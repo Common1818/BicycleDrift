@@ -3,73 +3,73 @@ import "./css/LoginForm.css";
 
 const SignupFormComp = () => {
   return (
-    <form class="form form--register" action="">
-      <h1 class="form__title signup">Sign Up For BicycleDrift</h1>
-      <div class="form__helper">
+    <form className="form form--register" action="">
+      <h1 className="form__title signup">Sign Up For BicycleDrift</h1>
+      <div className="form__helper">
         <input
           type="text"
           name="user"
           id="new-user"
           placeholder="User"
-          class=" form__input"
+          className=" form__input"
         />
-        <label class="form__label" for="new-user">
+        <label className="form__label" htmlFor="new-user">
           First Name
         </label>
       </div>
-      <div class="form__helper">
+      <div className="form__helper">
         <input
           type="text"
           name="user"
           id="new-user"
           placeholder="User"
-          class=" form__input"
+          className=" form__input"
         />
-        <label class="form__label" for="new-user">
+        <label className="form__label" htmlFor="new-user">
           Last Name
         </label>
       </div>
-      <div class="form__helper">
+      <div className="form__helper">
         <input
           type="email"
           name="email"
           id="email"
           placeholder="Email"
-          class="form__input"
+          className="form__input"
         />
-        <label class="form__label" for="email">
+        <label className="form__label" htmlFor="email">
           Email
         </label>
       </div>
-      <div class="form__helper">
+      <div className="form__helper">
         <input
           type="password"
           name="password"
           id="new-user-password"
           placeholder="Password"
-          class="form__input"
+          className="form__input"
         />
-        <label class="form__label" for="new-user-password">
+        <label className="form__label" htmlFor="new-user-password">
           Password
         </label>
       </div>
-      <div class="form__helper">
+      <div className="form__helper">
         <input
           type="password"
           name="password"
           id="confirm-password"
-          Placeholder="Confirm password"
-          class="form__input"
+          placeholder="Confirm password"
+          className="form__input"
         />
-        <label class="form__label" for="confirm-password">
+        <label className="form__label" htmlFor="confirm-password">
           Confirm password
         </label>
       </div>
-      <button type="submit" class="form__button">
+      <button type="submit" className="form__button">
         Register
       </button>
-      <p class="form__text">Already have an account?</p>{" "}
-      <label for="toggle" class="form__link">
+      <p className="form__text">Already have an account?</p>{" "}
+      <label htmlFor="toggle" className="form__link">
         Sign in!
       </label>
     </form>
