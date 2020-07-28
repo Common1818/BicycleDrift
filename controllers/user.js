@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-export const getUserById = async (req, res, next, id) => {
+exports.getUserById = async (req, res, next, id) => {
    try {
       const user = await User.findById(id).select('-password');
 
@@ -19,6 +19,6 @@ export const getUserById = async (req, res, next, id) => {
    }
 };
 
-export const getUser = async (req, res) => {
+exports.getUser = async (req, res) => {
    return res.json(req.profile);
 };
