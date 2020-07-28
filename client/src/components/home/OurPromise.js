@@ -1,58 +1,51 @@
 import React from "react";
 import "./css/OurPromise.css";
+import HomeDelivery from "./Images/HomeDelivery.PNG";
+import SecureTransactions from "./Images/SecureTransactions.PNG";
+import Asssembled from "./Images/Assembled.PNG";
+import QualityCheck from "./Images/QualityCheck.PNG";
+import { Row, Col } from "react-bootstrap";
 
 const OurPromise = () => {
   return (
-    <section id="shiping">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="shipping-box">
-              <div class="box-icon">
-                <i class="fas fa-truck"></i>
-              </div>
-              <div class="box-title">
-                <h3>Free Shipping</h3>
-                <p>above $5 only</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="shipping-box">
-              <div class="box-icon">
-                <i class="far fa-address-book"></i>
-              </div>
-              <div class="box-title">
-                <h3>Certified Organic</h3>
-                <p>100% guarantee</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="shipping-box">
-              <div class="box-icon">
-                <i class="far fa-money-bill-alt"></i>
-              </div>
-              <div class="box-title">
-                <h3>Huge Savings</h3>
-                <p>at lowest price</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="shipping-box">
-              <div class="box-icon">
-                <i class="fas fa-recycle"></i>
-              </div>
-              <div class="box-title">
-                <h3>Easy Returns</h3>
-                <p>no questions asked</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="our-promise-container">
+      <h2>Our Promise</h2>
+      <div className="our-promise">
+        <Row className="promises desktop">
+          <Col className="promise" sm={3}>
+            <img src={HomeDelivery} alt="" />
+          </Col>
+          <Col className="promise" sm={3}>
+            <img src={SecureTransactions} alt="" />
+          </Col>
+          <Col className="promise" sm={3}>
+            <img src={Asssembled} alt="" />
+          </Col>
+          <Col className="promise" sm={3}>
+            <img src={QualityCheck} alt="" />
+          </Col>
+        </Row>
+
+        <Row className="promises mobile">
+          <Row>
+            <Col className="promise" xs={6}>
+              <img src={SecureTransactions} alt="" />
+            </Col>
+            <Col className="promise" xs={6}>
+              <img src={QualityCheck} alt="" />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="promise" xs={6}>
+              <img src={HomeDelivery} alt="" />
+            </Col>
+            <Col className="promise" xs={6}>
+              <img src={Asssembled} alt="" />
+            </Col>
+          </Row>
+        </Row>
       </div>
-    </section>
+    </div>
   );
 };
 

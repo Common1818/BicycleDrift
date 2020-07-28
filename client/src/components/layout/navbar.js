@@ -72,11 +72,11 @@ const Navbar = () => {
             {/* bicycles  */}
 
             <li className="appDropdown macroDropdown aniList aniList-two isActive">
-              <a onClick={handleAniDrop}>
+              <Link onClick={handleAniDrop}>
                 <span id="dropBicycles" className="h op">
                   Bicycles
                 </span>
-              </a>
+              </Link>
               <BicyclesDropdown />
             </li>
 

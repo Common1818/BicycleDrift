@@ -1,33 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import $ from "jquery";
+import { Carousel } from "react-bootstrap";
 import "./css/Carousel.css";
 import carousel1 from "./Images/carousel1.PNG";
-import carousel2 from "./Images/carousel1.PNG";
-import carousel3 from "./Images/carousel1.PNG";
+import carousel2 from "./Images/carousel2.PNG";
+import carousel3 from "./Images/carousel3.PNG";
 
-const Carousel = () => {
-  var duration = 5000; //in miliseconds
-  $(document).ready(function () {
-    $(".carousel").carousel();
-  });
-  $(".carousel").carousel();
-  setInterval(function () {
-    $(".carousel").carousel("next");
-  }, duration); //
+const HomeCarousel = () => {
+  const [index, setIndex] = useState(0);
 
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
   return (
-    <div class="carousel carousel-slider">
-      <a class="carousel-item" href="#one!">
-        <img src={carousel1} alt="" />
-      </a>
-      <a class="carousel-item" href="#two!">
-        <img src={carousel2} alt="" />
-      </a>
-      <a class="carousel-item" href="#three!">
-        <img src={carousel3} alt="" />
-      </a>
+    <div className="home-carousel">
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel.Item>
+          <img className="d-block w-100" src={carousel1} alt="First slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={carousel2} alt="Second slide" />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={carousel3} alt="Third slide" />
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 };
 
-export default Carousel;
+export default HomeCarousel;
