@@ -18,40 +18,52 @@ const Footer = () => {
         <div class="upper_side contents">
           <ul class="flex">
             <li class="first_depth">
-              <p class="title">SHOP</p>
+              <p class="title">SHOP Bikes</p>
+              <ul class="second_depth">
+                <li class="white">By Age Group</li>
+                <li>
+                  <a href="#">For Adults</a>
+                </li>
+                <li>
+                  <a href="#">For Kids</a>
+                </li>
+                <li>
+                  <a href="#">For Toddlers</a>
+                </li>
+              </ul>
               <ul class="second_depth">
                 <li class="white">By Category</li>
                 <li>
-                  <a href="#">Shop Home</a>
+                  <a href="#">Mountain</a>
                 </li>
                 <li>
-                  <a href="#">Mens</a>
+                  <a href="#">City</a>
                 </li>
                 <li>
-                  <a href="#">Wemens</a>
+                  <a href="#">Road</a>
                 </li>
                 <li>
-                  <a href="#">Kids</a>
+                  <a href="#">Hybrid</a>
                 </li>
                 <li>
-                  <a href="#">Classics</a>
+                  <a href="#"></a>
                 </li>
               </ul>
             </li>
             <li class="first_depth">
-              <p class="title">SPORTS</p>
+              <p class="title"> Accessories</p>
               <ul class="second_depth">
                 <li>
-                  <a href="#">Skate</a>
+                  <a href="#">For Rider</a>
                 </li>
                 <li>
-                  <a href="#">Surf</a>
+                  <a href="#">For Bike</a>
                 </li>
                 <li>
-                  <a href="#">Snow</a>
+                  <a href="#">Navigation</a>
                 </li>
                 <li>
-                  <a href="#">BMX</a>
+                  <a href="#">Gear</a>
                 </li>
               </ul>
             </li>
@@ -65,45 +77,11 @@ const Footer = () => {
                   <a href="#">Store Locator</a>
                 </li>
                 <li>
-                  <a href="#">Missing Points?</a>
-                </li>
-                <li>
-                  <a href="#">Do Not Sell My Info</a>
+                  <a href="#">Order Status</a>
                 </li>
               </ul>
             </li>
-            <li class="first_depth">
-              <p class="title">COMPANY</p>
-              <ul class="second_depth">
-                <li>
-                  <a href="#">Terms of Use</a>
-                </li>
-                <li>
-                  <a href="#">Privacy</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-                <li>
-                  <a href="#">About</a>
-                </li>
-                <li>
-                  <a href="#">CA Supply Chains Act</a>
-                </li>
-                <li>
-                  <a href="#">Sustainability</a>
-                </li>
-                <li>
-                  <a href="#">Affilites</a>
-                </li>
-                <li>
-                  <a href="#">Recall Info</a>
-                </li>
-                <li>
-                  <a href="#">Inclusion and Diversity</a>
-                </li>
-              </ul>
-            </li>
+
             <li class="first_depth">
               <p class="title">CONTACT</p>
               <ul class="second_depth">
@@ -112,9 +90,7 @@ const Footer = () => {
                     <li>
                       <a href="#">Contact Us</a>
                     </li>
-                    <li>
-                      <a href="#">Order Status</a>
-                    </li>
+
                     <li>
                       <em class="white">Address</em>
                       <p>address</p>
@@ -142,7 +118,7 @@ const Footer = () => {
               </ul>
             </li>
             <li>
-              <p class="title">FOLLOW VANS</p>
+              <p class="title">FOLLOW BicycleDrift</p>
               <ul class="second_depth flex sns">
                 <li>
                   <a href="#">
@@ -187,10 +163,8 @@ const Footer = () => {
         <div class="lower_side contents">
           <ul class="flex">
             <li class="logo"></li>
-            <li>&copy; Vans, A VF Company</li>
-            <li>
-              <a href="#">Modern Slavery Statement</a>
-            </li>
+            <li>&copy; BicycleDrift</li>
+            <li>{/* <a href="#">Modern Slavery Statement</a> */}</li>
           </ul>
         </div>
       </div>

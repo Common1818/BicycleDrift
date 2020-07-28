@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
-export const signup = async (req, res) => {
+exports.signup = async (req, res) => {
    const errors = validationResult(req);
 
    if (!errors.isEmpty()) {
@@ -13,7 +13,7 @@ export const signup = async (req, res) => {
       });
    }
 
-   const { name, email, password } = req.body;
+   const { firstname, lastname, email, password } = req.body;
 
    try {
       // See if user exists
@@ -46,7 +46,7 @@ export const signup = async (req, res) => {
          { expiresIn: 36000000000 },
          (err, token) => {
             if (err) throw err;
-            return res.json({ token });
+            return res.json({ token, userId: user._id });
          }
       );
    } catch (err) {
@@ -55,7 +55,7 @@ export const signup = async (req, res) => {
    }
 };
 
-export const signin = async (req, res) => {
+exports.signin = async (req, res) => {
    const errors = validationResult(req);
    if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -92,7 +92,7 @@ export const signin = async (req, res) => {
          { expiresIn: 360000 },
          (err, token) => {
             if (err) throw err;
-            return res.json({ token });
+            return res.json({ token, userId: user._id });
          }
       );
    } catch (err) {

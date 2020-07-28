@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+.product-image-container.mobile {
+    display: none;
+}
+
+@media(max-width:580px) {
+    .product-image-container.desktop {
+        display: none;
+    }
+    .product-image-container.mobile {
+        display: block;
+    }
+    .product-image-container .image-car-sm {
+        visibility: visible;
+    }
+    .hr-4 {
+        margin-top: 20px;
+    }
+}

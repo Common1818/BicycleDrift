@@ -7,7 +7,8 @@ const { signup, signin } = require('../controllers/auth');
 router.post(
    '/signup',
    [
-      check('name', 'Name is required').notEmpty(),
+      check('firstname', 'First name is required').notEmpty(),
+      check('lastname', 'Last name is required').notEmpty(),
       check('email', 'Please enter a valid email').isEmail(),
       check(
          'password',

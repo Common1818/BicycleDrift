@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import NavLogo from "./NavLogo";
+import { connect } from "react-redux";
+import { logout } from "../../../../actions/auth";
 
-const TopRow = () => {
+const TopRow = ({ isLoggedIn, user, logout }) => {
   const handleNav = () => {
     $("#appNavOptions").removeClass("hidden-xs");
 
@@ -19,13 +21,26 @@ const TopRow = () => {
     }, 200);
   };
 
-  var isLoggedIn = true;
-
   return (
     <div className="bdRow topRow graidentBar">
       <NavLogo />
       <div className="appControls">
         <div className="bdRow controlRow">
+          <>
+            {isLoggedIn == true ? (
+              <div className="segment support hidden-xs">
+                <a href="/" onClick={logout}>
+                  <img
+                    src="https://www.svgrepo.com/show/181104/logout-exit.svg"
+                    className="img-responsive center-block userIcon"
+                    alt="Support"
+                    title="Support"
+                  />{" "}
+                  Logout
+                </a>
+              </div>
+            ) : null}
+          </>
           <div
             className="segment visible-xs"
             onClick={handleNav}
@@ -40,7 +55,6 @@ const TopRow = () => {
               />
             </div>
           </div>
-
           <div className="segment hidden-xs login" id="appLoginTrigger">
             <div className="bdRow">
               <Link to="/login">
@@ -50,10 +64,12 @@ const TopRow = () => {
                   alt="Login"
                   title="Login"
                 />{" "}
-                <b style={{ fontSize: "1.3rem" }}>
+                <span style={{ fontSize: "1.3rem" }}>
                   {" "}
-                  {isLoggedIn ? "Hola, Señorita!!" : " Login/Create Account"}
-                </b>
+                  {isLoggedIn == true
+                    ? `Hey, ${user && user.firstname} !!`
+                    : " Login/Create Account"}
+                </span>
               </Link>
             </div>
           </div>
@@ -102,4 +118,4 @@ const TopRow = () => {
   );
 };
 
-export default TopRow;
+export default connect(null, { logout })(TopRow);
