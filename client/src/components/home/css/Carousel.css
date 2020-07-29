@@ -1,9 +1,9 @@
 .home-carousel .carousel {
-    background-image: url("https://images.unsplash.com/photo-1485381771061-e2cbd5317d9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    background-image: url('https://images.unsplash.com/photo-1485381771061-e2cbd5317d9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+    background-color: rgb(57, 62, 119) !important;
+    background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
-    background-color: #fff;
-    background-blend-mode: multiply;
 }
 
 @media (min-width: 900px) {
