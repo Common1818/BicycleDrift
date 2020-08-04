@@ -14,10 +14,8 @@ import { connect } from "react-redux";
 //
 
 const Navbar = ({ auth }) => {
-  console.log(auth);
   const { isAuthenticated } = auth;
   const { user } = auth;
-  console.log(user);
   // =-=--=-=-=-=-=-=-=-==-=-=-=-=--=-=-=-=-=-=-==--=-=-=-=-=-=-=-=-==--==--=-=-=-=-==--=-=
 
   const handleAniDrop = () => {
@@ -122,7 +120,7 @@ const Navbar = ({ auth }) => {
             </li>
           </ul>
         </div>
-
+        <Link to="/admin">admin</Link>
         <SearchBar />
       </div>
     </div>

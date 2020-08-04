@@ -1,7 +1,20 @@
 import React from "react";
 import "./css/Specifications.css";
 
-const Specifications = () => {
+const Specifications = ({ specifications }) => {
+  console.log(specifications);
+  const brakes = specifications && specifications.brakes;
+  const chain = specifications && specifications.chain;
+  const color = specifications && specifications.color;
+  const framematerial = specifications && specifications.framematerial;
+  const frontderailleur = specifications && specifications.frontderailleur;
+  const rearderailleur = specifications && specifications.rearderailleur;
+  const handlebar = specifications && specifications.handlebar;
+  const rim = specifications && specifications.rim;
+  const suspension = specifications && specifications.suspension;
+  const shifter = specifications && specifications.shifter;
+  const tire = specifications && specifications.tire;
+
   return (
     <div class="container mt-4 specification-container">
       <h3>SPECIFICATIONS</h3>
@@ -13,8 +26,10 @@ const Specifications = () => {
           ></img>
           <div class="specs">
             <h4>Frame</h4>
-            NECO-WP-163-114X85MM, FULL PLASTIC, 9/16 BSWX20TPI – WITH ISO
-            REFLECTOR, WITH STEEL BALLS
+
+            <span style={{ fontSize: "1.2rem" }}>
+              {framematerial && framematerial}
+            </span>
           </div>
         </div>
         <div class="col-sm-4">
@@ -24,7 +39,11 @@ const Specifications = () => {
           ></img>
           <div class="specs">
             <h4>Fork</h4>
-            ZOOM-CH – 393 29T-SUSPENSION FORK, 60MM TRAVEL
+
+            <span style={{ fontSize: "1.2rem" }}>
+              {" "}
+              {suspension && suspension}
+            </span>
           </div>
         </div>
         <div class="col-sm-4">
@@ -34,7 +53,8 @@ const Specifications = () => {
           ></img>
           <div class="specs">
             <h4>Shifter</h4>
-            Shimano 21 Speed
+
+            <span style={{ fontSize: "1.2rem" }}> {shifter && shifter}</span>
           </div>
         </div>
       </div>
@@ -45,7 +65,8 @@ const Specifications = () => {
             alt=""
           ></img>
           <h4>CHAIN</h4>
-          KMC-Z33-1/2T X 3/32T X 112 LINKS
+
+          <span style={{ fontSize: "1.2rem" }}> {chain && chain}</span>
         </div>
         <div class="col-sm-4">
           <img
@@ -53,9 +74,11 @@ const Specifications = () => {
             alt=""
           ></img>
           <h4>REAR DERAILLEUR</h4>
-          SHIMANO-AFDTZ500DSTM6-TZ500-DS6, TOURNEY,DOWN-SWING, TOP PULL,FOR
-          3(FRICTION) X 7/6 SPEED,BAND TYPE 31.8MM, CS ANGLE: 66-69, FOR 42T,
-          CL: 47.5MM
+
+          <span style={{ fontSize: "1.2rem" }}>
+            {" "}
+            {rearderailleur && rearderailleur}
+          </span>
         </div>
         <div class="col-sm-4">
           <img
@@ -63,16 +86,21 @@ const Specifications = () => {
             alt=""
           ></img>
           <h4>FRONT DERAILLEUR</h4>
-          SHIMANO-AFDTZ500DSTM6-TZ500-DS6, TOURNEY,DOWN-SWING, TOP PULL,FOR
-          3(FRICTION) X 7/6 SPEED,BAND TYPE 31.8MM, CS ANGLE: 66-69, FOR 42T,
-          CL: 47.5MM
+          <span style={{ fontSize: "1.2rem" }}>
+            {" "}
+            <span style={{ fontSize: "1.2rem" }}>
+              {" "}
+              {frontderailleur && frontderailleur}
+            </span>
+          </span>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
           <img src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_Web_Specs_Icon_Rims_2017_04.png"></img>
           <h4>RIMS</h4>
-          29T X1.75T , H-25MM, 14GX36H, ALLOY DOUBLE WALL, WITH SAFETY LINE
+
+          <span style={{ fontSize: "1.2rem" }}> {rim && rim}</span>
         </div>
         <div class="col-sm-4 ">
           <img
@@ -80,7 +108,7 @@ const Specifications = () => {
             alt=" "
           ></img>
           <h4>TYRES</h4>
-          KENDA -P-1197-29T X 2.1T(54-622) DUAL WALL
+          <span style={{ fontSize: "1.2rem" }}> {tire && tire}</span>
         </div>
         <div class="col-sm-4 ">
           <img
@@ -88,14 +116,16 @@ const Specifications = () => {
             alt=" "
           ></img>
           <h4>BRAKES</h4>
-          FRONT – DISC BRAKE – 160 MM – ALLOY REAR – DISC BRAKE – 160 MM – ALLOY
+
+          <span style={{ fontSize: "1.2rem" }}> {brakes && brakes}</span>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4">
           <img src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_Web_Specs_Icon_Handle_Bar_2017_04.png"></img>
           <h4>HANDLEBAR</h4>
-          STEEL, 680MM LENGTH , 31.8MM DIA, 9° – 10° SWEEP, RISE – 30MM
+
+          <span style={{ fontSize: "1.2rem" }}> {handlebar && handlebar}</span>
         </div>
         <div class="col-sm-4 ">
           <img
@@ -111,7 +141,7 @@ const Specifications = () => {
             alt=" "
           ></img>
           <h4>COLOURS</h4>
-          CHARCOAL BLACK WITH ORANGE GRAPHICS, CHARCOAL BLACK WITH NEON GRAPHICS
+          <span style={{ fontSize: "1.2rem" }}> {color && color}</span>
         </div>
       </div>
     </div>

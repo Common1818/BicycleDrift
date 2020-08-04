@@ -1,5 +1,5 @@
-const express = require('express');
-const connectDb = require('./config/db');
+const express = require("express");
+const connectDb = require("./config/db");
 
 const app = express();
 
@@ -10,8 +10,11 @@ connectDb();
 app.use(express.json({ extended: false }));
 
 // Routes
-app.use('/api', require('./routes/auth'));
-app.use('/api', require('./routes/user'));
+app.use("/api", require("./routes/auth"));
+app.use("/api", require("./routes/user"));
+app.use("/api", require("./routes/category"));
+app.use("/api", require("./routes/brand"));
+app.use("/api", require("./routes/product"));
 
 const PORT = process.env.PORT || 8000;
 

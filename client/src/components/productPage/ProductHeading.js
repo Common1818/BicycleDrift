@@ -2,11 +2,13 @@ import React from "react";
 
 import "./css/ProductHeading.css";
 
-const ProductHeading = () => {
+const ProductHeading = ({ name, modelyear }) => {
   return (
-    <div class="product-header">
-      <h3 class="product-name-heading">Montra Rock 27.5 (2018)</h3>
-      <div class="rating-box">
+    <div className="product-header">
+      <h3 className="product-name-heading">
+        {name && name} ({modelyear && modelyear})
+      </h3>
+      <div className="rating-box">
         <img src="https://www.svgrepo.com/show/22427/star.svg" alt=""></img> 4.8
       </div>
     </div>

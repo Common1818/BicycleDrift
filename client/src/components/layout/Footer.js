@@ -14,13 +14,13 @@ const Footer = () => {
   });
   return (
     <footer>
-      <div class="wrap">
-        <div class="upper_side contents">
-          <ul class="flex">
-            <li class="first_depth">
-              <p class="title">SHOP Bikes</p>
-              <ul class="second_depth">
-                <li class="white">By Age Group</li>
+      <div className="wrap">
+        <div className="upper_side contents">
+          <ul className="flex">
+            <li className="first_depth">
+              <p className="title">SHOP Bikes</p>
+              <ul className="second_depth">
+                <li className="white">By Age Group</li>
                 <li>
                   <a href="#">For Adults</a>
                 </li>
@@ -31,8 +31,8 @@ const Footer = () => {
                   <a href="#">For Toddlers</a>
                 </li>
               </ul>
-              <ul class="second_depth">
-                <li class="white">By Category</li>
+              <ul className="second_depth">
+                <li className="white">By Category</li>
                 <li>
                   <a href="#">Mountain</a>
                 </li>
@@ -50,9 +50,9 @@ const Footer = () => {
                 </li>
               </ul>
             </li>
-            <li class="first_depth">
-              <p class="title"> Accessories</p>
-              <ul class="second_depth">
+            <li className="first_depth">
+              <p className="title"> Accessories</p>
+              <ul className="second_depth">
                 <li>
                   <a href="#">For Rider</a>
                 </li>
@@ -67,9 +67,9 @@ const Footer = () => {
                 </li>
               </ul>
             </li>
-            <li class="first_depth">
-              <p class="title">SUPPORT</p>
-              <ul class="second_depth">
+            <li className="first_depth">
+              <p className="title">SUPPORT</p>
+              <ul className="second_depth">
                 <li>
                   <a href="#">FAQs</a>
                 </li>
@@ -82,9 +82,9 @@ const Footer = () => {
               </ul>
             </li>
 
-            <li class="first_depth">
-              <p class="title">CONTACT</p>
-              <ul class="second_depth">
+            <li className="first_depth">
+              <p className="title">CONTACT</p>
+              <ul className="second_depth">
                 <li>
                   <ul>
                     <li>
@@ -92,11 +92,11 @@ const Footer = () => {
                     </li>
 
                     <li>
-                      <em class="white">Address</em>
+                      <em className="white">Address</em>
                       <p>address</p>
                     </li>
                     <li>
-                      <em class="white">Hours</em>
+                      <em className="white">Hours</em>
                       <p>M - F 6:00am - 3:30pm PST </p>
                     </li>
                   </ul>
@@ -105,54 +105,54 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div class="mid_side contents">
-          <ul class="flex">
+        <div className="mid_side contents">
+          <ul className="flex">
             <li>
-              <p class="title">STORE LOCATOR</p>
-              <ul class="second_depth">
+              <p className="title">STORE LOCATOR</p>
+              <ul className="second_depth">
                 <li>
                   <p>Find a Vans store near you</p>
-                  <button class="store">FIND A STORE</button>
+                  <button className="store">FIND A STORE</button>
                 </li>
                 <li></li>
               </ul>
             </li>
             <li>
-              <p class="title">FOLLOW BicycleDrift</p>
-              <ul class="second_depth flex sns">
+              <p className="title">FOLLOW BicycleDrift</p>
+              <ul className="second_depth flex sns">
                 <li>
                   <a href="#">
-                    <i class="fab fa-facebook-f"></i>
+                    <i className="fab fa-facebook-f"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fab fa-twitter"></i>
+                    <i className="fab fa-twitter"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fab fa-youtube"></i>
+                    <i className="fab fa-youtube"></i>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fab fa-instagram"></i>
+                    <i className="fab fa-instagram"></i>
                   </a>
                 </li>
               </ul>
             </li>
             <li>
-              <p class="title">SUBSCRIBE</p>
-              <ul class="second_depth">
+              <p className="title">SUBSCRIBE</p>
+              <ul className="second_depth">
                 <li>
                   <p>Receive product news and updates in your inbox.</p>
                 </li>
                 <li>
-                  <div class="input_box flex">
+                  <div className="input_box flex">
                     <input type="text" placeholder="Email Address"></input>
                     <button>
-                      <i class="fas fa-chevron-right"></i>
+                      <i className="fas fa-chevron-right"></i>
                     </button>
                   </div>
                 </li>
@@ -160,9 +160,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div class="lower_side contents">
-          <ul class="flex">
-            <li class="logo"></li>
+        <div className="lower_side contents">
+          <ul className="flex">
+            <li className="logo"></li>
             <li>&copy; BicycleDrift</li>
             <li>{/* <a href="#">Modern Slavery Statement</a> */}</li>
           </ul>

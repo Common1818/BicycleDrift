@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/ProductPage.css";
 import CustomerReviews from "./CustomerReviews";
 import Specifications from "./Specifications";
@@ -6,25 +6,58 @@ import ProductHeading from "./ProductHeading";
 import ProductDesktop from "./ProductDesktop";
 import ProductDescription from "./ProductDescription";
 import ProductMobile from "./ProductMobile";
+import { connect } from "react-redux";
+import { fetchBike } from "../../actions/product";
+import ProductAdminSection from "./ProductAdminSection";
 
-const ProductPage = () => {
+const ProductPage = (props) => {
+  useEffect(() => {
+    fetchBike(productId);
+  }, []);
+
+  const { fetchBike } = props;
+  const { productId } = props.match.params;
+  const { product } = props.product;
+  const specifications = product && product.specifications;
+  const images = product && product.images;
+  const name = product && product.name;
+  const modelyear = product && product.modelyear;
+  const gender = product && product.gender;
+  const category = product && product.category;
+  const description = product && product.description;
+  const price = product && product.price;
+  const stock = product && product.stock;
+
   return (
     <div class="fluid-container p-4 m-2">
       <div class="row product-container">
         <div class=" product-image col-lg-7">
-          <ProductHeading />
+          <ProductHeading name={name} modelyear={modelyear} />
 
-          <ProductDesktop />
-          <ProductMobile />
+          <ProductDesktop images={images} />
+          <ProductMobile images={images} />
         </div>
-        <ProductDescription />
+        <ProductDescription
+          description={description}
+          category={category}
+          name={name}
+          modelyear={modelyear}
+          gender={gender}
+          price={price}
+          stock={stock}
+        />
       </div>
 
       <hr class="hr-4"></hr>
-      <Specifications />
+      <Specifications specifications={specifications} />
       <CustomerReviews />
+      <ProductAdminSection productId={productId} product={product} />
     </div>
   );
 };
 
-export default ProductPage;
+const mapStateToProps = (state) => ({
+  product: state.product,
+});
+
+export default connect(mapStateToProps, { fetchBike })(ProductPage);

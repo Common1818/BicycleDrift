@@ -2,57 +2,33 @@ import React from "react";
 import $ from "jquery";
 import "./css/ProductMobile.css";
 
-const ProductMobile = () => {
+const ProductMobile = ({ images }) => {
   const changeDisplayImage = (tempSource) => {
     $(".cover-image img").removeAttr("src");
     $(".cover-image img").attr("src", tempSource);
   };
-
+  const imagesArray = images && images;
+  console.log(imagesArray);
   return (
     <div className="product-image-container mobile">
       <div className="cover-image">
-        <img
-          src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_Madrock_Blue_2019_07.png"
-          alt=""
-        />
+        <img src={imagesArray && imagesArray[0]} alt="" />
       </div>
       <div className="not-cover-image">
-        <div>
-          <img
-            onClick={(e) => {
-              changeDisplayImage(e.target.src);
-            }}
-            src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_Madrock_Blue_2019_07.png"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            onClick={(e) => {
-              changeDisplayImage(e.target.src);
-            }}
-            src="https://s3.ap-south-1.amazonaws.com/choosemybicycle/images/bicycles/montra-rock-2-1-27-5-2018-4.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            onClick={(e) => {
-              changeDisplayImage(e.target.src);
-            }}
-            src="https://s3.ap-south-1.amazonaws.com/choosemybicycle/images/bicycles/montra-rock-2-1-27-5-2018-3.jpg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            onClick={(e) => {
-              changeDisplayImage(e.target.src);
-            }}
-            src="https://s3.ap-south-1.amazonaws.com/choosemybicycle/images/bicycles/montra-rock-2-1-27-5-2018-6.jpg"
-            alt=""
-          />
-        </div>
+        {imagesArray &&
+          imagesArray.map((image) => {
+            return (
+              <div>
+                <img
+                  onClick={(e) => {
+                    changeDisplayImage(e.target.src);
+                  }}
+                  src={image}
+                  alt=""
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

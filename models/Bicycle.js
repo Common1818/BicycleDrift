@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
 
 const BicycleSchema = new mongoose.Schema(
@@ -7,17 +7,18 @@ const BicycleSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    agegroup: {
-      min: { type: Number, min: 0 },
-      max: { type: Number, min: 0 },
-    },
+
     gender: {
       type: String, // Girls, Boys, For Both
       required: true,
     },
     color: {
       type: String, // A drop down list of colors
-      default: 'Black',
+      default: "Black",
+    },
+    stock: {
+      type: Number,
+      required: true,
     },
     price: {
       type: Number,
@@ -25,36 +26,42 @@ const BicycleSchema = new mongoose.Schema(
       maxlength: 32,
       trim: true,
     },
-    framematerial: {
+
+    description: {
       type: String,
+    },
+    modelyear: {
+      type: Number,
     },
     instock: {
       type: Boolean,
       default: true,
     },
+
     images: {
       type: [String],
       required: true,
     },
     category: {
       type: ObjectId,
-      ref: 'Category',
+      ref: "Category",
       required: true,
     },
     specifications: {
+      required: true,
       type: ObjectId,
-      ref: 'Specifications',
+      ref: "Specifications",
     },
     brand: {
       type: ObjectId,
-      ref: 'Brand',
+      ref: "Brand",
     },
     warranty: {
-      type: ObjectId,
-      ref: 'Warranty',
+      type: String,
+      default: "Manufacturers Warrranty",
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Bicycle', BicycleSchema);
+module.exports = mongoose.model("Bicycle", BicycleSchema);

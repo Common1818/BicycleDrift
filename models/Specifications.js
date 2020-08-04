@@ -1,104 +1,50 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const SpecificationsSchema = new mongoose.Schema({
-   frontderailleour: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   rearderailleour: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   shifter: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   handlebar: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   tire: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   rim: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   suspension: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   chain: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-   },
-   frontbrake: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-      type: {
-         type: String,
-         default: 'Power',
-      },
-   },
-   rearbrake: {
-      name: {
-         type: String,
-         default: 'Generic',
-      },
-      description: {
-         type: String,
-      },
-      type: {
-         type: String,
-         default: 'Power',
-      },
-   },
+  frontderailleur: {
+    type: String,
+    default: "Generic",
+  },
+  rearderailleur: {
+    type: String,
+    default: "Generic",
+  },
+  shifter: {
+    type: String,
+    default: "Generic",
+  },
+  handlebar: {
+    type: String,
+    default: "Generic",
+  },
+  tire: {
+    type: String,
+    default: "Generic",
+  },
+  rim: {
+    type: String,
+    default: "Generic",
+  },
+  suspension: {
+    type: String,
+    default: "Generic",
+  },
+  chain: {
+    type: String,
+    default: "Generic",
+  },
+  framematerial: {
+    type: String,
+  },
+  brakes: {
+    type: String,
+  },
+  color: {
+    type: String,
+  },
+  size: {
+    typee: String,
+  },
 });
 
-module.exports = mongoose.model('Specifications', SpecificationsSchema);
+module.exports = mongoose.model("Specifications", SpecificationsSchema);
