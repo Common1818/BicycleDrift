@@ -7,6 +7,8 @@ import {
   LOGIN_FAIL,
   USER_LOADED,
   AUTH_ERROR,
+  SEND_RESET_EMAIL,
+  SEND_RESET_EMAIL_FAIL,
   LOGOUT,
 } from "./types";
 
@@ -109,4 +111,37 @@ export const logout = () => (dispatch) => {
   dispatch({
     type: "LOGOUT",
   });
+};
+
+export const sendResetEmail = ({ email }) => async (dispatch) => {
+  console.log(email);
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const body = JSON.stringify({ email });
+
+  try {
+    const res = await axios.post("/api/forgotpassword", body, config);
+
+    const messagesArray = res.data.messages;
+    // brand added message alert
+    messagesArray.forEach((message) =>
+      dispatch(setAlert(message.msg, "danger"))
+    );
+    dispatch({
+      type: SEND_RESET_EMAIL,
+      payload: res.data,
+    });
+  } catch (err) {
+    console.log(err);
+    const errors = err && err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    }
+    dispatch({
+      type: SEND_RESET_EMAIL_FAIL,
+    });
+  }
 };

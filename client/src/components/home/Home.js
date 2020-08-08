@@ -13,6 +13,6 @@ const Home = () => {
       <CustomerReviews />
     </React.Fragment>
   );
-}
+};
 
 export default Home;

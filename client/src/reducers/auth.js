@@ -6,6 +6,8 @@ import {
   USER_LOADED,
   AUTH_ERROR,
   LOGOUT,
+  SEND_RESET_EMAIL,
+  SEND_RESET_EMAIL_FAIL,
 } from "../actions/types";
 
 const initialState = {
@@ -58,6 +60,11 @@ export default function (state = initialState, action) {
         token: null,
         isAuthenticated: false,
         loading: false,
+      };
+    case SEND_RESET_EMAIL:
+      return {
+        ...state,
+        ...payload,
       };
     default:
       return state;

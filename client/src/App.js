@@ -13,9 +13,11 @@ import { loadUser } from "./actions/auth";
 import ProductPage from "./components/productPage/ProductPage";
 import ProductForm from "./components/admin/AddProduct/ProdutForm";
 import AdminRoute from "./routing/AdminRoute";
+import PrivateRoute from "./routing/PrivateRoute";
 import AdminPanel from "./components/admin/AdminPanel";
 import AddProductColor from "./components/admin/AddProduct/AddProductColor";
 import UpdateProduct from "./components/admin/EditProduct/UpdateProduct";
+import ForgotPasswordForm from "./components/auth/ForgotPasswordForm";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -35,6 +37,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={LoginSignupForm} />
         <Route exact path="/product/:productId" component={ProductPage} />
+        <Route exact path="/forgotpassword" component={ForgotPasswordForm} />
         {/* <Route exact path="/admin/product/add" component={ProductForm} /> */}
         <AdminRoute exact path="/admin/product/add" component={ProductForm} />
         <AdminRoute
