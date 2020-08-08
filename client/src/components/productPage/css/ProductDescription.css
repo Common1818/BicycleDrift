@@ -268,7 +268,7 @@ input[type=number] {
     cursor: pointer;
 }
 
-.btn--primary {
+.product-description .btn--primary {
     background-color: var(--clr-accent);
     font-size: 1.5rem;
     text-transform: uppercase;
