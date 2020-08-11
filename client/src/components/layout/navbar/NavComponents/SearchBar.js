@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import $ from "jquery";
+import { searchResult, getAllBikes } from "../../../../actions/products";
 
-const SearchBar = () => {
+const SearchBar = ({ searchResult, history, getAllBikes, Bikes }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const closeSearchNav = () => {
     $(".searchBar").addClass("hiddenTransform");
     setTimeout(() => {
       $(".searchBar").addClass("hidden-xs");
     }, 300);
+  };
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (Bikes.length === 0) {
+      await getAllBikes();
+    }
+    searchResult(searchTerm, history);
   };
 
   return (
@@ -26,7 +43,7 @@ const SearchBar = () => {
       <form
         className="form searchForm"
         id="appNavSearchForm"
-        autoComplete="off"
+        onSubmit={handleSubmit}
       >
         <div className="form-group positionRelative">
           <input
@@ -36,12 +53,31 @@ const SearchBar = () => {
             id="appSearch"
             name="appSearch"
             placeholder="Search on CycleDrift"
-            autoComplete="off"
+            onChange={handleChange}
           />
+          <div
+            onClick={(e) => {
+              handleSubmit(e);
+              closeSearchNav();
+            }}
+            className="SearchButton"
+          >
+            <img
+              style={{ width: "28px" }}
+              src="https://www.svgrepo.com/show/3907/search.svg"
+              alt=""
+            />
+          </div>
         </div>
       </form>
     </div>
   );
 };
 
-export default SearchBar;
+const mapStateToProps = (state) => ({
+  Bikes: state.products.Bikes,
+});
+
+export default connect(mapStateToProps, { searchResult, getAllBikes })(
+  withRouter(SearchBar)
+);

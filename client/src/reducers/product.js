@@ -26,6 +26,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         product: { ...payload },
+        loading: false,
       };
     case FETCH_ALL_BIKES:
       return {
@@ -43,6 +44,12 @@ export default function (state = initialState, action) {
     case UPDATE_BIKE_ERROR:
       return {
         ...state,
+      };
+    case "EMPTY_PRODUCT_STATE":
+      return {
+        ...state,
+        product: null,
+        loading: null,
       };
 
     default:

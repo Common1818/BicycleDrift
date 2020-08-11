@@ -9,8 +9,10 @@ import {
   DELETE_BIKE_ERROR,
   UPDATE_BIKE,
   UPDATE_BIKE_ERROR,
+  ADD_TO_CART,
 } from "./types";
 import { setAlert } from "./alert";
+import { type } from "jquery";
 
 // useId from localstorage
 const userId = localStorage.getItem("userId");
@@ -165,4 +167,10 @@ export const updateBike = (bikedata, productId) => async (dispatch) => {
       type: UPDATE_BIKE_ERROR,
     });
   }
+};
+
+export const emptyProductState = () => (dispatch) => {
+  dispatch({
+    type: "EMPTY_PRODUCT_STATE",
+  });
 };

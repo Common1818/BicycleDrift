@@ -1,7 +1,7 @@
 .productForm-container {
     min-height: 60vh;
-    font-family: 'Lato', sans-serif;
-    background: linear-gradient(to top, #f71543, #eb833e) fixed;
+    font-family: "Lato", sans-serif;
+    background: #f1f1f1;
 }
 
 
@@ -36,13 +36,13 @@
     font-family: times;
     font-style: normal;
     line-height: 130%;
-    opacity: .6;
+    opacity: 0.6;
 }
 
 .productForm-container form {
     width: 100%;
     overflow: hidden;
-    background-color: #FEFEFE;
+    background-color: #fefefe;
     padding: 21px 13px;
     border-radius: 21px;
     -webkit-box-shadow: 0px 5px 34px rgba(0, 0, 0, 0.1);
@@ -71,8 +71,8 @@
 
 .productForm-container formgroup input:focus {
     opacity: 1;
-    border-bottom: 2px solid #F71442;
-    color: #F71442;
+    border-bottom: 2px solid #f71442;
+    color: #f71442;
 }
 
 .productForm-container formgroup label {
@@ -123,7 +123,7 @@
 
 .productForm-container #login-btn {
     border: none;
-    color: #FEFEFE;
+    color: #fefefe;
     padding: 0.8em 0;
     font-size: 1em;
     font-weight: 300;
@@ -131,8 +131,8 @@
     border-radius: 55px;
     -webkit-box-shadow: 0px 3px 21px rgba(255, 100, 0, 0.7);
     box-shadow: 0px 3px 21px rgba(255, 100, 0, 0.7);
-    background: -webkit-gradient(linear, left top, right top, from(#F98340), to(#F71442));
-    background: linear-gradient(to right, #F98340, #F71442);
+    background: -webkit-gradient( linear, left top, right top, from(#f98340), to(#f71442));
+    background: linear-gradient(to right, #f98340, #f71442);
     background-size: 100%;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -159,18 +159,18 @@
 }
 
 .productForm-container .social #facebook {
-    background: #1F4788;
-    background: -webkit-gradient(linear, left top, right top, from(#4B77BE), to(#1F4788));
-    background: linear-gradient(to right, #4B77BE, #1F4788);
+    background: #1f4788;
+    background: -webkit-gradient( linear, left top, right top, from(#4b77be), to(#1f4788));
+    background: linear-gradient(to right, #4b77be, #1f4788);
     background-size: 100%;
 }
 
 .productForm-container .social #google {
-    background: #FEFEFE;
-    background: -webkit-gradient(linear, left top, right top, from(#FEFEFE), to(#f1f1f1));
-    background: linear-gradient(to right, #FEFEFE, #f1f1f1);
+    background: #fefefe;
+    background: -webkit-gradient( linear, left top, right top, from(#fefefe), to(#f1f1f1));
+    background: linear-gradient(to right, #fefefe, #f1f1f1);
     background-size: 100%;
-    color: #F71442;
+    color: #f71442;
 }
 
 .productForm-container p {
@@ -197,7 +197,7 @@
     }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .container-center {
         position: absolute;
         left: 50%;
@@ -213,8 +213,8 @@
     }
     .productForm-container {
         min-height: 60vh;
-        font-family: 'Lato', sans-serif;
-        background: linear-gradient(to top, #f71543, #eb833e) fixed;
+        font-family: "Lato", sans-serif;
+        background: linear-gradient(to top, #f71543, #eb833e);
     }
 }
 
@@ -223,14 +223,17 @@
 
 @media screen and (min-width: 768px) {
     .productForm-container .container-center {
-        width: 500px;
+        width: 50vw;
+        background: linear-gradient(to top, #f71543, #eb833e);
+        border-radius: 40px;
+        padding: 20px;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .productForm-container {
-        min-height: 70vh;
-        font-family: 'Lato', sans-serif;
-        background: linear-gradient(to top, #f71543, #eb833e) fixed;
+        min-height: 80vh;
+        font-family: "Lato", sans-serif;
+        background: #f1f1f1;
     }
 }

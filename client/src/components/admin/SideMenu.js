@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import AddBrand from "./AddBrand";
 import AllBrands from "./AllBrands";
 import AllBikes from "./AllBikes";
+import AllPincodes from "./AllPincodes";
+import AddPincode from "./AddPincode";
 
 const SideMenu = ({ displayComp }) => {
   const handleDisplay = (comp) => {
@@ -77,21 +79,31 @@ const SideMenu = ({ displayComp }) => {
       </ul>
 
       <ul class="menu">
+        <li>Pincode</li>
+        <li
+          onClick={() => {
+            handleDisplay(<AddPincode />);
+          }}
+        >
+          {" "}
+          <span class="plus">+</span> Add Pincode
+        </li>
+        <li
+          onClick={() => {
+            handleDisplay(<AllPincodes />);
+          }}
+        >
+          View all Pincodes
+        </li>
+      </ul>
+
+      <ul class="menu">
         <li>Accesssories</li>
         <li>
           {" "}
           <span class="plus">+</span> Add Accesssories
         </li>
         <li>View all Accesssories</li>
-      </ul>
-
-      <ul class="menu">
-        <li>Reviews</li>
-        <li>
-          {" "}
-          <span class="plus">+</span> Add Reviews
-        </li>
-        <li>View all Reviews</li>
       </ul>
     </div>
   );

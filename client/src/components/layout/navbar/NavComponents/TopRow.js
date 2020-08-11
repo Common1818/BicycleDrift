@@ -101,8 +101,8 @@ const TopRow = ({ isLoggedIn, user, logout }) => {
             </div>
           </div>
 
-          <div className="segment cart" id="appCartIcon">
-            <Link to="/en/cart">
+          <div className="segment cart shopping-cart" id="appCartIcon">
+            <Link to="/mycart">
               <img
                 src="https://choosemybicycle.s3.ap-south-1.amazonaws.com/static/icons/navigation/shopping-cart-white.svg"
                 className="img-responsive center-block menuIcon"

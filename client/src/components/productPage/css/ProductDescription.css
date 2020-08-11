@@ -2,8 +2,8 @@
 :root {
     --clr-heading: #212126;
     --clr-body: #7c7c7e;
-    --clr-accent: #D90429;
-    --ff-body: 'Montserrat', sans-serif;
+    --clr-accent: #d90429;
+    --ff-body: "Montserrat", sans-serif;
     --fs-h2: 5rem;
     --fs-h4: 1.6rem;
     box-sizing: border-box;
@@ -16,7 +16,7 @@
     letter-spacing: 2px;
     font-weight: 600;
     line-height: 1.2;
-    margin-bottom: .6em;
+    margin-bottom: 0.6em;
 }
 
 .main-grid {
@@ -58,7 +58,7 @@
 .header__label {
     font-size: 1.6rem;
     text-transform: uppercase;
-    letter-spacing: -.5px;
+    letter-spacing: -0.5px;
     font-weight: 500;
     margin-right: 1em;
     display: inline-block;
@@ -106,7 +106,7 @@
 }
 
 .header__numb::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -129,7 +129,7 @@
 }
 
 .line::before {
-    content: '';
+    content: "";
     position: absolute;
     border-radius: 3px;
     top: -8px;
@@ -156,7 +156,7 @@
 }
 
 .card__choose::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     bottom: 0;
@@ -183,7 +183,7 @@
 
 .clr {
     display: inline-block;
-    margin-left: .5em;
+    margin-left: 0.5em;
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
@@ -201,7 +201,7 @@
 .card__select {
     display: inline-block;
     width: 80px;
-    padding: .4em 1em;
+    padding: 0.4em 1em;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -223,13 +223,13 @@
     justify-content: space-between;
     width: 80%;
     margin-bottom: 2em;
-    padding: 1em .7em;
+    padding: 1em 0.7em;
 }
 
 .card__numb {
     font-size: 3.5rem;
     background: transparent;
-    padding: .1em .3em;
+    padding: 0.1em 0.3em;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -254,7 +254,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield;
     /* Firefox */
 }
@@ -268,7 +268,7 @@ input[type=number] {
     cursor: pointer;
 }
 
-.btn--primary {
+.product-description .btn--primary {
     background-color: var(--clr-accent);
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -328,7 +328,7 @@ input[type=number] {
     padding: 5px;
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
     .product-description h2 {
         font-size: 3rem;
     }

@@ -5,6 +5,22 @@
     --nav-font-color: #1d3557;
 }
 
+.SearchButton {
+    position: absolute;
+    right: 10%;
+    top: 32%;
+}
+
+.SearchButton:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 650px) {
+    .SearchButton {
+        display: none;
+    }
+}
+
 div#appNavOptions.appNavOptions {
     background-color: var(--nav-secondary-background) !important;
 }
