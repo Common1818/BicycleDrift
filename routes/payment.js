@@ -1,28 +1,23 @@
 const express = require('express');
 const router = express.Router();
-
-const { createOrder, getOrder, deleteOrder } = require('../controllers/order');
+const { check } = require('express-validator');
 
 const { isSignedIn, isAuthenticated } = require('../middleware/index');
 const { getUserById } = require('../controllers/user');
 const { getOrderById } = require('../controllers/order');
+const { transaction, callback } = require('../controllers/payment.js');
 
 //params
 router.param('userId', getUserById);
 router.param('orderId', getOrderById);
 
-//create an order
-router.post('/order/create/:userId', isSignedIn, isAuthenticated, createOrder);
-
-// get an order
-router.get('/order/:orderId/:userId', isSignedIn, isAuthenticated, getOrder);
-
-// delete an order
-router.delete(
-   '/order/:orderId/:userId',
+router.post(
+   '/payment/:userId/:orderId',
    isSignedIn,
    isAuthenticated,
-   deleteOrder
+   transaction
 );
+
+router.post(`/callback`, callback);
 
 module.exports = router;
