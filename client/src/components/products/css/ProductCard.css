@@ -14,12 +14,11 @@
     height: 440px;
     transform-style: preserve-3d;
     transition: transform 5s;
-    left: 50%;
 }
 
 .products-container #product-card {
-    width: 325px;
-    height: 410px;
+    width: 96%;
+    height: 93%;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -32,8 +31,8 @@
 }
 
 .products-container #make-3D-space #product-card #product-front {
-    width: 335px;
-    height: 440px;
+    width: 101%;
+    height: 100%;
     background: #fff;
     position: absolute;
     -webkit-transition: all 100ms ease-out;
@@ -48,7 +47,7 @@
 }
 
 .products-container #product-bottom {
-    width: 325px;
+    width: 96%;
     height: 50px;
     background: #fff;
     position: absolute;
@@ -197,6 +196,17 @@
     background: #fff;
     color: #48cfad;
     cursor: pointer;
+}
+
+.products-container #view_details a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.products-container #view_details:hover a,
+.products-container #view_details a:hover {
+    color: #48cfad;
+    text-decoration: none;
 }
 
 .products-container #product-card.animate #view_details {

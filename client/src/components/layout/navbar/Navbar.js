@@ -35,44 +35,44 @@ const Navbar = ({ auth }) => {
    var isLoggedIn = isAuthenticated;
 
    return (
-      <div className='appNavParent' id='appNavParent'>
+      <div className="appNavParent" id="appNavParent">
          {/* Top Row */}
          <TopRow isLoggedIn={isAuthenticated} user={user} />
          {/* Top Row */}
-         <div className='bdRow topRow menuRow'>
+         <div className="bdRow topRow menuRow">
             <div
-               className='appNavOptions hidden-xs hiddenTransform'
-               id='appNavOptions'
+               className="appNavOptions hidden-xs hiddenTransform"
+               id="appNavOptions"
             >
                <button
-                  className='defaultButton secondaryBlack visible-xs closerButton'
+                  className="defaultButton secondaryBlack visible-xs closerButton"
                   onClick={handleCloseNav}
-                  id='closeSearchBar'
+                  id="closeSearchBar"
                >
                   <img
-                     src='https://choosemybicycle.s3.ap-south-1.amazonaws.com/static/icons/buttons/x-mark-black.svg'
-                     className='img-responsive center-block'
-                     alt='Close'
-                     title='Close'
+                     src="https://choosemybicycle.s3.ap-south-1.amazonaws.com/static/icons/buttons/x-mark-black.svg"
+                     className="img-responsive center-block"
+                     alt="Close"
+                     title="Close"
                   />
                </button>
 
-               <div className='topNavLogo visible-xs'>
+               <div className="topNavLogo visible-xs">
                   <img
-                     src='https://www.svgrepo.com/show/303611/giant-bicycles-logo.svg'
-                     className='img-responsive center-block'
-                     alt='bicycledrift'
-                     title='bicycledrift'
+                     src="https://www.svgrepo.com/show/303611/giant-bicycles-logo.svg"
+                     className="img-responsive center-block"
+                     alt="bicycledrift"
+                     title="bicycledrift"
                   />
                </div>
 
-               <ul className='list-unstyled topLevelNav'>
+               <ul className="list-unstyled topLevelNav">
                   <li
-                     className='userAccount aniList aniList-one visible-xs hide'
-                     id='mobileAppLoginTrigger'
+                     className="userAccount aniList aniList-one visible-xs hide"
+                     id="mobileAppLoginTrigger"
                   >
                      <Link
-                        to='/login'
+                        to="/login"
                         onClick={handleCloseNav}
                         style={{ fontSize: '1.3rem' }}
                      >
@@ -85,9 +85,9 @@ const Navbar = ({ auth }) => {
 
                   {/* bicycles  */}
 
-                  <li className='appDropdown macroDropdown aniList aniList-two isActive'>
-                     <Link to='/products/bikes'>
-                        <span id='dropBicycles' className='h op'>
+                  <li className="appDropdown macroDropdown aniList aniList-two isActive">
+                     <Link to="/products/bikes">
+                        <span id="dropBicycles" className="h op">
                            Bicycles
                         </span>
                      </Link>
@@ -97,9 +97,9 @@ const Navbar = ({ auth }) => {
                   {/* bicycles */}
 
                   {/* Accesssories */}
-                  <li className='appDropdown macroDropdown aniList aniList-four'>
-                     <Link to='/products/accessories'>
-                        <span id='dropAccessories' className='h op'>
+                  <li className="appDropdown macroDropdown aniList aniList-four">
+                     <Link to="/products/accessories">
+                        <span id="dropAccessories" className="h op">
                            Accessories
                         </span>
                      </Link>
@@ -107,20 +107,20 @@ const Navbar = ({ auth }) => {
                   </li>
 
                   {/* Accessories */}
-                  <li className='appLink aniList aniList-six'>
-                     <Link to='/en/woc'>
-                        <span className='h'>Reviews</span>
+                  <li className="appLink aniList aniList-six">
+                     <Link to="/en/woc">
+                        <span className="h">Reviews</span>
                      </Link>
                   </li>
 
-                  <li className='appLink aniList aniList-eight visible-xs'>
-                     <Link to='/en/help-center'>
-                        <span className='h'>Customer Support</span>
+                  <li className="appLink aniList aniList-eight visible-xs">
+                     <Link to="/en/help-center">
+                        <span className="h">Customer Support</span>
                      </Link>
                   </li>
                </ul>
             </div>
-            <Link to='/admin'>admin</Link>
+            <Link to="/admin">admin</Link>
             <SearchBar />
          </div>
       </div>

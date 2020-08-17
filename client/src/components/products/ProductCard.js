@@ -1,102 +1,103 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { addProductToCart } from "../../actions/cart";
-import $ from "jquery";
-import "./css/ProductCard.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Col } from 'react-bootstrap';
+import { addProductToCart } from '../../actions/cart';
+import $ from 'jquery';
+import './css/ProductCard.css';
 
 const ProductCard = ({
-  product: {
-    _id,
-    name,
-    brand,
-    price,
-    images,
-    description,
-    modelyear,
-    gender,
-    category,
-    color,
-  },
-  addProductToCart,
-}) => {
-  const handleHover = (id) => {
-    $(`.hover${id}`).addClass("animate");
-  };
-
-  const handleLeave = (id) => {
-    $(`.hover${id}`).removeClass("animate");
-  };
-
-  const handleCart = (e) => {
-    e.preventDefault();
-
-    addProductToCart({
+   product: {
       _id,
       name,
-      brand: brand.brandname,
+      brand,
       price,
+      images,
+      description,
+      modelyear,
+      gender,
+      category,
       color,
-      image: images[0],
-      quantity: 1,
-    });
-  };
+   },
+   addProductToCart,
+}) => {
+   const handleHover = (id) => {
+      $(`.hover${id}`).addClass('animate');
+   };
 
-  return (
-    <Fragment>
-      <div id="make-3D-space">
-        <div
-          id="product-card"
-          className={"hover" + _id}
-          onMouseOver={() => handleHover(_id)}
-          onMouseLeave={() => handleLeave(_id)}
-        >
-          <div id="product-front">
-            <div className="shadow"></div>
-            <img src={images[0]} alt={description && description} />
-            <div className="image_overlay"></div>
-            <div id="view_details">
-              <Link to={"/product/" + _id}>View details</Link>
-            </div>
-            <div className="stats">
-              <div className="stats-container">
-                <span className="product_price">&#8377; {price}</span>
-                <span className="product_name">
-                  {" "}
-                  {name} {modelyear && modelyear}
-                </span>
-                <p>
-                  <strong>{color && color}</strong>{" "}
-                  <strong>{gender && gender}</strong>
-                </p>
+   const handleLeave = (id) => {
+      $(`.hover${id}`).removeClass('animate');
+   };
 
-                <div className="product-options">
-                  <ul>
-                    {brand && <li>Brand: {brand.brandname}</li>}
-                    {category && <li>Category: {category.name}</li>}
-                    {/* stars */}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="product-bottom">
-          <div id="product-bottom-card">
-            <Link to={"/product/" + _id} className="btn btn--primary">
-              Buy Now
-            </Link>
-            <button
-              onClick={handleCart}
-              className="btn btn--primary float-right"
+   const handleCart = (e) => {
+      e.preventDefault();
+
+      addProductToCart({
+         _id,
+         name,
+         brand: brand.brandname,
+         price,
+         color,
+         image: images[0],
+         quantity: 1,
+      });
+   };
+
+   return (
+      <Col lg={3} md={4} sm={6}>
+         <div id="make-3D-space">
+            <div
+               id="product-card"
+               className={'hover' + _id}
+               onMouseOver={() => handleHover(_id)}
+               onMouseLeave={() => handleLeave(_id)}
             >
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      </div>
-    </Fragment>
-  );
+               <div id="product-front">
+                  <div className="shadow"></div>
+                  <img src={images[0]} alt={description && description} />
+                  <div className="image_overlay"></div>
+                  <div id="view_details">
+                     <Link to={'/product/' + _id}>View details</Link>
+                  </div>
+                  <div className="stats">
+                     <div className="stats-container">
+                        <span className="product_price">&#8377; {price}</span>
+                        <span className="product_name">
+                           {' '}
+                           {name} {modelyear && modelyear}
+                        </span>
+                        <p>
+                           <strong>{color && color}</strong>{' '}
+                           <strong>{gender && gender}</strong>
+                        </p>
+
+                        <div className="product-options">
+                           <ul>
+                              {brand && <li>Brand: {brand.brandname}</li>}
+                              {category && <li>Category: {category.name}</li>}
+                              {/* stars */}
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="product-bottom">
+               <div id="product-bottom-card">
+                  <Link to={'/product/' + _id} className="btn btn--primary">
+                     Buy Now
+                  </Link>
+                  <button
+                     onClick={handleCart}
+                     className="btn btn--primary float-right"
+                  >
+                     Add to Cart
+                  </button>
+               </div>
+            </div>
+         </div>
+      </Col>
+   );
 };
 
 export default connect(null, { addProductToCart })(ProductCard);
