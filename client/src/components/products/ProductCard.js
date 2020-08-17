@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addProductToCart } from "../../actions/cart";
@@ -30,6 +30,14 @@ const ProductCard = ({
 
   const handleCart = (e) => {
     e.preventDefault();
+    $(".add-to-cart-gif img").attr(
+      "src",
+      "https://i.pinimg.com/originals/93/d5/79/93d5790a9ed64a9ec17494651ef5e796.gif"
+    );
+    $(".add-to-cart-gif img").addClass("visible");
+    setTimeout(() => {
+      $(".add-to-cart-gif img").removeClass("visible");
+    }, 4000);
 
     addProductToCart({
       _id,
@@ -53,7 +61,11 @@ const ProductCard = ({
         >
           <div id="product-front">
             <div className="shadow"></div>
-            <img src={images[0]} alt={description && description} />
+            <img
+              className="test"
+              src={images[0]}
+              alt={description && description}
+            />
             <div className="image_overlay"></div>
             <div id="view_details">
               <Link to={"/product/" + _id}>View details</Link>
@@ -88,7 +100,7 @@ const ProductCard = ({
             </Link>
             <button
               onClick={handleCart}
-              className="btn btn--primary float-right"
+              className="btn btn--primary float-right add-to-cart"
             >
               Add to Cart
             </button>

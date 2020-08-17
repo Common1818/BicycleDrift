@@ -61,6 +61,9 @@ const Products = ({
     <Loader />
   ) : (
     <div className="products-container">
+      <div className="add-to-cart-gif">
+        <img src="" alt="" srcset="" />
+      </div>
       <h1>{heading}</h1>
       <Row>
         {currentProducts &&

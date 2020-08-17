@@ -7,6 +7,7 @@ import AllBrands from "./AllBrands";
 import AllBikes from "./AllBikes";
 import AllPincodes from "./AllPincodes";
 import AddPincode from "./AddPincode";
+import AllOrders from "./AllOrders";
 
 const SideMenu = ({ displayComp }) => {
   const handleDisplay = (comp) => {
@@ -16,6 +17,19 @@ const SideMenu = ({ displayComp }) => {
   return (
     <div id="sideMenu">
       <h1>Bicycle Drift Admin Dashboard</h1>
+
+      <ul class="menu">
+        <li>Orders</li>
+        <li
+          onClick={() => {
+            console.log("click");
+            handleDisplay(<AllOrders />);
+          }}
+        >
+          View All Orders
+        </li>
+        {/* <li>View all Accesssories</li> */}
+      </ul>
 
       <ul class="menu">
         <li>Categories</li>
@@ -95,15 +109,6 @@ const SideMenu = ({ displayComp }) => {
         >
           View all Pincodes
         </li>
-      </ul>
-
-      <ul class="menu">
-        <li>Accesssories</li>
-        <li>
-          {" "}
-          <span class="plus">+</span> Add Accesssories
-        </li>
-        <li>View all Accesssories</li>
       </ul>
     </div>
   );

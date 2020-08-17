@@ -221,7 +221,56 @@
     z-index: 3;
     display: none;
     background: -webkit-linear-gradient( left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
-    background: -o-linear-gradient( right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    background: -o-linear-gradient(right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
     background: -moz-linear-gradient( right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
-    background: linear-gradient( to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+
+/* Add to cart GIF */
+
+.add-to-cart-gif img.visible {
+    opacity: 1;
+}
+
+.add-to-cart-gif img {
+    width: 20vw;
+    border-radius: 30px;
+    opacity: 0;
+    transition: 4s ease;
+}
+
+.add-to-cart-gif {
+    width: 100%;
+    position: fixed;
+    top: 30vh;
+    text-align: center;
+    z-index: 1000;
+}
+
+@media (max-width: 1000px) {
+    .add-to-cart-gif img {
+        width: 30vw;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .add-to-cart-gif img {
+        width: 30vw;
+        border-radius: 30px;
+    }
+    .add-to-cart-gif {
+        top: 40vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .add-to-cart-gif img {
+        width: 50vw;
+        border-radius: 30px;
+    }
+    .add-to-cart-gif {
+        top: 40vh;
+    }
 }
