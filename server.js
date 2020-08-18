@@ -4,9 +4,11 @@ const app = express();
 const path = require("path");
 const https = require("https");
 const qs = require("querystring");
+
 // Middleware for body parsing
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
+
 const checksum_lib = require("./paytm/checksum");
 const config = require("./paytm/config");
 const Order = require("./models/Order");
@@ -26,6 +28,17 @@ app.use("/api", require("./routes/product"));
 app.use("/api", require("./routes/pincode"));
 app.use("/api", require("./routes/order"));
 app.use("/", require("./routes/payment"));
+
+// Serve static assets in production
+if(process.env.NODE_ENV === 'production'){
+    // Set static folder
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
+
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT} `));

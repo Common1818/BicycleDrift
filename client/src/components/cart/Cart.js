@@ -58,7 +58,7 @@ const Cart = ({ createOrder, order }) => {
 
   return (
     <div className="cart-container ">
-      {CartProducts.length > 0 ? (
+      {CartProducts && CartProducts.length > 0 ? (
         <div className="row">
           <div className="col-sm-8 cart-items-container">
             <div>
