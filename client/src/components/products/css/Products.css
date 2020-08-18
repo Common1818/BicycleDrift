@@ -1,6 +1,6 @@
 .products-container {
-    position: relative;
-    max-width: 100%;
+    /* position: relative; */
+    max-width: 100vw !important;
     height: auto;
     background-image: url('https://images.unsplash.com/photo-1521078803125-7efd09b65b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
     padding-bottom: 40px;
@@ -44,19 +44,59 @@
 }
 
 @media(max-width: 580px) {
-    .products-container {
+    /* .products-container {
         padding-left: 17vw;
+    } */
+}
+
+
+/* s */
+
+
+/* Add to cart GIF */
+
+.add-to-cart-gif img.visible {
+    opacity: 1;
+}
+
+.add-to-cart-gif img {
+    width: 20vw;
+    border-radius: 30px;
+    opacity: 0;
+    transition: 4s ease;
+}
+
+.add-to-cart-gif {
+    width: 100%;
+    position: fixed;
+    top: 30vh;
+    text-align: center;
+    z-index: 1000;
+}
+
+@media (max-width: 1000px) {
+    .add-to-cart-gif img {
+        width: 30vw;
+        border-radius: 30px;
     }
 }
 
-@media(max-width: 450px) {
-    .products-container {
-        padding-left: 7vw;
+@media (max-width: 700px) {
+    .add-to-cart-gif img {
+        width: 30vw;
+        border-radius: 30px;
+    }
+    .add-to-cart-gif {
+        top: 40vh;
     }
 }
 
-@media(max-width: 390px) {
-    .products-container {
-        padding-left: 5vw;
+@media (max-width: 500px) {
+    .add-to-cart-gif img {
+        width: 50vw;
+        border-radius: 30px;
+    }
+    .add-to-cart-gif {
+        top: 40vh;
     }
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import footerLogo from "./footerLogo.PNG";
+import { Link } from "react-router-dom";
 import $ from "jquery";
 import "./footerStyles/Footer.css";
 
@@ -18,86 +20,85 @@ const Footer = () => {
         <div className="upper_side contents">
           <ul className="flex">
             <li className="first_depth">
-              <p className="title">SHOP Bikes</p>
+              <p className="title">
+                Shop on BicycleDrift <i className="fa fa-shopping-basket"></i>{" "}
+              </p>
               <ul className="second_depth">
-                <li className="white">By Age Group</li>
+                <li className="white">Bikes</li>
+
                 <li>
-                  <a href="#">For Adults</a>
-                </li>
-                <li>
-                  <a href="#">For Kids</a>
-                </li>
-                <li>
-                  <a href="#">For Toddlers</a>
+                  <Link
+                    onClick={() => {
+                      $("html, body").animate({ scrollTop: 10 }, 500);
+                    }}
+                    to="/products/bikes"
+                  >
+                    All Bikes
+                  </Link>
                 </li>
               </ul>
               <ul className="second_depth">
-                <li className="white">By Category</li>
+                <li className="white">Accessories</li>
                 <li>
-                  <a href="#">Mountain</a>
-                </li>
-                <li>
-                  <a href="#">City</a>
-                </li>
-                <li>
-                  <a href="#">Road</a>
-                </li>
-                <li>
-                  <a href="#">Hybrid</a>
-                </li>
-                <li>
-                  <a href="#"></a>
+                  <a href="#">All Accessories</a>
                 </li>
               </ul>
             </li>
+
             <li className="first_depth">
-              <p className="title"> Accessories</p>
-              <ul className="second_depth">
-                <li>
-                  <a href="#">For Rider</a>
-                </li>
-                <li>
-                  <a href="#">For Bike</a>
-                </li>
-                <li>
-                  <a href="#">Navigation</a>
-                </li>
-                <li>
-                  <a href="#">Gear</a>
-                </li>
-              </ul>
-            </li>
-            <li className="first_depth">
-              <p className="title">SUPPORT</p>
+              <p className="title">
+                SUPPORT <i className="fa fa-headset"></i>{" "}
+              </p>
               <ul className="second_depth">
                 <li>
                   <a href="#">FAQs</a>
                 </li>
                 <li>
-                  <a href="#">Store Locator</a>
+                  <a href="#">Order Status</a>
                 </li>
                 <li>
-                  <a href="#">Order Status</a>
+                  <a href="mailto:bicyclesdrift@gmail.com">
+                    Write to Us <i className="fa fa-pen"></i>{" "}
+                  </a>
                 </li>
               </ul>
             </li>
 
             <li className="first_depth">
-              <p className="title">CONTACT</p>
+              <p className="title">
+                CONTACT <i className="fa fa-phone"></i>{" "}
+              </p>
+              <p>M - S 10:00am - 8:00 pm IST </p>
+
               <ul className="second_depth">
+                <li>
+                  <a href="tel:+919212403104">Ph: +91 92124 03104</a>
+                </li>
+                <li>
+                  <em className="white">
+                    Mail <i className="fa fa-envelope-open"></i>{" "}
+                  </em>
+                  <a href="mailto:bicyclesdrift@gmail.com">
+                    bicylesdrift@gmail.com <i className="fa fa-pen"></i>{" "}
+                  </a>
+                </li>
                 <li>
                   <ul>
                     <li>
-                      <a href="#">Contact Us</a>
-                    </li>
-
-                    <li>
-                      <em className="white">Address</em>
-                      <p>address</p>
-                    </li>
-                    <li>
-                      <em className="white">Hours</em>
-                      <p>M - F 6:00am - 3:30pm PST </p>
+                      <em className="white">
+                        Address <i className="fa fa-map-marker-alt"></i>{" "}
+                      </em>
+                      <a
+                        href="
+                     https://www.google.com/maps/place/Vd+chawla+cycle+store/@28.3807038,77.2928859,17z/data=!3m1!4b1!4m5!3m4!1s0x390cdc23ac9b011f:0x18128ca1fa136374!8m2!3d28.3807038!4d77.2950746
+                     "
+                      >
+                        <p>
+                          Address: vd chawla cycle store Add:2A/117New
+                          Industrial Township 2, near india college, Faridabad,
+                          Haryana 121001
+                        </p>
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -105,66 +106,12 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="mid_side contents">
-          <ul className="flex">
-            <li>
-              <p className="title">STORE LOCATOR</p>
-              <ul className="second_depth">
-                <li>
-                  <p>Find a Vans store near you</p>
-                  <button className="store">FIND A STORE</button>
-                </li>
-                <li></li>
-              </ul>
-            </li>
-            <li>
-              <p className="title">FOLLOW BicycleDrift</p>
-              <ul className="second_depth flex sns">
-                <li>
-                  <a href="#">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fab fa-youtube"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p className="title">SUBSCRIBE</p>
-              <ul className="second_depth">
-                <li>
-                  <p>Receive product news and updates in your inbox.</p>
-                </li>
-                <li>
-                  <div className="input_box flex">
-                    <input type="text" placeholder="Email Address"></input>
-                    <button>
-                      <i className="fas fa-chevron-right"></i>
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+
         <div className="lower_side contents">
           <ul className="flex">
-            <li className="logo"></li>
-            <li>&copy; BicycleDrift</li>
-            <li>{/* <a href="#">Modern Slavery Statement</a> */}</li>
+            <li className="logo">
+              <img src={footerLogo} alt="" />
+            </li>
           </ul>
         </div>
       </div>

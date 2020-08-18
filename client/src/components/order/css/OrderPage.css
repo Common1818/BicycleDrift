@@ -55,8 +55,10 @@
 }
 
 .order-page-container .products .product img {
+    border-radius: 10px;
     width: 130px;
     padding-bottom: 20px;
+    margin: 20px;
 }
 
 .transac-buttons {

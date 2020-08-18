@@ -1,0 +1,26 @@
+@media(max-width:600px) {
+    .loader-container {
+        text-align: center;
+        background: transparent;
+        margin-top: 10px;
+    }
+    .loader-container img {
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+@media(min-width:600px) {
+    .loader-container {
+        min-height: 50vh;
+        text-align: center;
+        background: transparent;
+        margin-top: 10px;
+    }
+    .loader-container img {
+        width: 40%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}

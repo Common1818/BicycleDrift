@@ -37,7 +37,7 @@
         min-height: 400px;
         padding: 0;
     }
-    .loginForm .box__toggle:checked+.box__image {
+    .loginForm .box_toggle:checked+.box_image {
         left: 300px;
     }
 }
@@ -220,7 +220,7 @@
     opacity: 0;
 }
 
-.loginForm .form__input:not(:placeholder-shown)+.form__label {
+.loginForm .form_input:not(:placeholder-shown)+.form_label {
     bottom: 25px;
     color: #d90429;
     font-size: 0.8rem;
@@ -230,7 +230,7 @@
     border-bottom-color: #d90429;
 }
 
-.loginForm .form__input:focus+.form__label {
+.loginForm .form_input:focus+.form_label {
     bottom: 25px;
     color: #d90429;
     font-size: 0.8rem;

@@ -1,5 +1,4 @@
 {
-
     "mongoURI": "mongodb+srv://kartik123:kartik123@devconnectorcourse.xn9xn.mongodb.net/<dbname>?retryWrites=true&w=majority",
     "jwtSecret": "Whatever",
     "merchantID": "ctygRR14184822145812",

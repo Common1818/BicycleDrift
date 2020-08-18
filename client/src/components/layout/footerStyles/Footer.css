@@ -21,9 +21,15 @@ a:hover {
 .flex {
     display: flex;
     justify-content: space-between;
+    width: 100vw;
+}
+
+footer {
+    width: 100vw !important;
 }
 
 footer li {
+    text-align: center;
     font-size: 1.5rem;
     list-style: none;
 }
@@ -68,13 +74,21 @@ footer {
 }
 
 footer .wrap {
-    width: 900px;
+    /* width: 900px; */
     margin: auto;
     padding: 40px 0;
 }
 
 footer .wrap .upper_side ul.flex li {
     padding: 4px 0;
+}
+
+footer ul {
+    padding: 5px 0 5px 0;
+}
+
+footer ul li {
+    padding-left: 10px;
 }
 
 
@@ -161,36 +175,43 @@ footer .wrap .mid_side ul li .input_box button:hover {
 
 /* last box */
 
-footer .wrap .lower_side {
-    position: relative;
-    width: 466px;
-}
-
-footer .wrap .lower_side ul.flex {
-    align-items: flex-end;
-}
-
 footer .wrap .lower_side ul.flex li {
     margin-bottom: 8px;
-    flex: none;
 }
 
-footer .wrap .lower_side li.logo {
-    display: block;
-    width: 132px;
-    height: 70px;
-    margin-bottom: 0px !important;
-    background: url(https://www.vans.com/wcsstore/vans-storefront/images/logos/logo-white.svg) no-repeat center;
-    background-size: cover;
+footer .wrap .lower_side li.logo img {
+    width: 70vw;
+    /* height: 40vh; */
+    padding: 0px !important;
+    margin: 0px auto !important;
+    border-radius: 5px;
+}
+
+@media(min-width:1200px) {
+    footer .wrap .lower_side li.logo img {
+        width: 50vw;
+        /* height: 40vh; */
+        padding: 0px !important;
+        margin: 0px auto !important;
+        border-radius: 5px;
+    }
+}
+
+@media(max-width:600px) {
+    footer .wrap .lower_side li.logo img {
+        width: 80vw;
+        /* height: 40vh; */
+        padding: 0px !important;
+        margin: 0px auto !important;
+        border-radius: 5px;
+    }
 }
 
 
 /*==================================================================*/
 
 @media all and (max-width: 1023px) and (min-width: 640px) {
-    footer .wrap {
-        width: 90%;
-    }
+    footer .wrap {}
     /* mid box */
     footer .wrap .mid_side ul.second_depth {
         margin-top: 14px;
@@ -218,10 +239,11 @@ footer .wrap .lower_side li.logo {
         font-size: 18px;
     }
     footer .wrap {
-        width: 95%;
+        /* width: 95%; */
         min-width: 320px;
     }
     footer .wrap .upper_side ul.flex li {
+        text-align: center;
         position: relative;
         padding: 8px 0;
     }

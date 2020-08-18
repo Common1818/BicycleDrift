@@ -1,10 +1,11 @@
 import React from "react";
-import loading from "./loading.gif";
+import BDloader from "./BDloader.gif";
+import "./loader.css";
 
 const Loader = () => {
   return (
-    <div className="container-sm">
-      <img style={{ width: "100vw" }} src={loading} alt="Now loading" />
+    <div className="container-sm loader-container">
+      <img className="loader" src={BDloader} alt="Now loading" />
     </div>
   );
 };

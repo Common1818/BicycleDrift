@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo.PNG";
 
 const NavLogo = () => {
   return (
     <div className="appIcon">
       <Link to="/">
         <img
-          src="https://www.svgrepo.com/show/303611/giant-bicycles-logo.svg"
+          src={Logo}
           className="img-responsive center-block visible-xs"
           alt="bicycledrift.com"
           title="bicycledrift.com"
         />
 
         <img
-          src="https://www.svgrepo.com/show/303611/giant-bicycles-logo.svg"
+          src={Logo}
           className="img-responsive center-block hidden-xs"
           alt="bicycledrift.com"
           title="bicycledrift.com"

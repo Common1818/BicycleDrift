@@ -61,6 +61,13 @@
     transform: scale(1.1);
 }
 
+.carousel-indicators li {
+    background-color: #111 !important;
+    height: 6px;
+    width: 40px;
+    border-radius: 5px !important;
+}
+
 @media (max-width: 1200px) {
     .shop-onBD-container h2 {
         font-size: 2rem;
