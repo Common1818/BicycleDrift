@@ -19,7 +19,7 @@ const PaymentModal = (props) => {
             <div class="col-md-4 offset-md-4">
               <div class="card">
                 <div class="card-body">
-                  <form class="" action="/paynow" method="post">
+                  <form class="" action="/api/paynow" method="post">
                     <div class="form-group">
                       <label for="">CustomerId </label>
                       <input

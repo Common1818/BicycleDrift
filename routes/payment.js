@@ -47,7 +47,7 @@ router.post("/paynow", [parseUrl, parseJson], (req, res) => {
     params["ORDER_ID"] = req.body.orderId;
     params["CUST_ID"] = paymentDetails.customerId;
     params["TXN_AMOUNT"] = paymentDetails.amount;
-    params["CALLBACK_URL"] = "http://localhost:3000/callback";
+    params["CALLBACK_URL"] = "http://localhost:3000/api/callback";
     params["EMAIL"] = paymentDetails.customerEmail;
     params["MOBILE_NO"] = paymentDetails.customerPhone;
 
