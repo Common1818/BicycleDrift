@@ -9,8 +9,6 @@ const qs = require('querystring');
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 
-// const checksum_lib = require("./paytm/checksum");
-// const config = require("./paytm/config");
 const Order = require('./models/Order');
 
 // Connect to DB
