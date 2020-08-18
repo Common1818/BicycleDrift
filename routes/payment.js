@@ -5,7 +5,7 @@ const qs = require("querystring");
 // Middleware for body parsing
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
-const checksum_lib = require("../paytm/checksum");
+const checksum_lib = require("../paytm_checkSum/checksum");
 const config = require("../paytm/config");
 const Order = require("../models/Order");
 const router = express.Router();
