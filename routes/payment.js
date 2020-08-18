@@ -6,7 +6,7 @@ const qs = require("querystring");
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 const checksum_lib = require("../paytm_checkSum/checksum");
-const config = require("../paytm/config");
+const config = require("../paytm_checkSum/config");
 const Order = require("../models/Order");
 const router = express.Router();
 // Nodemailer
