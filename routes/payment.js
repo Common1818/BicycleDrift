@@ -24,6 +24,7 @@ const mailTransport = nodemailer.createTransport({
 
 router.post('/paynow', [parseUrl, parseJson], (req, res) => {
    console.log(req.body);
+
    // Route for making payment
    var paymentDetails = {
       amount: req.body.amount,
@@ -89,6 +90,7 @@ router.post('/paynow', [parseUrl, parseJson], (req, res) => {
 });
 
 router.post('/callback', async (req, res) => {
+   console.log('req recieved');
    var body = '';
 
    req.on('data', function (data) {
@@ -161,43 +163,41 @@ router.post('/callback', async (req, res) => {
 
                         products.map((prod) => {
                            console.log(prod);
-                           var tableToAppend = `
-      <tr style="background=#fff; " >
-    <th>${prod.name}</th>
-    <th>	&#8377; ${prod.price}</th>
-    <th>${prod.quantity}</th>
-  </tr>
-  `;
+                           var tableToAppend = `<tr style="background=#fff; " >
+                                             <th>${prod.name}</th>
+                                             <th>	&#8377; ${prod.price}</th>
+                                             <th>${prod.quantity}</th>
+                                          </tr> `;
                            table += tableToAppend;
                         });
-                        const output = `
-    <h2>Hey ${billingDetails.firstName} Your order was placed Successfully.. YAY!!! </h2>
-    <h3>Order Id:${billingDetails._id}</h3>
-    <table style="background=#f1f1f1;width=100vw;">
-  <tr >
-    <th>Product</th>
-    <th>Price</th>
-    <th>Quantity</th>
-  </tr>
-  ${table}
-</table>
-<h3>Total : 	&#8377;${total}</h3>
-<h3>Your order will be dispatched within 3 working days. You'll be notified on your mobile numnber: ${billingDetails.mobileNumber} </h3>
-<h3>Thanks For shopping on BicycleDrift</h3>
-  `;
+                        const output = `<h2>Hey ${billingDetails.firstName} Your order was placed Successfully.. YAY!!! </h2>
+                                       <h3>Order Id:${billingDetails._id}</h3>
+                                       <table style="background=#f1f1f1;width=100vw;">
+                                       <tr >
+                                          <th>Product</th>
+                                          <th>Price</th>
+                                          <th>Quantity</th>
+                                       </tr>
+                                       ${table}
+                                       </table>
+                                       <h3>Total : 	&#8377;${total}</h3>
+                                       <h3>Your order will be dispatched within 3 working days. You'll be notified on your mobile numnber: ${billingDetails.mobileNumber} </h3>
+                                       <h3>Thanks For shopping on BicycleDrift</h3> `;
+
                         let mailOptions = {
                            from:
                               '"Nodemailer Contact" <marketingacad.help@email.com>', // sender address
                            to: [billingDetails.email, 'kartikdps.kg@gmail.com'], // list of receivers
-                           subject: `Bicycle Drit OrderNo:${_id}`, // Subject line
+                           subject: `Bicycle Drift OrderNo:${_id}`, // Subject line
                            text: 'Hello world?', // plain text body
                            html: output, // html body
                         };
 
                         mailTransport.sendMail(mailOptions, (error, info) => {
                            if (error) {
+                              console.log(error);
                               res.send(
-                                 `payment was successful  but something weent wrong while sending email contact Customer Care`
+                                 `payment was successful  but something weent wrong while sending your order details to your email contact Customer Care ${error}`
                               );
                            }
 
