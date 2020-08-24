@@ -12,6 +12,16 @@ const BicycleSchema = new mongoose.Schema(
          type: String, // Girls, Boys, For Both
          required: true,
       },
+      age: {
+         min: {
+            type: Number,
+            default: 2,
+         },
+         max: {
+            type: Number,
+            default: 60,
+         },
+      },
       color: {
          type: String, // A drop down list of colors
          default: 'Black',
