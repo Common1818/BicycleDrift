@@ -186,7 +186,7 @@ router.post('/callback', async (req, res) => {
 
                         let mailOptions = {
                            from:
-                              '"Nodemailer Contact" <marketingacad.help@email.com>', // sender address
+                              '"Nodemailer Contact" <marketingacad.help@gmail.com>', // sender address
                            to: [billingDetails.email, 'kartikdps.kg@gmail.com'], // list of receivers
                            subject: `Bicycle Drift OrderNo:${_id}`, // Subject line
                            text: 'Hello world?', // plain text body
