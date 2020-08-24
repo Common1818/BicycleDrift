@@ -14,7 +14,9 @@ const nodemailer = require('nodemailer');
 var gmailEmail = 'marketingacad.help@gmail.com';
 var gmailPassword = 'abcd9876';
 const mailTransport = nodemailer.createTransport({
-   service: 'gmail',
+   host: 'smtp.gmail.com',
+   port: 465,
+   secure: true,
    auth: {
       user: gmailEmail,
       pass: gmailPassword,
