@@ -1,5 +1,5 @@
 const Brand = require("../models/Brand");
-const Bicycle = require("../models/Bicycle");
+const Product = require("../models/Bicycle");
 const { validationResult } = require("express-validator");
 
 exports.createBrand = async (req, res) => {
@@ -55,7 +55,7 @@ exports.removeBrand = async (req, res) => {
   const brandId = brand._id;
   // check if bikes exisst with this brand
   // if yes then escape deletion
-  const bikes = await Bicycle.find({ brand: brandId });
+  const bikes = await Product.find({ brand: brandId });
   if (bikes.length > 1) {
     return res.status(400).json({
       errors: [

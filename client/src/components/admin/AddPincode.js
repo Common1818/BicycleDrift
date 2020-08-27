@@ -10,6 +10,7 @@ const AddPincode = ({ addPincode }) => {
   const [checked, setChecked] = useState(false);
   const [cityCode, setCityCode] = useState("");
   const [cityName, setCityName] = useState("");
+  const [deliveryCharge, setDeliveryCharge] = useState();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +27,7 @@ const AddPincode = ({ addPincode }) => {
       excludedAreas: ExcludedArr,
       cityCode,
       cityName,
+      deliveryCharge,
     });
   };
 
@@ -46,6 +48,15 @@ const AddPincode = ({ addPincode }) => {
           }}
           type="text"
           placeholder="Enter City Name"
+        />
+        <input
+          onChange={(e) => {
+            setDeliveryCharge(e.target.value);
+          }}
+          min="0"
+          max="5000"
+          type="number"
+          placeholder="Enter the delivery Charges"
         />
 
         <input

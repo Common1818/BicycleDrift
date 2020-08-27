@@ -15,7 +15,21 @@ export const addProductToCart = (cartItem) => (dispatch) => {
 
   console.log(userId);
 
-  dispatch({
-    type: ADD_TO_CART,
-  });
+  setTimeout(() => {
+    dispatch({
+      type: ADD_TO_CART,
+      payload: JSON.parse(localStorage.getItem("cart")),
+    });
+  }, 4000);
+};
+
+export const updateCartItem = (cartItem) => (dispatch) => {
+  console.log("asdf");
+  localStorage.setItem("cart", JSON.stringify(cartItem));
+  setTimeout(() => {
+    dispatch({
+      type: ADD_TO_CART,
+      payload: JSON.parse(localStorage.getItem("cart")),
+    });
+  }, 4000);
 };

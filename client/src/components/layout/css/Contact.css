@@ -1,0 +1,82 @@
+.whatsapp-icon a img {
+    width: 50px;
+    z-index: 1000;
+    position: fixed;
+    right: 15px;
+    bottom: 70px;
+    border-radius: 50%;
+    transition: 0.2s ease-in;
+}
+
+.whatsapp-icon a img:nth-child(1):hover~img:nth-child(2) {
+    display: block !important;
+    /* animation: 3s blink ease infinite; */
+    /* transition: 0.2s ease-in; */
+}
+
+
+/* 
+.whatsapp-icon a img:nth-child(1):hover {
+    width: 50px;
+    z-index: 1000;
+    position: fixed;
+    right: 15px;
+} */
+
+.whatsapp-icon a img:nth-child(2) {
+    width: 50px;
+    z-index: 1000;
+    position: fixed;
+    right: 1px;
+    bottom: 110px;
+    border-radius: 50px;
+    width: 35px;
+    z-index: 900 !important;
+    display: none;
+    transition: 0.2s ease;
+    /* animation: 5s blink ease infinite; */
+}
+
+@media(max-width:600px) {
+    .whatsapp-icon a img {
+        width: 35px;
+        z-index: 1000;
+        position: fixed;
+        right: 15px;
+        bottom: 70px;
+        transition: 0.2s ease-in;
+    }
+    .whatsapp-icon a img:nth-child(2) {
+        display: block;
+        width: 40px;
+        z-index: 1000;
+        position: fixed;
+        right: 1px;
+        bottom: 100px;
+        z-index: 900 !important;
+        /* transform: rotate(350deg); */
+        border-radius: 50px;
+        width: 35px;
+    }
+}
+
+
+/* 
+.whatsapp-icon a img.appear {
+    animation: 1s icon-appear forwards;
+}
+
+.whatsapp-icon a img.disappear {
+    animation: 1s icon-appear reverse;
+}
+
+@keyframes icon-appear {
+    0% {
+        bottom: 0px;
+        right: 0px;
+    }
+    100% {
+        bottom: 20px;
+        right: 20px;
+    }
+} */

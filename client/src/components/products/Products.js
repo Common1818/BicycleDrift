@@ -40,7 +40,7 @@ const Products = ({
     type === "search"
       ? "Search Results..."
       : type === "bikes"
-      ? "Bicycles....."
+      ? "Bicycles..."
       : "Accessories...";
 
   const [currentPage, setCurrentPage] = useState(1);

@@ -44,11 +44,12 @@ exports.checkPincode = async (req, res) => {
     const data = await Pincode.findOne({ cityCode });
     console.log(data);
     if (!data) {
-      return res.json({ Serviceable: false });
+      return res.json({ Serviceable: false, deliveryCharge: null });
     }
     const { coverAllAreas } = data;
     const { excludedAreas } = data;
     const { includedAreas } = data;
+    const { deliveryCharge } = data;
 
     const isExcluded = excludedAreas.some((area) => {
       return area == pincode;
@@ -60,17 +61,17 @@ exports.checkPincode = async (req, res) => {
 
     if (includedAreas.length == 0) {
       coverAllAreas
-        ? res.json({ Serviceable: true })
+        ? res.json({ Serviceable: true, deliveryCharge })
         : isExcluded
-        ? res.json({ Serviceable: false })
-        : res.json({ Serviceable: true });
+        ? res.json({ Serviceable: false, deliveryCharge: null })
+        : res.json({ Serviceable: true, deliveryCharge });
     }
     if (includedAreas.length > 0) {
       coverAllAreas
-        ? res.json({ Serviceable: true })
+        ? res.json({ Serviceable: true, deliveryCharge })
         : isIncluded
-        ? res.json({ Serviceable: true })
-        : res.json({ Serviceable: false });
+        ? res.json({ Serviceable: true, deliveryCharge })
+        : res.json({ Serviceable: false, deliveryCharge: null });
     }
   } catch (err) {
     console.log(err);

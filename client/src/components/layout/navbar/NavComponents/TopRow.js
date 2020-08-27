@@ -5,7 +5,13 @@ import NavLogo from "./NavLogo";
 import { connect } from "react-redux";
 import { logout } from "../../../../actions/auth";
 
-const TopRow = ({ isLoggedIn, user, logout }) => {
+const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
+  const localCartItems =
+    (JSON.parse(localStorage.getItem("cart")) &&
+      JSON.parse(localStorage.getItem("cart")).length) ||
+    0;
+  console.log(cartItems.length);
+
   const handleNav = () => {
     $("#appNavOptions").removeClass("hidden-xs");
 
@@ -108,8 +114,13 @@ const TopRow = ({ isLoggedIn, user, logout }) => {
                 className="img-responsive center-block menuIcon"
                 alt="Cart"
                 title="Cart"
-              />
-              <span>Cart</span>
+              />{" "}
+              {localCartItems == 0 ? null : cartItems.length == 0 ? (
+                <sup>{localCartItems}</sup>
+              ) : (
+                <sup>{cartItems.length}</sup>
+              )}
+              <div className="cart-items"></div>
             </Link>
           </div>
         </div>
@@ -118,4 +129,8 @@ const TopRow = ({ isLoggedIn, user, logout }) => {
   );
 };
 
-export default connect(null, { logout })(TopRow);
+const mapStateToProps = (state) => ({
+  cartItems: state.cart.cartItems,
+});
+
+export default connect(mapStateToProps, { logout })(TopRow);

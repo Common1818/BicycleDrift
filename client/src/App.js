@@ -23,6 +23,7 @@ import UserDashboard from "./components/user/UserDashboard";
 import Payment from "./components/Payment/Payment";
 import Cart from "./components/cart/Cart";
 import OrderPage from "./components/order/OrderPage";
+import AccessoryForm from "./components/admin/AddAccessory/AccessoryForm";
 // import payment from "./reducers/payment";
 
 if (localStorage.token) {
@@ -47,6 +48,7 @@ const App = () => {
         <Route exact path="/forgotpassword" component={ForgotPasswordForm} />
         <Route exact path="/mycart" component={Cart} />
         <AdminRoute exact path="/admin/product/add" component={ProductForm} />
+        <Route exact path="/admin/accessory/add" component={AccessoryForm} />
         <Route exact path="/userdashboard" component={UserDashboard} />
         <AdminRoute
           exact
