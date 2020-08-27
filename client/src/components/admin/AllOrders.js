@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllOrders } from "../../actions/order";
+import { Link } from "react-router-dom";
+import moment from "moment";
 import Loader from "../layout/Loader";
 
 const AllOrders = ({ orders, getAllOrders, loadingComplete }) => {
@@ -15,6 +17,7 @@ const AllOrders = ({ orders, getAllOrders, loadingComplete }) => {
         <table>
           <tbody>
             <tr>
+              <th>OrderID</th>
               <th>OrderDate</th>
               <th>Status</th>
               <th>total</th>
@@ -24,7 +27,11 @@ const AllOrders = ({ orders, getAllOrders, loadingComplete }) => {
               orders.map((order) => {
                 return (
                   <tr key={order._id}>
-                    <td>{order.createdAt}</td>
+                    <Link to={"/adminOrder/" + order._id}>
+                      <td>{order._id}</td>
+                    </Link>
+
+                    <td>{moment(order.createdAt).format("DD/MM/YYYY")}</td>
                     <td>{order.status}</td>
                     <td>{order.total}</td>
                     <td>{order.totalQuantity}</td>

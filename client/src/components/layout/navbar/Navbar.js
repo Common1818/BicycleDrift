@@ -85,11 +85,13 @@ const Navbar = ({ auth, logout }) => {
             </li>
 
             {/* bicycles  */}
-            <li className="appLink aniList aniList-six">
-              <Link to="/en/woc">
-                <span className="h">My Account</span>
-              </Link>
-            </li>
+            {isLoggedIn ? (
+              <li className="appLink aniList aniList-six">
+                <Link to="/myorders">
+                  <span className="h">My Orders</span>
+                </Link>
+              </li>
+            ) : null}
 
             <li className="appDropdown macroDropdown aniList aniList-two isActive">
               <Link onClick={handleCloseNav} to="/products/bikes">
@@ -111,11 +113,27 @@ const Navbar = ({ auth, logout }) => {
               </Link>
               {/* <AccessoriesDropdown /> */}
             </li>
+            <li className="appDropdown macroDropdown aniList aniList-four">
+              <Link to="/products/accessories">
+                <span id="dropAccessories" className="h op">
+                  Spares
+                </span>
+              </Link>
+              {/* <AccessoriesDropdown /> */}
+            </li>
 
             {/* Accessories */}
 
             <li className="appLink aniList aniList-eight visible-xs">
-              <Link to="/en/help-center">
+              <Link
+                onClick={() => {
+                  handleCloseNav();
+                  $("html, body").animate(
+                    { scrollTop: $(document).height() },
+                    1000
+                  );
+                }}
+              >
                 <span className="h">Customer Support</span>
               </Link>
             </li>

@@ -24,6 +24,8 @@ import Payment from "./components/Payment/Payment";
 import Cart from "./components/cart/Cart";
 import OrderPage from "./components/order/OrderPage";
 import AccessoryForm from "./components/admin/AddAccessory/AccessoryForm";
+import UserOrders from "./components/order/UserOrders";
+import AdminOrderPage from "./components/admin/AdminOrderPage";
 // import payment from "./reducers/payment";
 
 if (localStorage.token) {
@@ -49,7 +51,7 @@ const App = () => {
         <Route exact path="/mycart" component={Cart} />
         <AdminRoute exact path="/admin/product/add" component={ProductForm} />
         <Route exact path="/admin/accessory/add" component={AccessoryForm} />
-        <Route exact path="/userdashboard" component={UserDashboard} />
+        <PrivateRoute exact path="/myOrders" component={UserOrders} />
         <AdminRoute
           exact
           path="/admin/product/addColor"
@@ -61,6 +63,11 @@ const App = () => {
           component={UpdateProduct}
         />
         <AdminRoute exact path="/admin" component={AdminPanel} />
+        <AdminRoute
+          exact
+          path="/adminOrder/:orderId"
+          component={AdminOrderPage}
+        />
         <Route exact path="/order/:orderId" component={OrderPage} />
         <Route exact path="/paynow" component={Payment} />
       </Switch>

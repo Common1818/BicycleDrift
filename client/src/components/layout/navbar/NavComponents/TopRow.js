@@ -81,7 +81,14 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
           </div>
 
           <div className="segment support hidden-xs">
-            <Link to="/en/help-center">
+            <Link
+              onClick={() => {
+                $("html, body").animate(
+                  { scrollTop: $(document).height() },
+                  1000
+                );
+              }}
+            >
               <img
                 src="https://choosemybicycle.s3.ap-south-1.amazonaws.com/static/icons/navigation/support-icon-white.svg"
                 className="img-responsive center-block userIcon"
