@@ -174,7 +174,7 @@ router.post('/callback', async (req, res) => {
                            table += tableToAppend;
                         });
                         const output = `<h2>Hey ${billingDetails.firstName} Your order was placed Successfully.. YAY!!! </h2>
-                                       <h3>Order Id:${billingDetails._id}</h3>
+                                       <h3>Order Id:${_id}</h3>
                                        <table style="background=#f1f1f1;width=100vw;">
                                        <tr >
                                           <th>Product</th>
