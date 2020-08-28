@@ -239,3 +239,15 @@
     background: -moz-linear-gradient( right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
     background: linear-gradient( to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
 }
+
+@media(max-width: 580px) {
+    .products-container #make-3D-space {
+        height: 400px;
+    }
+    .products-container .stats-container {
+        top: 190px;
+    }
+    .products-container #product-bottom {
+        top: 330px;
+    }
+}
