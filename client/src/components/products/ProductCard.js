@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addProductToCart } from "../../actions/cart";
+import cartGif from "./cartGif.gif";
 import $ from "jquery";
 import "./css/ProductCard.css";
 
@@ -16,6 +17,8 @@ const ProductCard = ({
     modelyear,
     gender,
     category,
+
+    actualPrice,
     color,
   },
   addProductToCart,
@@ -23,7 +26,7 @@ const ProductCard = ({
   const handleHover = (id) => {
     $(`.hover${id}`).addClass("animate");
   };
-
+  console.log(actualPrice);
   const handleLeave = (id) => {
     $(`.hover${id}`).removeClass("animate");
   };
@@ -31,14 +34,11 @@ const ProductCard = ({
   const handleCart = (e) => {
     e.preventDefault();
     console.log("s");
-    $(".add-to-cart-gif img").attr(
-      "src",
-      "https://i.pinimg.com/originals/93/d5/79/93d5790a9ed64a9ec17494651ef5e796.gif"
-    );
+    $(".add-to-cart-gif img").attr("src", cartGif);
     $(".add-to-cart-gif img").addClass("visible");
     setTimeout(() => {
       $(".add-to-cart-gif img").removeClass("visible");
-    }, 4000);
+    }, 3000);
 
     addProductToCart({
       _id,
@@ -47,6 +47,7 @@ const ProductCard = ({
       price,
       color,
       image: images[0],
+      actualPrice,
       quantity: 1,
     });
   };
@@ -60,6 +61,12 @@ const ProductCard = ({
           onMouseOver={() => handleHover(_id)}
           onMouseLeave={() => handleLeave(_id)}
         >
+          {actualPrice && actualPrice !== price ? (
+            <div className="sale-banner">
+              {parseInt(((actualPrice - price) / actualPrice) * 100)}
+              {" % OFF"} {"  "}save {"  "} &#8377;{actualPrice - price}
+            </div>
+          ) : null}
           <div id="product-front">
             <div className="shadow"></div>
             <img
@@ -73,7 +80,11 @@ const ProductCard = ({
             </div>
             <div className="stats">
               <div className="stats-container">
-                <span className="product_price">&#8377; {price}</span>
+                <span className="product_price">
+                  &#8377; {price}
+                  <br></br>{" "}
+                  <s style={{ color: "red" }}>&#8377; {actualPrice}</s>{" "}
+                </span>
                 <span className="product_name">
                   {" "}
                   {name} {modelyear && modelyear}

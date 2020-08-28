@@ -15,15 +15,25 @@ const AddProductColor = ({ product, addBikecolor }) => {
   const [productImage4, setproductImage4] = useState("");
   const [stock, setstock] = useState("");
   const [color, setcolor] = useState("");
-  const { name, price, description, modelyear, gender } = product.product;
+  const {
+    name,
+    price,
+    actualPrice,
+    description,
+    modelyear,
+    gender,
+    productType,
+  } = product.product;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {
       name,
       price,
+      actualPrice,
       description,
       modelyear,
+      productType,
       gender,
       color: color,
       stock: parseInt(stock),

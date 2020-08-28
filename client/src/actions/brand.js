@@ -9,7 +9,9 @@ import {
 import { setAlert } from "./alert";
 import axios from "axios";
 
-export const addBrand = ({ brandname, description }) => async (dispatch) => {
+export const addBrand = ({ brandname, description, brandLogoUrl }) => async (
+  dispatch
+) => {
   const userId = localStorage.getItem("userId");
   console.log(userId);
   const config = {
@@ -17,7 +19,7 @@ export const addBrand = ({ brandname, description }) => async (dispatch) => {
       "Content-Type": "application/json",
     },
   };
-  const body = JSON.stringify({ brandname, description });
+  const body = JSON.stringify({ brandname, description, brandLogoUrl });
   try {
     const res = await axios.post(`/api/brand/create/${userId}`, body, config);
     const messagesArray = res.data.messages;

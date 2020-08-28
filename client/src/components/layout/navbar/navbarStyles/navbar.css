@@ -151,6 +151,31 @@ h4 {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08);
 }
 
+.cart sup {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.3rem;
+    background-color: rgba(30, 143, 255, 0.712);
+    padding-right: 5px;
+    border-radius: 10px;
+    padding-left: 4px;
+}
+
+@media(max-width:768px) {
+    .cart sup {
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.3rem;
+        background-color: rgba(30, 143, 255, 0.712);
+        padding-right: 5px;
+        padding-left: 4px;
+        border-radius: 10px;
+        position: relative;
+        left: 17px;
+        top: -20px;
+    }
+}
+
 .appNavParent .bdRow.topRow .appIcon a {
     display: block;
 }

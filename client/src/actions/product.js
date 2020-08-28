@@ -30,6 +30,43 @@ export const addBike = (bikeData) => async (dispatch) => {
     //
     const res = await axios.post(`/api/product/create/${userId}`, body, config);
     const messagesArray = res.data.messages;
+    messagesArray.forEach((message) =>
+      dispatch(setAlert(message.msg, "danger"))
+    );
+    // ye naya vala product store mein product ke andar hai agar use karna ho toh
+    dispatch({
+      type: ADD_BIKE,
+      payload: res.data,
+    });
+  } catch (err) {
+    const errors = err.response.data.errors;
+    // Array of errors
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    }
+    dispatch({
+      type: ADD_BIKE_ERROR,
+    });
+  }
+};
+
+export const addAccessory = (data) => async (dispatch) => {
+  const userId = localStorage.getItem("userId");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const body = JSON.stringify(data);
+  console.log(data);
+  try {
+    //
+    const res = await axios.post(
+      `/api/accessory/create/${userId}`,
+      body,
+      config
+    );
+    const messagesArray = res.data.messages;
     // Added successssfully wala message
     messagesArray.forEach((message) =>
       dispatch(setAlert(message.msg, "danger"))
@@ -102,6 +139,7 @@ export const fetchBike = (productId) => async (dispatch) => {
 export const fetchAllBikes = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/products");
+
     dispatch({
       type: FETCH_ALL_BIKES,
       payload: { products: res.data },

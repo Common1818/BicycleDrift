@@ -3,11 +3,13 @@ import {
   DELETE_ORDER,
   DELETE_ORDER_ERROR,
   GET_ALL_ORDERS,
+  GET_ALL_USER_ORDERS,
   GET_ALL_ORDERS_ERROR,
 } from "./types";
 import { setAlert } from "./alert";
 import axios from "axios";
 const userId = localStorage.getItem("userId");
+console.log(userId);
 export const createOrder = (data) => async (dispatch) => {
   const userId = localStorage.getItem("userId");
   if (!userId) {
@@ -79,6 +81,28 @@ export const fetchOrder = (orderId) => async (dispatch) => {
     //      payload: { errMessage: "Error getting all brands" },
     //      type: ADD_BRAND_FAIL,
     //    });
+  }
+};
+
+export const fetchAdminOrder = (orderId) => async (dispatch) => {
+  const userId = localStorage.getItem("userId");
+  try {
+    const res = await axios.get(`/api/adminorder/${userId}/${orderId}`);
+    dispatch({
+      type: "GET_ADMIN_ORDER",
+      payload: res.data,
+    });
+
+    console.log(res.data);
+  } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    }
+    dispatch({
+      payload: { errMessage: "Error getting all brands" },
+      type: GET_ALL_ORDERS_ERROR,
+    });
   }
 };
 
@@ -168,7 +192,7 @@ export const updateAddress = (orderId, data) => async (dispatch) => {
 
 export const getAllOrders = () => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/orders/${userId}`);
+    const res = await axios.get(`/api/allorders/${userId}`);
     const messagesArray = res.data.messages;
     // Added successssfully wala message
     messagesArray.forEach((message) =>
@@ -179,6 +203,32 @@ export const getAllOrders = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    dispatch({
+      payload: { errMessage: "Error getting all brands" },
+      type: GET_ALL_ORDERS_ERROR,
+    });
+  }
+};
+
+export const getUserOrders = () => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `/api/orders/${localStorage.getItem("userId")}`
+    );
+    const messagesArray = res.data.messages;
+    // Added successssfully wala message
+    messagesArray.forEach((message) =>
+      dispatch(setAlert(message.msg, "danger"))
+    );
+    dispatch({
+      type: GET_ALL_USER_ORDERS,
+      payload: res.data,
+    });
+  } catch (err) {
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    }
     dispatch({
       payload: { errMessage: "Error getting all brands" },
       type: GET_ALL_ORDERS_ERROR,

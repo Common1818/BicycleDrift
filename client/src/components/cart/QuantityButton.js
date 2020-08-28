@@ -64,6 +64,7 @@ const QuantityButton = ({
             }
           });
           setCartProducts([...CartProducts]);
+
           localStorage.setItem("cart", JSON.stringify(CartProducts));
           console.log(CartProducts);
         }}

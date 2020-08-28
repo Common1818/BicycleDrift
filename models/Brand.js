@@ -10,6 +10,9 @@ const BrandSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  brandLogoUrl: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Brand", BrandSchema);

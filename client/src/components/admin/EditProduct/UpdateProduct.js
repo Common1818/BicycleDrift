@@ -32,6 +32,7 @@ const UpdateProduct = ({
   const [productImage4, setproductImage4] = useState(images[3]);
   const [Rating, setRating] = useState("5");
   const [Price, setPrice] = useState(product.product.price);
+  const [actualPrice, setActualPrice] = useState(product.product.actualPrice);
   const [name, setproductName] = useState(product.product.name);
   const [Description, setDescription] = useState(product.product.description);
   const [modelYear, setmodelYear] = useState(product.product.modelyear);
@@ -102,6 +103,7 @@ const UpdateProduct = ({
       name,
       Rating,
       price: parseInt(Price),
+      actualPrice: parseInt(actualPrice),
       description: Description,
       modelyear: parseInt(modelYear),
       category,
@@ -167,6 +169,7 @@ const UpdateProduct = ({
           <ProductDescription
             setPrice={setPrice}
             setDescription={setDescription}
+            setActualPrice={setActualPrice}
             setproductName={setproductName}
             setmodelYear={setmodelYear}
           />

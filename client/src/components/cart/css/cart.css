@@ -1,8 +1,30 @@
 .cart-container {
     min-height: 40vh;
-    width: 80vw;
+    width: 100vw;
+    overflow-x: hidden;
     margin: 30px auto;
     /* background-color: #f0f3f6; */
+}
+
+img.pincode-cart-check {
+    visibility: hidden;
+}
+
+img.pincode-cart-check.visible {
+    width: 100px !important;
+    visibility: visible !important;
+}
+
+@keyframes animateInput {
+    0% {
+        border: 3px solid #f1f1f1 !important;
+    }
+    50% {
+        border: 3px solid blue !important;
+    }
+    100% {
+        border: 3px solid #f1f1f1 !important;
+    }
 }
 
 .cart-container .col-sm-8 {
@@ -23,6 +45,7 @@
 
 .cart-container .cart-items-container div {
     width: 100%;
+    height: auto;
 }
 
 .cart-container .cart-items-container div:nth-child(1) {
@@ -96,12 +119,23 @@
 }
 
 @media (max-width: 700px) {
+    .cart-container .cart-items-container div:nth-child(1) input {
+        width: 30vw
+    }
     .cart-container {
         width: 95vw;
     }
     .cart-container .prod .col-sm-4 {
         margin-top: 30px !important;
         text-align: center;
+    }
+    img.pincode-cart-check.visible {
+        width: 100px !important;
+        position: absolute;
+        visibility: visible;
+        right: -25px;
+        top: -10px;
+        z-index: -1;
     }
 }
 
@@ -158,7 +192,7 @@
 
 .cart-total {
     border-radius: 4px;
-    height: 27vh;
+    /* height: 27vh; */
     background-color: #fff;
     width: 100%;
     margin-top: 80px;
@@ -200,13 +234,28 @@
     width: 70%;
 }
 
+.bottom .flex {
+    display: flex;
+}
+
 @media(max-width:1100px) {
     .cart-container .products .product {
-        height: 30vh;
+        height: 40vh;
         /* width: 100vw; */
         /* background-color: #f1f1f1; */
         border-bottom: 1px solid rgba(30, 143, 255, 0.523);
         margin: 10px;
+    }
+}
+
+@media(min-width:1200px) {
+    .cart-total {
+        border-radius: 4px;
+        height: 27vh;
+        background-color: #fff;
+        width: 80% !important;
+        margin: 80px auto;
+        border: 1px solid rgba(128, 128, 128, 0.671);
     }
 }
 

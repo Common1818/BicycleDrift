@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 
 const AddBrand = ({ brand, addBrand }) => {
   const [brandname, setBrand] = useState("");
+  const [BrandUrl, setBrandUrl] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    addBrand({ brandname, description });
+    addBrand({ brandname, description, brandLogoUrl: BrandUrl });
   };
 
   const AddedBrand = brand.brand && brand.brand.brandname;
@@ -22,6 +23,11 @@ const AddBrand = ({ brand, addBrand }) => {
           onChange={(e) => setBrand(e.target.value)}
           type="text"
           placeholder="Enter Brand Name"
+        />
+        <input
+          onChange={(e) => setBrandUrl(e.target.value)}
+          type="text"
+          placeholder="Brand logo image Url"
         />
         <br />
         <br />

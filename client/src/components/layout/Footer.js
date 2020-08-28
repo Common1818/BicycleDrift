@@ -2,7 +2,8 @@ import React from "react";
 import footerLogo from "./footerLogo.PNG";
 import { Link } from "react-router-dom";
 import $ from "jquery";
-import "./footerStyles/Footer.css";
+import payment from "./payment.png";
+import "./css/footerStyles/Footer.css";
 
 const Footer = () => {
   $(document).ready(function () {
@@ -114,6 +115,12 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        <div className="payment">
+          <img src={payment} alt="" />
+        </div>
+      </div>
+      <div style={{ padding: "10px", textAlign: "right" }}>
+        Website by : Koshish
       </div>
     </footer>
   );

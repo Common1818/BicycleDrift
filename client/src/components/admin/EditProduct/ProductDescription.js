@@ -7,6 +7,7 @@ import { Spinner } from "react-bootstrap";
 const ProductDescription = ({
   product,
   setPrice,
+  setActualPrice,
   setDescription,
   setproductName,
   setmodelYear,
@@ -57,25 +58,15 @@ const ProductDescription = ({
                 placeholder="Price"
                 type="number"
               />
+              <br />
+              &#8377;{" "}
+              <input
+                onChange={(e) => setActualPrice(e.target.value)}
+                style={{ width: "50%" }}
+                placeholder="Actual Price"
+                type="number"
+              />
             </p>
-          </div>
-          <div className="pincode__check">
-            <input
-              type="number"
-              placeholder="Check Availability"
-              name="pincode"
-            />
-            <button
-              onClick={() => {
-                $(".checking").css("display", "block");
-              }}
-              type="submit"
-            >
-              Check
-              <Spinner className="checking" animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-              </Spinner>
-            </button>
           </div>
 
           <button href="#" class="btn btn--primary">

@@ -2,7 +2,6 @@ import React from "react";
 import "./css/Specifications.css";
 
 const Specifications = ({ specifications }) => {
-  console.log(specifications);
   const brakes = specifications && specifications.brakes;
   const chain = specifications && specifications.chain;
   const color = specifications && specifications.color;

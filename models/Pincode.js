@@ -10,6 +10,10 @@ const PincodeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  deliveryCharge: {
+    type: Number,
+    required: true,
+  },
   coverAllAreas: {
     type: Boolean,
     default: true,

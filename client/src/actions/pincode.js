@@ -21,7 +21,6 @@ export const checkPincode = ({ pincode }) => async (dispatch) => {
 
   try {
     const res = await axios.post(`/api/pincode/check`, body, config);
-    console.log(res.data);
     dispatch({
       type: CHECK_PINCODE,
       payload: res.data,

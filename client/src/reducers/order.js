@@ -3,6 +3,7 @@ import {
   DELETE_ORDER,
   DELETE_ORDER_ERROR,
   GET_ALL_ORDERS,
+  GET_ALL_USER_ORDERS,
   GET_ALL_ORDERS_ERROR,
 } from "../actions/types";
 
@@ -35,15 +36,27 @@ export default function (state = initialState, action) {
         ...state,
         billingDetailsUpdated: false,
       };
+    case "GET_ADMIN_ORDER":
+      return {
+        ...state,
+        AdminOrder: payload.order,
+        loadingComplete: true,
+      };
     case GET_ALL_ORDERS:
       return {
         ...state,
-        ...payload,
+        orders: payload.orders,
         loadingComplete: true,
       };
     case GET_ALL_ORDERS_ERROR:
       return {
         ...state,
+        loadingComplete: true,
+      };
+    case GET_ALL_USER_ORDERS:
+      return {
+        ...state,
+        orders: payload.orders,
         loadingComplete: true,
       };
 
