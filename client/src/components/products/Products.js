@@ -1,27 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 import { getAllBikes } from "../../actions/products";
+import { getAllCategories } from "../../actions/category";
 import { emptyProductState } from "../../actions/product";
-import OurPromise from "../home/OurPromise";
+import { searchResult } from "../../actions/products";
+
+import Filter from "./Filter";
 import Loader from "../layout/Loader";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
-// import "../home/css/OurPromise.css";
 import "./css/Products.css";
 
 const Products = ({
   getAllBikes,
+  getAllCategories,
   emptyProductState,
   bikes,
   accessories,
+  categories,
   searchResults,
+  searchResult,
   loading,
   match,
 }) => {
   useEffect(() => {
     getAllBikes();
+    getAllCategories();
     emptyProductState();
   }, []);
 
@@ -62,26 +68,29 @@ const Products = ({
   return loading ? (
     <Loader />
   ) : (
-    <>
-      <div className="products-container">
-        <div className="add-to-cart-gif">
-          <img src="" alt="" srcset="" />
-        </div>
-        <h1>{heading}</h1>
-        <Row className="wrapper">
-          {currentProducts &&
-            currentProducts.map((item) => (
-              <ProductCard product={item} key={item._id} />
-            ))}
-        </Row>
-        <Pagination
-          productsPerPage={productsPerPage}
-          totalProducts={products.length}
-          paginate={paginate}
-        />
+    <div className="products-container">
+      <div className="add-to-cart-gif">
+        <img src="" alt="" srcset="" />
       </div>
-      <OurPromise />
-    </>
+      <h1>{heading}</h1>
+      {type === "search" || type === "bikes" ? (
+        <div className="filter">
+          <Filter categories={categories} searchResult={searchResult} />
+        </div>
+      ) : null}
+
+      <Row className="wrapper">
+        {currentProducts &&
+          currentProducts.map((item) => (
+            <ProductCard product={item} key={item._id} />
+          ))}
+      </Row>
+      <Pagination
+        productsPerPage={productsPerPage}
+        totalProducts={products.length}
+        paginate={paginate}
+      />
+    </div>
   );
 };
 
@@ -90,8 +99,12 @@ const mapStateToProps = (state) => ({
   accessories: state.products.Accessories,
   searchResults: state.products.SearchResults,
   loading: state.products.loading,
+  categories: state.category.categories,
 });
 
-export default connect(mapStateToProps, { getAllBikes, emptyProductState })(
-  Products
-);
+export default connect(mapStateToProps, {
+  getAllBikes,
+  emptyProductState,
+  getAllCategories,
+  searchResult,
+})(Products);

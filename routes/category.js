@@ -31,9 +31,5 @@ router.delete("/category/:categoryId/:userId", removeCategory);
 
 router.get("/categories", getAllCategory);
 
-// router.get("/category/:categoryId", getCategory);
-// router.get("/categories", getAllCategory);
-// router.put("/category/:categoryId/:userId", updateCategory);
-// router.delete("/category/:categoryId/:userId", removeCategory);
 
 module.exports = router;
