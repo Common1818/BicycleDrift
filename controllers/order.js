@@ -125,3 +125,21 @@ exports.fetchAdminOrder = async (req, res) => {
     });
   }
 };
+
+exports.updateOrderStatus = async (req, res) => {
+  const order = req.order;
+
+  const { status } = req.body;
+  try {
+    order.status = status;
+    await order.save();
+    return res.json({
+      messages: [{ msg: `"Order Status Was Updated Successfully` }],
+    });
+  } catch (err) {
+    console.log(err);
+    res.json({
+      messages: [{ msg: `Error updating Order Status` }],
+    });
+  }
+};

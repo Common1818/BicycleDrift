@@ -7,6 +7,7 @@ const {
   getOrder,
   deleteOrder,
   fetchAdminOrder,
+  updateOrderStatus,
 } = require("../controllers/order");
 
 const { isSignedIn, isAuthenticated, isAdmin } = require("../middleware/index");
@@ -44,6 +45,14 @@ router.get(
   isAuthenticated,
   isAdmin,
   fetchAdminOrder
+);
+//update order Status
+router.post(
+  "/adminorder/:userId/:orderId",
+  isSignedIn,
+  isAuthenticated,
+  isAdmin,
+  updateOrderStatus
 );
 // update address
 router.put(

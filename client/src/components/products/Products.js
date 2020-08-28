@@ -4,9 +4,11 @@ import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getAllBikes } from "../../actions/products";
 import { emptyProductState } from "../../actions/product";
+import OurPromise from "../home/OurPromise";
 import Loader from "../layout/Loader";
 import ProductCard from "./ProductCard";
 import Pagination from "./Pagination";
+// import "../home/css/OurPromise.css";
 import "./css/Products.css";
 
 const Products = ({
@@ -60,23 +62,26 @@ const Products = ({
   return loading ? (
     <Loader />
   ) : (
-    <div className="products-container">
-      <div className="add-to-cart-gif">
-        <img src="" alt="" srcset="" />
+    <>
+      <div className="products-container">
+        <div className="add-to-cart-gif">
+          <img src="" alt="" srcset="" />
+        </div>
+        <h1>{heading}</h1>
+        <Row className="wrapper">
+          {currentProducts &&
+            currentProducts.map((item) => (
+              <ProductCard product={item} key={item._id} />
+            ))}
+        </Row>
+        <Pagination
+          productsPerPage={productsPerPage}
+          totalProducts={products.length}
+          paginate={paginate}
+        />
       </div>
-      <h1>{heading}</h1>
-      <Row className="wrapper">
-        {currentProducts &&
-          currentProducts.map((item) => (
-            <ProductCard product={item} key={item._id} />
-          ))}
-      </Row>
-      <Pagination
-        productsPerPage={productsPerPage}
-        totalProducts={products.length}
-        paginate={paginate}
-      />
-    </div>
+      <OurPromise />
+    </>
   );
 };
 

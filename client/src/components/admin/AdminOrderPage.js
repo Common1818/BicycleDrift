@@ -1,10 +1,19 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchAdminOrder } from "../../actions/order";
+import { fetchAdminOrder, updateOrderStatus } from "../../actions/order";
 import orderImage from "./orderImage.PNG";
 import moment from "moment";
+var formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "INR",
+});
 
-const AdminOrderPage = ({ match, fetchAdminOrder, order }) => {
+const AdminOrderPage = ({
+  match,
+  fetchAdminOrder,
+  updateOrderStatus,
+  order,
+}) => {
   const { orderId } = match.params;
   useEffect(() => {
     fetchAdminOrder(orderId);
@@ -30,8 +39,28 @@ const AdminOrderPage = ({ match, fetchAdminOrder, order }) => {
             </div>
             <div class="col-xl-15">
               <small class="col-title">Order Status</small>
-              <div style={{ color: "#152EA3" }} class="col-text">
-                {order && order.status}
+              <div>
+                <select
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                    updateOrderStatus({
+                      id: order && order._id,
+                      status: e.target.value,
+                    });
+                  }}
+                  style={{ color: "#152EA3" }}
+                  class="col-text"
+                  name="cars"
+                  id="cars"
+                >
+                  <option value={order && order.status}>
+                    {" "}
+                    {order && order.status}
+                  </option>
+                  <option value="confirmed">Confirmed</option>
+                  <option value="dispatched">Dispatched</option>
+                  <option value="delivered">Delivered</option>
+                </select>
               </div>
             </div>
             <div class="col-xl-15">
@@ -44,11 +73,14 @@ const AdminOrderPage = ({ match, fetchAdminOrder, order }) => {
             </div>
             <div class="col-md-15">
               <small class="col-title">No. of Items</small>
-              <div class="col-text">{order && order.totalQuantity}</div>
+              <div class="col-text"> {order && order.totalQuantity}</div>
             </div>
             <div class="col-md-15">
               <small class="col-title">Grand Total</small>
-              <div class="col-text">{order && order.total}</div>
+              <div class="col-text">
+                {" "}
+                {formatter.format(order && order.total)}
+              </div>
             </div>
           </div>
           <div className="row">
@@ -91,7 +123,10 @@ const AdminOrderPage = ({ match, fetchAdminOrder, order }) => {
                           <div class="subject">
                             Quantity: {product.quantity}
                           </div>
-                          <div class="price">{product.price}</div>
+                          <div class="price">
+                            {" "}
+                            {formatter.format(product.price)}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -109,4 +144,6 @@ const mapStateToProps = (state) => ({
   order: state.order.AdminOrder,
 });
 
-export default connect(mapStateToProps, { fetchAdminOrder })(AdminOrderPage);
+export default connect(mapStateToProps, { fetchAdminOrder, updateOrderStatus })(
+  AdminOrderPage
+);

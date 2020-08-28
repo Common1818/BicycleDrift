@@ -5,6 +5,11 @@ import moment from "moment";
 import orderImage from "./orderImage.PNG";
 import "./css/UserOrders.css";
 import { Link } from "react-router-dom";
+var formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "INR",
+});
+
 moment.defaultFormat = "DD.MM.YYYY HH:mm";
 
 const UserOrders = ({ getUserOrders, orders }) => {
@@ -54,7 +59,10 @@ const UserOrders = ({ getUserOrders, orders }) => {
                         </div>
                         <div class="col-md-15">
                           <small class="col-title">Grand Total</small>
-                          <div class="col-text">{order.total}</div>
+                          <div class="col-text">
+                            {" "}
+                            {formatter.format(order.total)}
+                          </div>
                         </div>
                       </div>
                       <div className="row">
@@ -105,7 +113,9 @@ const UserOrders = ({ getUserOrders, orders }) => {
                                       <div class="subject">
                                         Quantity: {product.quantity}
                                       </div>
-                                      <div class="price">{product.price}</div>
+                                      <div class="price">
+                                        {formatter.format(product.price)}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>

@@ -3,12 +3,13 @@ import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import ShopOnBDback from "./Images/ShopOnBDback.PNG";
+import toddler from "./Images/toddler.PNG";
 import "./css/ShopOnBD.css";
 
 const ShopOnBD = () => {
   return (
     <div class="shop-onBD-container">
-      <h2>Shop On BicycleDrift</h2>
+      <h2>Shop By Brand</h2>
       <div class="shop-on-bd row desktop">
         <div class="col-sm-4">
           <h3>For Adults</h3>
@@ -35,7 +36,7 @@ const ShopOnBD = () => {
             }}
             to="/products/bikes"
           >
-            <img src={ShopOnBDback} alt=""></img>
+            <img src={toddler} alt=""></img>
             <img
               className="bike"
               src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_DTR_24_2019_07.png"
