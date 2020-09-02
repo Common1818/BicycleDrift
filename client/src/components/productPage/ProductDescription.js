@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import $ from "jquery";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Spinner } from "react-bootstrap";
+import { createOrder } from "../../actions/order";
 import { checkPincode } from "../../actions/pincode";
 import { addProductToCart } from "../../actions/cart";
 import cartGif from "../products/cartGif.gif";
@@ -26,6 +28,9 @@ const ProductDescription = ({
   images,
   color,
   brand,
+  pincodeData,
+  createOrder,
+  order,
 }) => {
   var message;
   const handleCart = (e) => {
@@ -80,6 +85,37 @@ const ProductDescription = ({
   if (Loading == false || Loading == null) {
     $(".checking").css("display", "none");
   }
+  const { Serviceable, deliveryCharge } = pincodeData;
+
+  const handleBuyNow = (e) => {
+    e.preventDefault();
+    if (stock != 0) {
+      createOrder({
+        products: [
+          {
+            _id,
+            name,
+            brand: brand.brandname,
+            price,
+            color,
+            image: images[0],
+            actualPrice,
+            quantity: 1,
+          },
+        ],
+        total: price + deliveryCharge,
+        totalQuantity: 1,
+      });
+    } else {
+      window.alert("Sorry this Product is currently out of stock");
+    }
+  };
+  const { redirect } = order;
+  const orderId = order.order._id;
+  if (redirect == true) {
+    localStorage.setItem("cart", JSON.stringify([]));
+    return <Redirect to={"/order/" + orderId} />;
+  }
 
   return (
     <div class="product-description col-lg-5">
@@ -130,9 +166,10 @@ const ProductDescription = ({
                 onChange={(e) => {
                   setpincode(e.target.value);
                 }}
+                style={{ fontSize: "1.2rem" }}
                 type="number"
                 className="pincode-input"
-                placeholder={localStorage.getItem("pincode")}
+                placeholder="Enter pincode to Buy Now"
                 name="pincode"
               />
 
@@ -176,10 +213,22 @@ const ProductDescription = ({
           <div style={{ fontSize: "2rem", fontWeight: "800" }} className="or">
             OR
           </div>
-          <button href="#" class="btn btn--primary">
-            Pickup From Store{" "}
-            <img src="https://www.svgrepo.com/show/10112/map.svg" alt="" />
-          </button>
+          {Serviceable && deliveryCharge ? (
+            <button onClick={handleBuyNow} href="#" class="btn btn--primary">
+              Buy Now
+            </button>
+          ) : (
+            <button
+              disabled
+              onClick={() => {
+                window.alert("Enter pincode First");
+              }}
+              href="#"
+              class="btn btn--primary"
+            >
+              Buy Now
+            </button>
+          )}
         </div>
       </main>
     </div>
@@ -189,8 +238,12 @@ const ProductDescription = ({
 const mapStateToProps = (state) => ({
   isServiceable: state.pincode.Serviceable,
   Loading: state.pincode.loading,
+  pincodeData: state.pincode,
+  order: state.order,
 });
 
-export default connect(mapStateToProps, { checkPincode, addProductToCart })(
-  ProductDescription
-);
+export default connect(mapStateToProps, {
+  checkPincode,
+  addProductToCart,
+  createOrder,
+})(ProductDescription);

@@ -12,6 +12,10 @@ import { fetchBike } from "../../actions/product";
 import ProductAdminSection from "./ProductAdminSection";
 import Loader from "../layout/Loader";
 import AboutBrand from "./AboutBrand";
+import AccessorySpecifications from "./accessorySpecifications";
+import accessoryBanner from "./images/accessoryBanner.PNG";
+import bikeBanner from "./images/bikeBanner.PNG";
+import OurPromise from "../home/OurPromise";
 
 const ProductPage = ({
   isAdmin,
@@ -35,11 +39,12 @@ const ProductPage = ({
   }, []);
 
   const specifications = product && product.specifications;
+  const accessorySpecifications = product && product.accessorySpecifications;
   const modelyear = product && product.modelyear;
   const gender = product && product.gender;
   const category = product && product.category;
   const description = product && product.description;
-
+  const productType = product && product.productType;
   const stock = product && product.stock;
   const minAge = product && product.age.min;
   const maxAge = product && product.age.max;
@@ -70,6 +75,12 @@ const ProductPage = ({
 
               <ProductDesktop images={images} />
               <ProductMobile images={images} />
+              <div className="product-banner mobile ">
+                <img
+                  src={productType == "Bike" ? bikeBanner : accessoryBanner}
+                  alt=""
+                />
+              </div>
             </div>
             <ProductDescription
               _id={id}
@@ -88,12 +99,27 @@ const ProductPage = ({
               maxAge={maxAge}
             />
           </div>
+          <br />
+          <div className="product-banner desktop ">
+            <img
+              src={productType == "Bike" ? bikeBanner : accessoryBanner}
+              alt=""
+            />
+          </div>
+          <br />
 
           <hr class="hr-4"></hr>
 
-          <Specifications specifications={specifications} />
+          {productType == "Bike" ? (
+            <Specifications specifications={specifications} />
+          ) : (
+            <AccessorySpecifications
+              accessorySpecifications={accessorySpecifications}
+            />
+          )}
           <hr />
           <AboutBrand product={product} />
+          <OurPromise />
           <CustomerReviews />
           {isAdmin ? (
             <ProductAdminSection productId={productId} product={product} />

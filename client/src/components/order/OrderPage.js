@@ -19,6 +19,8 @@ const OrderPage = ({
   user,
   redirectToPaytm,
 }) => {
+  console.log(order);
+
   const [details, setDetails] = useState({
     firstName: "",
     lastName: "",
@@ -47,8 +49,11 @@ const OrderPage = ({
   // if (billingDetailsUpdated == true) {
   //   setModalShow(true);
   // }
-  const [modalShow, setModalShow] = React.useState(false);
 
+  const [modalShow, setModalShow] = React.useState(false);
+  if (order.status && order.status != "Payment Pending") {
+    return <Redirect to="/" />;
+  }
   return (
     <div className="order-page-container container-lg">
       {products ? (

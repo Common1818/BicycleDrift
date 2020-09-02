@@ -10,37 +10,6 @@ const FAQ = () => {
           <div class="col-md-12 ">
             <div class="faq" id="accordion">
               <div class="card">
-                <div class="card-header" id="faqHeading-1">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-1"
-                      data-aria-expanded="true"
-                      data-aria-controls="faqCollapse-1"
-                    >
-                      <span class="badge">1</span>What is Lorem Ipsum?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-1"
-                  class="collapse"
-                  aria-labelledby="faqHeading-1"
-                  data-parent="#accordion"
-                >
-                  <div class="card-body">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
                 <div class="card-header" id="faqHeading-2">
                   <div class="mb-0">
                     <h5
@@ -50,7 +19,7 @@ const FAQ = () => {
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-2"
                     >
-                      <span class="badge">2</span> Where does it come from?
+                      <span class="badge">1</span> Is BicycleDrift Safe?
                     </h5>
                   </div>
                 </div>
@@ -62,9 +31,50 @@ const FAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making it over 2000 years old.
+                      <b> BicycleDrift</b> is committed to respecting your
+                      privacy, protection and transactions. We at{" "}
+                      <b> BicycleDrift</b> care about your Security and Your
+                      personal data is of top priority to us. To ensure high
+                      grade security <b>BicycleDrift</b> uses best encryption
+                      software in the industry & your information is encrypted
+                      an protected with the - Secure Socket Layer
+                      <b>(SSL)</b> technology to protect the data you send to us
+                      over the internet. All payment transactions you make on
+                      this site are processed and handled by <b>Paytm</b> and
+                      all transcations happen on their server, making
+                      transactions effortless and Safe.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="faqHeading-1">
+                  <div class="mb-0">
+                    <h5
+                      class="faq-title"
+                      data-toggle="collapse"
+                      data-target="#faqCollapse-1"
+                      data-aria-expanded="true"
+                      data-aria-controls="faqCollapse-1"
+                    >
+                      <span class="badge">2</span>Can i Cancel my order after
+                      Making a Purchase?
+                    </h5>
+                  </div>
+                </div>
+                <div
+                  id="faqCollapse-1"
+                  class="collapse"
+                  aria-labelledby="faqHeading-1"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body">
+                    <p>
+                      You can <b>Cancel</b> your order anytime before it has
+                      been <i>Shipped</i>. Once Your Order has been shipped
+                      which usually takes 2-4 Working Days, you can not Cancel
+                      it. Once you cancel your order amount will be refunded to
+                      your bank account within 3-4 working Days.
                     </p>
                   </div>
                 </div>
@@ -79,7 +89,8 @@ const FAQ = () => {
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-3"
                     >
-                      <span class="badge">3</span>Why do we use it?
+                      <span class="badge">3</span>Can i return my product if i
+                      don't like it ?
                     </h5>
                   </div>
                 </div>
@@ -91,11 +102,11 @@ const FAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. The point of using Lorem Ipsum is that it
-                      has a more-or-less normal distribution of letters, as
-                      opposed to using 'Content here, content here.
+                      You <b>can Return</b> a Product if you receive something
+                      other than what you ordered, But you <b>can't</b> return a
+                      product if you don't like it, be sure before ordering. You
+                      can also take our help before making a purchase of our{" "}
+                      <b>WhatsApp</b> based <b>customer service</b>.
                     </p>
                   </div>
                 </div>
@@ -110,7 +121,7 @@ const FAQ = () => {
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-4"
                     >
-                      <span class="badge">4</span> Where can I get some?
+                      <span class="badge">4</span>How do we Ship?
                     </h5>
                   </div>
                 </div>
@@ -122,10 +133,18 @@ const FAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable.
+                      We use an outside shipping company to ship orders, and a
+                      credit card processing company to validate charges for
+                      goods. These companies have agreed with us that they do
+                      not retain, share, store or use personally identifiable
+                      information for any secondary purposes. These third
+                      parties are not allowed to use personally identifiable
+                      information except for the purpose of providing these
+                      services. we will pass that user's relevant personal
+                      information securely over <b>SSL</b>, which may include{" "}
+                      <i>name</i>,<i>postal address</i>, and any other{" "}
+                      <i>required billing information</i>, to that specific
+                      third party.
                     </p>
                   </div>
                 </div>
@@ -140,7 +159,8 @@ const FAQ = () => {
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-5"
                     >
-                      <span class="badge">5</span> What is Lorem Ipsum?
+                      <span class="badge">5</span> Changes to this Policy
+                      Policy?
                     </h5>
                   </div>
                 </div>
@@ -152,75 +172,13 @@ const FAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      {" "}
-                      It has survived not only five centuries, but also the leap
-                      into electronic typesetting, remaining essentially
-                      unchanged. It was popularised in the 1960s with the
-                      release of Letraset sheets containing
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-6">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-6"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-6"
-                    >
-                      <span class="badge">6</span> Where does it come from?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-6"
-                  class="collapse"
-                  aria-labelledby="faqHeading-6"
-                  data-parent="#accordion"
-                >
-                  <div class="card-body">
-                    <p>
-                      The standard chunk of Lorem Ipsum used since the 1500s is
-                      reproduced below for those interested. Sections 1.10.32
-                      and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                      are also reproduced in their exact original form,
-                      accompanied by English versions from the 1914 translation
-                      by H. Rackham.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-7">
-                  <div class="mb-0">
-                    <h5
-                      class="faq-title"
-                      data-toggle="collapse"
-                      data-target="#faqCollapse-7"
-                      data-aria-expanded="false"
-                      data-aria-controls="faqCollapse-7"
-                    >
-                      <span class="badge">7</span> Why do we use it?
-                    </h5>
-                  </div>
-                </div>
-                <div
-                  id="faqCollapse-7"
-                  class="collapse"
-                  aria-labelledby="faqHeading-7"
-                  data-parent="#accordion"
-                >
-                  <div class="card-body">
-                    <p>
-                      Many desktop publishing packages and web page editors now
-                      use Lorem Ipsum as their default model text, and a search
-                      for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the
-                      years, sometimes by accident, sometimes on purpose
-                      (injected humour and the like).
+                      We reserve the right to modify the Terms of Use, Privacy
+                      Policy or other disclaimers or legal terms at any time
+                      without giving you prior notice. Your use of The Site
+                      following any such modification constitutes your agreement
+                      to follow and be bound by such things as modified. For
+                      this reason, we encourage you to review the Privacy Policy
+                      and other terms whenever you use The Site.
                     </p>
                   </div>
                 </div>

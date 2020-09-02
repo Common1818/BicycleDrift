@@ -235,32 +235,3 @@ export const getUserOrders = () => async (dispatch) => {
     });
   }
 };
-
-export const updateOrderStatus = (data) => async (dispatch) => {
-  try {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const { id, status } = data;
-    // console.log(data);
-    const body = JSON.stringify({ status });
-    const res = await axios.post(
-      `/api/adminorder/${userId}/${id}`,
-      body,
-      config
-    );
-    const messagesArray = res.data.messages;
-    // Added successssfully wala message
-    messagesArray.forEach((message) =>
-      dispatch(setAlert(message.msg, "danger"))
-    );
-  } catch (err) {
-    console.log(err);
-    const errors = err.response.data.errors;
-    if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
-    }
-  }
-};

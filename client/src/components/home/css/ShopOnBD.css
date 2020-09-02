@@ -14,7 +14,6 @@
     font-family: "Titillium Web", sans-serif;
     border-bottom-left-radius: 15px !important;
     border-bottom-right-radius: 15px !important;
-    overflow: hidden;
 }
 
 .shop-onBD-container h3 {
@@ -32,10 +31,30 @@
     width: 70%;
     margin: 0px auto !important;
     border-radius: 10px;
+    /* border: 10px #111; */
+    /* box-shadow: 3px 3px 5px 6px #ccc; */
+    box-shadow: inset 0 0 10px rgb(109, 117, 124);
+    /* border-radius: 50px; */
+    border-style: groove;
+    padding: 10px;
+}
+
+.category-card {
+    /* background: #111 !important; */
+    /* background: url("https://images.unsplash.com/photo-1538806932492-b6ac36ccfa28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 20px;
 }
 
 .shop-on-bd {
     text-align: center;
+}
+
+.shop-onBD-container {
+    /* background: #fdfdfd; */
+    /* padding-bottom: 10px; */
 }
 
 .shop-on-bd img.bike {
@@ -54,7 +73,11 @@
     top: 5%;
 }
 
-.shop-on-bd img.bike:hover {
+.shop-on-bd a img {
+    transition: 0.4s ease;
+}
+
+.shop-on-bd a img:hover {
     transform: scale(1.1);
 }
 

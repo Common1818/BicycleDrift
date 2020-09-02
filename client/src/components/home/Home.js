@@ -3,10 +3,12 @@ import OurPromise from "./OurPromise";
 import $ from "jquery";
 import HomeCarousel from "./Carousel";
 import ShopOnBD from "./ShopOnBD";
+import ShopOnBD2 from "./ShopOnBD2";
 import CustomerReviews from "./CustomerReviews";
 import FAQ from "./FAQ";
 import Shop from "./Shop";
 import Contact from "../layout/Contact";
+import AboutChawla from "./AboutChawla";
 
 const Home = () => {
   // useEffect(() => {
@@ -23,9 +25,14 @@ const Home = () => {
       <HomeCarousel />
       <OurPromise />
       <Shop />
-      <ShopOnBD />
+      <div className="category-card">
+        <ShopOnBD />
+        <ShopOnBD2 />
+      </div>
       <Contact />
+
       <FAQ />
+      <AboutChawla />
       <CustomerReviews />
     </React.Fragment>
   );

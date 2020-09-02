@@ -79,7 +79,7 @@ const Products = ({
         </div>
       ) : null}
 
-      <Row className="wrapper">
+      <Row className="wrap">
         {currentProducts &&
           currentProducts.map((item) => (
             <ProductCard product={item} key={item._id} />

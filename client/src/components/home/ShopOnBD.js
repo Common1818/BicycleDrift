@@ -3,55 +3,46 @@ import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 import ShopOnBDback from "./Images/ShopOnBDback.PNG";
-import toddler from "./Images/toddler.PNG";
 import "./css/ShopOnBD.css";
 
 const ShopOnBD = () => {
   return (
     <div class="shop-onBD-container">
-      <h2>Shop By Brand</h2>
+      <h2>Shop On BicycleDrift</h2>
       <div class="shop-on-bd row desktop">
         <div class="col-sm-4">
-          <h3>For Adults</h3>
           <Link
             onClick={() => {
               $("html, body").animate({ scrollTop: 10 }, 500);
             }}
             to="/products/bikes"
           >
-            <img src={ShopOnBDback} alt=""></img>
-
             <img
-              className="bike"
-              src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_Rock_Blue_2019_07.png"
+              src="http://drive.google.com/uc?export=view&id=1MdDMR3ODAQHHH87e1njPsitvd9BzYHn7"
               alt=""
             ></img>
           </Link>
         </div>
         <div class="col-sm-4">
-          <h3>For Kids</h3>
+          <Link>
+            <img
+              src="http://drive.google.com/uc?export=view&id=1Umqe9MtXsfL1rA8DZ3PqKlTW1Hon7iD5"
+              alt=""
+            />
+          </Link>
+        </div>
+        <div class="col-sm-4">
           <Link
             onClick={() => {
               $("html, body").animate({ scrollTop: 10 }, 500);
             }}
             to="/products/bikes"
           >
-            <img src={toddler} alt=""></img>
             <img
-              className="bike"
-              src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_DTR_24_2019_07.png"
+              src="http://drive.google.com/uc?export=view&id=1kEOUcXjtS412XTe9cfCr4p1Eh15rpVmz"
               alt=""
             ></img>
           </Link>
-        </div>
-        <div class="col-sm-4">
-          <h3>Accessories</h3>
-          <img src={ShopOnBDback} alt=""></img>
-          <img
-            class=" accessory-man"
-            src="https://choosemybicycle.s3.ap-south-1.amazonaws.com/home-page-directory/macro-level-carousel/accessories-img.png"
-            alt=""
-          ></img>
         </div>
       </div>
       {/* Mobile view */}
@@ -59,26 +50,9 @@ const ShopOnBD = () => {
         <Carousel interval={10000000}>
           <Carousel.Item>
             <div class="col-sm-4">
-              <h3>For Adults</h3>
-
               <Link to="/products/bikes">
-                <img src={ShopOnBDback} alt=""></img>
                 <img
-                  className="bike"
-                  src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_Rock_Blue_2019_07.png"
-                  alt=""
-                ></img>
-              </Link>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="col-sm-4">
-              <h3>For Kids</h3>
-              <Link tp="/products/bikes">
-                <img src={ShopOnBDback} alt=""></img>
-                <img
-                  className="bike"
-                  src="https://montra.in/wp-content/uploads/sites/17/2017/04/Montra_DTR_24_2019_07.png"
+                  src="http://drive.google.com/uc?export=view&id=1MdDMR3ODAQHHH87e1njPsitvd9BzYHn7"
                   alt=""
                 ></img>
               </Link>
@@ -86,13 +60,20 @@ const ShopOnBD = () => {
           </Carousel.Item>
           <Carousel.Item>
             <div class="col-sm-4">
-              <h3>Accessories</h3>
-              <img src={ShopOnBDback} alt=""></img>
               <img
-                class=" accessory-man"
-                src="https://choosemybicycle.s3.ap-south-1.amazonaws.com/home-page-directory/macro-level-carousel/accessories-img.png"
+                src="http://drive.google.com/uc?export=view&id=1Umqe9MtXsfL1rA8DZ3PqKlTW1Hon7iD5"
                 alt=""
-              ></img>
+              />
+            </div>
+          </Carousel.Item>
+          <Carousel.Item>
+            <div className="col-sm-4">
+              <Link tp="/products/bikes">
+                <img
+                  src="http://drive.google.com/uc?export=view&id=1kEOUcXjtS412XTe9cfCr4p1Eh15rpVmz"
+                  alt=""
+                ></img>
+              </Link>
             </div>
           </Carousel.Item>
         </Carousel>

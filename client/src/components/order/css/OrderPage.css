@@ -90,7 +90,7 @@
     font-size: 2rem !important;
 }
 
-.modal-content {
+.order-page-container .modal-content {
     width: 100% !important;
     background-image: url("http://www.dealnloot.com/wp-content/uploads/2018/03/paytm-offer.jpg");
     background-position: center;

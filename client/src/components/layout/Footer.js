@@ -69,7 +69,8 @@ const Footer = () => {
               <p className="title">
                 CONTACT <i className="fa fa-phone"></i>{" "}
               </p>
-              <p>M - S 10:00am - 8:00 pm IST </p>
+              <p>Shop Timing : M - S 10:00am - 8:00 pm IST </p>
+              <p>Workshop Timing : M - S 10:00am - 4:30 pm IST</p>
 
               <ul className="second_depth">
                 <li>

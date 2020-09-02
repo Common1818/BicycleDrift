@@ -31,11 +31,8 @@ const CartFAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book.
+                      Yes We'll deiver your bike completely assembled and ready
+                      to ride
                     </p>
                   </div>
                 </div>
@@ -62,9 +59,8 @@ const CartFAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature from 45 BC, making it over 2000 years old.
+                      you can contact Us either on <b>WhatsApp</b> or on on
+                      Mobile Number
                     </p>
                   </div>
                 </div>
@@ -92,11 +88,7 @@ const CartFAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout. The point of using Lorem Ipsum is that it
-                      has a more-or-less normal distribution of letters, as
-                      opposed to using 'Content here, content here.
+                      You'll be updated about your order status via Whatsapp
                     </p>
                   </div>
                 </div>
@@ -123,10 +115,8 @@ const CartFAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      There are many variations of passages of Lorem Ipsum
-                      available, but the majority have suffered alteration in
-                      some form, by injected humour, or randomised words which
-                      don't look even slightly believable.
+                      After your order has been shipped it usually takes 5-10
+                      Working Days to reach you.
                     </p>
                   </div>
                 </div>
@@ -155,10 +145,11 @@ const CartFAQ = () => {
                   <div class="card-body">
                     <p>
                       {" "}
-                      It has survived not only five centuries, but also the leap
-                      into electronic typesetting, remaining essentially
-                      unchanged. It was popularised in the 1960s with the
-                      release of Letraset sheets containing
+                      You can <b>Cancel</b> your order anytime before it has
+                      been <i>Shipped</i>. Once Your Order has been shipped
+                      which usually takes 2-4 Working Days, you can not Cancel
+                      it. Once you cancel your order amount will be refunded to
+                      your bank account within 3-4 working Days.
                     </p>
                   </div>
                 </div>
@@ -186,12 +177,11 @@ const CartFAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      The standard chunk of Lorem Ipsum used since the 1500s is
-                      reproduced below for those interested. Sections 1.10.32
-                      and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero
-                      are also reproduced in their exact original form,
-                      accompanied by English versions from the 1914 translation
-                      by H. Rackham.
+                      You <b>can Return</b> a Product if you receive something
+                      other than what you ordered, But you <b>can't</b> return a
+                      product if you don't like it, be sure before ordering. You
+                      can also take our help before making a purchase of our{" "}
+                      <b>WhatsApp</b> based <b>customer service</b>.
                     </p>
                   </div>
                 </div>
@@ -219,12 +209,8 @@ const CartFAQ = () => {
                 >
                   <div class="card-body">
                     <p>
-                      Many desktop publishing packages and web page editors now
-                      use Lorem Ipsum as their default model text, and a search
-                      for 'lorem ipsum' will uncover many web sites still in
-                      their infancy. Various versions have evolved over the
-                      years, sometimes by accident, sometimes on purpose
-                      (injected humour and the like).
+                      Shipping charges depend on your location , you'll need to
+                      enter your pincode in order to check the delivery charges
                     </p>
                   </div>
                 </div>
