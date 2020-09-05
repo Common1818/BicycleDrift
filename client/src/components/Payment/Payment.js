@@ -1,11 +1,6 @@
 import React from "react";
 
 const Payment = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("s");
-  };
-
   return (
     <div class="row my-5">
       <div class="col-md-4 offset-md-4">

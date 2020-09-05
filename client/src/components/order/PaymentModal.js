@@ -1,5 +1,6 @@
+/*eslint-disable */
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 const PaymentModal = (props) => {
   const {

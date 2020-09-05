@@ -9,7 +9,6 @@ import {
   AUTH_ERROR,
   SEND_RESET_EMAIL,
   SEND_RESET_EMAIL_FAIL,
-  LOGOUT,
 } from "./types";
 
 import { setAuthToken } from "../utils/setAuthToken";
@@ -41,7 +40,9 @@ export const loadUser = () => async (dispatch) => {
 export const register = ({ firstname, lastname, email, password }) => async (
   dispatch
 ) => {
-  console.log(" in register");
+  dispatch({
+    type: "SET_AUTH_LOADER",
+  });
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -52,17 +53,14 @@ export const register = ({ firstname, lastname, email, password }) => async (
 
   try {
     const res = await axios.post("/api/signup", body, config);
-
-    console.log(res);
-
     dispatch({
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
+    dispatch(setAlert("SIGNED UP SUCCESSFULLY", "danger"));
 
     dispatch(loadUser());
   } catch (err) {
-    console.log("Whatever" + err);
     const errors = err.response.data.errors;
 
     if (errors) {
@@ -76,6 +74,9 @@ export const register = ({ firstname, lastname, email, password }) => async (
 };
 
 export const login = ({ email, password }) => async (dispatch) => {
+  dispatch({
+    type: "SET_AUTH_LOADER",
+  });
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -95,7 +96,7 @@ export const login = ({ email, password }) => async (dispatch) => {
     dispatch(loadUser());
   } catch (err) {
     const errors = err && err.response.data.errors;
-    console.log(errors);
+
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
@@ -114,7 +115,6 @@ export const logout = () => (dispatch) => {
 };
 
 export const sendResetEmail = ({ email }) => async (dispatch) => {
-  console.log(email);
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -135,7 +135,6 @@ export const sendResetEmail = ({ email }) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    console.log(err);
     const errors = err && err.response.data.errors;
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));

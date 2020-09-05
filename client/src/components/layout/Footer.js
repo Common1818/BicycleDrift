@@ -7,9 +7,7 @@ import "./css/footerStyles/Footer.css";
 
 const Footer = () => {
   $(document).ready(function () {
-    var accordionOpen = $(".first_depth p"),
-      secondDepth = $(".second_depth");
-
+    var accordionOpen = $(".first_depth p");
     accordionOpen.on("click", function () {
       accordionOpen.closest(".first_depth").removeClass("on");
       $(this).closest(".first_depth").addClass("on");
@@ -41,7 +39,14 @@ const Footer = () => {
               <ul className="second_depth">
                 <li className="white">Accessories</li>
                 <li>
-                  <a href="#">All Accessories</a>
+                  <Link
+                    onClick={() => {
+                      $("html, body").animate({ scrollTop: 10 }, 500);
+                    }}
+                    to="/products/accessories"
+                  >
+                    All Accessories
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -52,10 +57,7 @@ const Footer = () => {
               </p>
               <ul className="second_depth">
                 <li>
-                  <a href="#">FAQs</a>
-                </li>
-                <li>
-                  <a href="#">Order Status</a>
+                  <Link to="/myorders"> Order Status</Link>
                 </li>
                 <li>
                   <a href="mailto:bicyclesdrift@gmail.com">
@@ -117,11 +119,45 @@ const Footer = () => {
           </ul>
         </div>
         <div className="payment">
+          <span>IDFC bank Financing Available</span>
+          <br />
           <img src={payment} alt="" />
         </div>
       </div>
-      <div style={{ padding: "10px", textAlign: "right" }}>
-        Website by : Koshish
+      <div className="koshish" style={{ padding: "10px", textAlign: "center" }}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://instagram.com/bihani.priya"
+        >
+          {" "}
+          <span className="bykoshish">Website by : Koshish </span>
+        </a>
+        <br />
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://instagram.com/bihani.priya"
+        >
+          {" "}
+          <img
+            style={{ width: "20px" }}
+            src="https://www.svgrepo.com/show/303154/instagram-2016-logo.svg"
+            alt=""
+          />
+        </a>{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://instagram.com/gkartik18"
+        >
+          {" "}
+          <img
+            style={{ width: "20px" }}
+            src="https://www.svgrepo.com/show/303154/instagram-2016-logo.svg"
+            alt=""
+          />
+        </a>
       </div>
     </footer>
   );

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useState } from "react";
 import $ from "jquery";
 // import "./css/ProductMobile.css";
@@ -10,7 +11,7 @@ const ProductMobile = ({ img1, img2, img3, img4 }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handlePreview = (value, imgclass) => {
-    value != ""
+    value !== ""
       ? $(`.${imgclass}`).attr("src", value)
       : $(`.${imgclass}`).attr("src", addImage);
   };
@@ -18,16 +19,11 @@ const ProductMobile = ({ img1, img2, img3, img4 }) => {
   return (
     <div className="product-image-container mobile">
       <div className="cover-image">
-        <img className="prod-img-1" src={addImage} alt="add Image" />
+        <img className="prod-img-1" src={addImage} />
       </div>
       <div className="not-cover-image">
         <div>
-          <img
-            onClick={handleShow}
-            className="prod-img-1"
-            src={addImage}
-            alt="add image"
-          />
+          <img onClick={handleShow} className="prod-img-1" src={addImage} />
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Enter Image Url</Modal.Title>
@@ -50,12 +46,7 @@ const ProductMobile = ({ img1, img2, img3, img4 }) => {
           </Modal>
         </div>
         <div>
-          <img
-            onClick={handleShow}
-            className="prod-img-2"
-            src={addImage}
-            alt="add image"
-          />
+          <img onClick={handleShow} className="prod-img-2" src={addImage} />
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Enter Image Url</Modal.Title>
@@ -78,12 +69,7 @@ const ProductMobile = ({ img1, img2, img3, img4 }) => {
           </Modal>
         </div>
         <div>
-          <img
-            onClick={handleShow}
-            className="prod-img-3"
-            src={addImage}
-            alt="add image"
-          />
+          <img onClick={handleShow} className="prod-img-3" src={addImage} />
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Enter Image Url</Modal.Title>
@@ -106,12 +92,7 @@ const ProductMobile = ({ img1, img2, img3, img4 }) => {
           </Modal>
         </div>
         <div>
-          <img
-            onClick={handleShow}
-            className="prod-img-4"
-            src={addImage}
-            alt="add image"
-          />
+          <img onClick={handleShow} className="prod-img-4" src={addImage} />
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Enter Image Url</Modal.Title>

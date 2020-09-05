@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from "react";
 import { Link } from "react-router-dom";
 import $ from "jquery";
@@ -10,7 +11,6 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
     (JSON.parse(localStorage.getItem("cart")) &&
       JSON.parse(localStorage.getItem("cart")).length) ||
     0;
-  console.log(cartItems.length);
 
   const handleNav = () => {
     $("#appNavOptions").removeClass("hidden-xs");
@@ -33,7 +33,7 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
       <div className="appControls">
         <div className="bdRow controlRow">
           <>
-            {isLoggedIn == true ? (
+            {isLoggedIn === true ? (
               <div className="segment support hidden-xs">
                 <a href="/" onClick={logout}>
                   <img
@@ -72,7 +72,7 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
                 />{" "}
                 <span style={{ fontSize: "1.3rem" }}>
                   {" "}
-                  {isLoggedIn == true
+                  {isLoggedIn === true
                     ? `Hey, ${user && user.firstname} !!`
                     : " Login/Create Account"}
                 </span>
@@ -81,7 +81,7 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
           </div>
 
           <div className="segment support hidden-xs">
-            <Link
+            <a
               onClick={() => {
                 $("html, body").animate(
                   { scrollTop: $(document).height() },
@@ -96,7 +96,7 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
                 title="Support"
               />{" "}
               Support
-            </Link>
+            </a>
           </div>
 
           <div
@@ -122,7 +122,7 @@ const TopRow = ({ isLoggedIn, user, logout, cartItems }) => {
                 alt="Cart"
                 title="Cart"
               />{" "}
-              {localCartItems == 0 ? null : cartItems.length == 0 ? (
+              {localCartItems === 0 ? null : cartItems.length === 0 ? (
                 <sup>{localCartItems}</sup>
               ) : (
                 <sup>{cartItems.length}</sup>

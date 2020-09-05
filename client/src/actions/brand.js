@@ -13,7 +13,6 @@ export const addBrand = ({ brandname, description, brandLogoUrl }) => async (
   dispatch
 ) => {
   const userId = localStorage.getItem("userId");
-  console.log(userId);
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +61,7 @@ export const deleteBrand = (brandId) => async (dispatch) => {
   const userId = localStorage.getItem("userId");
   try {
     const res = await axios.delete(`/api/brand/${brandId}/${userId}`);
-    console.log(res.data);
+
     const messagesArray = res.data.messages;
     messagesArray.forEach((message) =>
       dispatch(setAlert(message.msg, "danger"))
@@ -73,7 +72,7 @@ export const deleteBrand = (brandId) => async (dispatch) => {
     });
   } catch (err) {
     const errors = err.response.data.errors;
-    console.log(errors);
+
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }

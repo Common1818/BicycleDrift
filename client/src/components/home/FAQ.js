@@ -3,33 +3,33 @@ import "./css/FAQ.css";
 
 const FAQ = () => {
   return (
-    <section class="faq-section">
-      <div class="faq-container">
+    <section className="faq-section">
+      <div className="faq-container">
         <h2>FAQ's</h2>
-        <div class="row">
-          <div class="col-md-12 ">
-            <div class="faq" id="accordion">
-              <div class="card">
-                <div class="card-header" id="faqHeading-2">
-                  <div class="mb-0">
+        <div className="row">
+          <div className="col-md-12 ">
+            <div className="faq" id="accordion">
+              <div className="card">
+                <div className="card-header" id="faqHeading-2">
+                  <div className="mb-0">
                     <h5
-                      class="faq-title"
+                      className="faq-title"
                       data-toggle="collapse"
                       data-target="#faqCollapse-2"
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-2"
                     >
-                      <span class="badge">1</span> Is BicycleDrift Safe?
+                      <span className="badge">1</span> Is BicycleDrift Safe?
                     </h5>
                   </div>
                 </div>
                 <div
                   id="faqCollapse-2"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="faqHeading-2"
                   data-parent="#accordion"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     <p>
                       <b> BicycleDrift</b> is committed to respecting your
                       privacy, protection and transactions. We at{" "}
@@ -47,28 +47,28 @@ const FAQ = () => {
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-1">
-                  <div class="mb-0">
+              <div className="card">
+                <div className="card-header" id="faqHeading-1">
+                  <div className="mb-0">
                     <h5
-                      class="faq-title"
+                      className="faq-title"
                       data-toggle="collapse"
                       data-target="#faqCollapse-1"
                       data-aria-expanded="true"
                       data-aria-controls="faqCollapse-1"
                     >
-                      <span class="badge">2</span>Can i Cancel my order after
-                      Making a Purchase?
+                      <span className="badge">2</span>Can i Cancel my order
+                      after Making a Purchase?
                     </h5>
                   </div>
                 </div>
                 <div
                   id="faqCollapse-1"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="faqHeading-1"
                   data-parent="#accordion"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     <p>
                       You can <b>Cancel</b> your order anytime before it has
                       been <i>Shipped</i>. Once Your Order has been shipped
@@ -79,28 +79,28 @@ const FAQ = () => {
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-3">
-                  <div class="mb-0">
+              <div className="card">
+                <div className="card-header" id="faqHeading-3">
+                  <div className="mb-0">
                     <h5
-                      class="faq-title"
+                      className="faq-title"
                       data-toggle="collapse"
                       data-target="#faqCollapse-3"
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-3"
                     >
-                      <span class="badge">3</span>Can i return my product if i
-                      don't like it ?
+                      <span className="badge">3</span>Can i return my product if
+                      i don't like it ?
                     </h5>
                   </div>
                 </div>
                 <div
                   id="faqCollapse-3"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="faqHeading-3"
                   data-parent="#accordion"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     <p>
                       You <b>can Return</b> a Product if you receive something
                       other than what you ordered, But you <b>can't</b> return a
@@ -111,27 +111,27 @@ const FAQ = () => {
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-4">
-                  <div class="mb-0">
+              <div className="card">
+                <div className="card-header" id="faqHeading-4">
+                  <div className="mb-0">
                     <h5
-                      class="faq-title"
+                      className="faq-title"
                       data-toggle="collapse"
                       data-target="#faqCollapse-4"
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-4"
                     >
-                      <span class="badge">4</span>How do we Ship?
+                      <span className="badge">4</span>How do we Ship?
                     </h5>
                   </div>
                 </div>
                 <div
                   id="faqCollapse-4"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="faqHeading-4"
                   data-parent="#accordion"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     <p>
                       We use an outside shipping company to ship orders, and a
                       credit card processing company to validate charges for
@@ -149,28 +149,28 @@ const FAQ = () => {
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="faqHeading-5">
-                  <div class="mb-0">
+              <div className="card">
+                <div className="card-header" id="faqHeading-5">
+                  <div className="mb-0">
                     <h5
-                      class="faq-title"
+                      className="faq-title"
                       data-toggle="collapse"
                       data-target="#faqCollapse-5"
                       data-aria-expanded="false"
                       data-aria-controls="faqCollapse-5"
                     >
-                      <span class="badge">5</span> Changes to this Policy
+                      <span className="badge">5</span> Changes to this Privacy
                       Policy?
                     </h5>
                   </div>
                 </div>
                 <div
                   id="faqCollapse-5"
-                  class="collapse"
+                  className="collapse"
                   aria-labelledby="faqHeading-5"
                   data-parent="#accordion"
                 >
-                  <div class="card-body">
+                  <div className="card-body">
                     <p>
                       We reserve the right to modify the Terms of Use, Privacy
                       Policy or other disclaimers or legal terms at any time

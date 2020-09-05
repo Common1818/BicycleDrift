@@ -9,6 +9,10 @@
     width: 30%;
 }
 
+.specification-container {
+    top: 0px !important;
+}
+
 .specification-container div {
     text-align: center;
     font-family: 'Lato', sans-serif;

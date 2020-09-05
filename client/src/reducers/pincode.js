@@ -1,17 +1,19 @@
 import {
-  ADD_PINCODE,
-  ADD_PINCODE_FAIL,
   CHECK_PINCODE,
-  CHECK_PINCODE_FAIL,
   FETCH_PINCODES,
   FETCH_PINCODES_FAIL,
 } from "../actions/types";
 
-const initialState = { pincodes: [], pincode: {} };
+const initialState = { pincodes: [], pincode: {}, loading: false };
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
+    case "SET_PINCODE_LOADER":
+      return {
+        ...state,
+        loading: true,
+      };
     case CHECK_PINCODE:
       return {
         ...state,

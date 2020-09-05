@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllPincodes, deletePincode } from "../../actions/pincode";
@@ -26,7 +27,7 @@ const AllPincodes = ({ getAllPincodes, pincodes, deletePincode }) => {
                   <td>{pincode.cityCode}</td>
                   <td>{pincode.cityName}</td>
                   <td>
-                    {pincode.excludedAreas.length == 0
+                    {pincode.excludedAreas.length === 0
                       ? "none"
                       : pincode.excludedAreas.map((data) => {
                           return (

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/*eslint-disable */
+import React, { useState } from "react";
 import $ from "jquery";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
@@ -8,6 +9,7 @@ import { checkPincode } from "../../actions/pincode";
 import { addProductToCart } from "../../actions/cart";
 import cartGif from "../products/cartGif.gif";
 import "./css/ProductDescription.css";
+import Loader from "../layout/Loader";
 
 const ProductDescription = ({
   name,
@@ -76,20 +78,20 @@ const ProductDescription = ({
   };
 
   message =
-    isServiceable == null
+    isServiceable === null
       ? ""
-      : isServiceable == true
+      : isServiceable === true
       ? "Pincode is Serviceable, Order Now"
       : "Pincode is not Serviceable, Contact Customer Support for more options";
 
-  if (Loading == false || Loading == null) {
+  if (Loading === false || Loading === null) {
     $(".checking").css("display", "none");
   }
   const { Serviceable, deliveryCharge } = pincodeData;
 
   const handleBuyNow = (e) => {
     e.preventDefault();
-    if (stock != 0) {
+    if (stock !== 0) {
       createOrder({
         products: [
           {
@@ -112,14 +114,14 @@ const ProductDescription = ({
   };
   const { redirect } = order;
   const orderId = order.order._id;
-  if (redirect == true) {
+  if (redirect === true) {
     localStorage.setItem("cart", JSON.stringify([]));
     return <Redirect to={"/order/" + orderId} />;
   }
 
   return (
-    <div class="product-description col-lg-5">
-      <main class="card main-grid">
+    <div className="product-description col-lg-5">
+      <main className="card main-grid">
         {actualPrice && actualPrice !== price ? (
           <div className="sale-banner">
             {actualPrice ? (
@@ -130,8 +132,8 @@ const ProductDescription = ({
             ) : null}
           </div>
         ) : null}
-        <div class="card__content">
-          <div class="card__head">
+        <div className="card__content">
+          <div className="card__head">
             <h2>
               <small style={{ fontSize: "1rem" }}>
                 {gender && gender} {">"} {minAge && minAge}
@@ -144,15 +146,15 @@ const ProductDescription = ({
               <br />
               {name && name} <br /> ({modelyear && modelyear})
             </h2>
-            <div style={{ fontSize: "1.2rem" }} class="card__text">
+            <div style={{ fontSize: "1.2rem" }} className="card__text">
               {description && description}
-              <ul class="description-promise">
+              <ul className="description-promise">
                 <li>Fre Home Delivery</li>
                 <li>Fully Fitted ready to ride</li>
                 <li>Free accessories worth 500</li>
               </ul>
             </div>
-            <p class="card__price">
+            <p className="card__price">
               &#8377; {price && price}
               <sub>
                 {" "}
@@ -173,33 +175,37 @@ const ProductDescription = ({
                 name="pincode"
               />
 
-              <button
-                onClick={() => {
-                  $(".checking").css("display", "block");
-                }}
-                type="submit"
-              >
-                Check
-                {loading ? (
-                  <Spinner
-                    className="checking"
-                    animation="border"
-                    role="status"
-                  >
-                    <span className="sr-only">Loading...</span>
-                  </Spinner>
-                ) : null}
-              </button>
+              {pincode.loading ? (
+                <Loader />
+              ) : (
+                <button
+                  onClick={() => {
+                    $(".checking").css("display", "block");
+                  }}
+                  type="submit"
+                >
+                  Check
+                  {loading ? (
+                    <Spinner
+                      className="checking"
+                      animation="border"
+                      role="status"
+                    >
+                      <span className="sr-only">Loading...</span>
+                    </Spinner>
+                  ) : null}
+                </button>
+              )}
               <div className="message text-success">{message}</div>
             </form>
           </div>
 
           {stockNumber > 0 ? (
-            <button onClick={handleCart} class="btn btn--primary">
+            <button onClick={handleCart} className="btn btn--primary">
               Add to cart
             </button>
           ) : (
-            <button disabled href="#" class="btn btn--primary">
+            <button disabled href="#" className="btn btn--primary">
               Add to cart
             </button>
           )}
@@ -214,7 +220,11 @@ const ProductDescription = ({
             OR
           </div>
           {Serviceable && deliveryCharge ? (
-            <button onClick={handleBuyNow} href="#" class="btn btn--primary">
+            <button
+              onClick={handleBuyNow}
+              href="#"
+              className="btn btn--primary"
+            >
               Buy Now
             </button>
           ) : (
@@ -224,7 +234,7 @@ const ProductDescription = ({
                 window.alert("Enter pincode First");
               }}
               href="#"
-              class="btn btn--primary"
+              className="btn btn--primary"
             >
               Buy Now
             </button>

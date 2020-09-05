@@ -1,6 +1,6 @@
 import React from "react";
 // import "./css/Specifications.css";
-
+/*eslint-disable */
 const Specifications = ({
   setcolor,
   setsize,

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
@@ -16,6 +17,7 @@ const OrderPage = ({
   order: { products, total, billingDetails },
   match,
   billingDetailsUpdated,
+  orderLoader,
   user,
   redirectToPaytm,
 }) => {
@@ -51,7 +53,7 @@ const OrderPage = ({
   // }
 
   const [modalShow, setModalShow] = React.useState(false);
-  if (order.status && order.status != "Payment Pending") {
+  if (order.status && order.status !== "Payment Pending") {
     return <Redirect to="/" />;
   }
   return (
@@ -65,7 +67,7 @@ const OrderPage = ({
                 {products &&
                   products.map((prod) => {
                     return (
-                      <div className="product">
+                      <div key={prod._id} className="product">
                         <img src={prod.image} alt="" />
                         <div className="desc">
                           <h3>{prod.name}</h3>
@@ -85,12 +87,16 @@ const OrderPage = ({
               show={modalShow}
               onHide={() => setModalShow(false)}
             />
-            <DetailsForm
-              handleBilling={handleBilling}
-              billingDetails={billingDetails}
-              details={details}
-              setDetails={setDetails}
-            />
+            {orderLoader ? (
+              <Loader />
+            ) : (
+              <DetailsForm
+                handleBilling={handleBilling}
+                billingDetails={billingDetails}
+                details={details}
+                setDetails={setDetails}
+              />
+            )}
           </div>
           <div className="transac-buttons">
             <button
@@ -129,6 +135,7 @@ const mapStateToProps = (state) => ({
   order: state.order.order,
   user: state.auth.user,
   billingDetailsUpdated: state.order.billingDetailsUpdated,
+  orderLoader: state.order.loading,
 });
 
 export default connect(mapStateToProps, {

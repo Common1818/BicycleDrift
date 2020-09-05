@@ -8,6 +8,7 @@ import AllBikes from "./AllBikes";
 import AllPincodes from "./AllPincodes";
 import AddPincode from "./AddPincode";
 import AllOrders from "./AllOrders";
+import AddCarousel from "./AddCarousel";
 
 const SideMenu = ({ displayComp }) => {
   const handleDisplay = (comp) => {
@@ -70,6 +71,18 @@ const SideMenu = ({ displayComp }) => {
           }}
         >
           View All Brands
+        </li>
+      </ul>
+      <ul class="menu">
+        <li>Carousel</li>
+        <li
+          onClick={() => {
+            console.log("click");
+            handleDisplay(<AddCarousel />);
+          }}
+        >
+          {" "}
+          <span class="plus">+</span> Add Carousesl
         </li>
       </ul>
 

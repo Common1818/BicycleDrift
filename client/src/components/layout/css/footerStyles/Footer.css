@@ -18,12 +18,45 @@ a:hover {
     color: #c9192e;
 } */
 
+.koshish {}
+
 .payment {
     text-align: center;
 }
 
 .payment img {
     border-radius: 10px;
+}
+
+.koshish span {
+    transition: 0.5s ease-in;
+}
+
+.koshish a {
+    color: #fdfdfd;
+    text-decoration: none;
+}
+
+.koshish a:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+    /* color: dodgerblue; */
+    color: #f1f1f1;
+}
+
+
+/* .payment::after {
+    content: " IDFC bank Financing Available";
+    color: "#fff";
+    position: absolute;
+    top: 10px;
+} */
+
+.payment span {
+    font-weight: 800;
+    margin: 20px !important;
+    position: relative;
+    top: 20px;
 }
 
 .flex {

@@ -61,23 +61,26 @@ Trusted people. Trusted store.`,
   for (var i = 0; i < 3; i++) {
     reviewArray.push(reviews[Math.floor(Math.random() * 5)]);
   }
+
+  var k = 0;
   return (
-    <div class="fluid-container user-reviews">
+    <div className="fluid-container user-reviews">
       <h2>CUSTOMER REVIEWS</h2>
-      <hr class="hr-star"></hr>
-      <div class="row">
+      <hr className="hr-star"></hr>
+      <div className="row">
         {reviewArray &&
           reviewArray.map((review) => {
+            k++;
             return (
-              <div class="col-lg-4">
-                <div class="testimonial">
-                  <div class="testimonial-content">
-                    <div class="testimonial-icon">
-                      <i class="fa fa-quote-left"></i>
+              <div key={k} className="col-lg-4">
+                <div className="testimonial">
+                  <div className="testimonial-content">
+                    <div className="testimonial-icon">
+                      <i className="fa fa-quote-left"></i>
                     </div>
-                    <p class="description">{review.review}</p>
+                    <p className="description">{review.review}</p>
                   </div>
-                  <h3 class="title">{review.name}✩✩✩✩✩</h3>
+                  <h3 className="title">{review.name}✩✩✩✩✩</h3>
                 </div>
               </div>
             );

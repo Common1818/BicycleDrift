@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllOrders } from "../../actions/order";
@@ -13,7 +14,7 @@ const AllOrders = ({ orders, getAllOrders, loadingComplete }) => {
   return (
     <div className="all-categories container-fluid">
       <h3>All Orders</h3>
-      {loadingComplete == true ? (
+      {loadingComplete === true ? (
         <table>
           <tbody>
             <tr>

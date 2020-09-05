@@ -1,5 +1,5 @@
+/*eslint-disable */
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 import ProductDesktop from "./ProductDesktop";
 import ProductMobile from "./ProductMobile";
@@ -112,7 +112,7 @@ const ProuctForm = ({
     //     size,
     //   },
     // };
-    if (productType == "Bike") {
+    if (productType === "Bike") {
       addBike({
         images: [productImage1, productImage2, productImage3, productImage4],
         productType,
@@ -208,7 +208,7 @@ const ProuctForm = ({
         </div>
 
         <hr class="hr-4"></hr>
-        {productType && productType == "Bike" ? (
+        {productType && productType === "Bike" ? (
           <Specifications
             setcolor={setcolor}
             setsize={setsize}

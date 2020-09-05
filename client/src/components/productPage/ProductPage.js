@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useEffect } from "react";
 import $ from "jquery";
 import "./css/ProductPage.css";
@@ -61,23 +62,23 @@ const ProductPage = ({
   isLoading = loading;
 
   return (
-    <div class="fluid-container p-4 m-2">
-      {isLoading == null ? (
+    <div className="fluid-container p-4 m-2">
+      {isLoading === null ? (
         <Loader />
       ) : (
         <>
-          <div class="row product-container">
+          <div className="row product-container">
             <div className="add-to-cart-gif">
-              <img src="" alt="" srcset="" />
+              <img src="" alt="" />
             </div>
-            <div class=" product-image col-lg-7">
+            <div className=" product-image col-lg-7">
               <ProductHeading name={name} modelyear={modelyear} />
 
               <ProductDesktop images={images} />
               <ProductMobile images={images} />
               <div className="product-banner mobile ">
                 <img
-                  src={productType == "Bike" ? bikeBanner : accessoryBanner}
+                  src={productType === "Bike" ? bikeBanner : accessoryBanner}
                   alt=""
                 />
               </div>
@@ -102,15 +103,15 @@ const ProductPage = ({
           <br />
           <div className="product-banner desktop ">
             <img
-              src={productType == "Bike" ? bikeBanner : accessoryBanner}
+              src={productType === "Bike" ? bikeBanner : accessoryBanner}
               alt=""
             />
           </div>
           <br />
 
-          <hr class="hr-4"></hr>
+          <hr className="hr-4"></hr>
 
-          {productType == "Bike" ? (
+          {productType === "Bike" ? (
             <Specifications specifications={specifications} />
           ) : (
             <AccessorySpecifications

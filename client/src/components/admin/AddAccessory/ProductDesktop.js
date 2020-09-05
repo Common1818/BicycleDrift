@@ -6,7 +6,7 @@ import addImage from "./images/addImage.PNG";
 
 const ProductDesktop = ({ img1, img2, img3, img4 }) => {
   const handlePreview = (value, imgclass) => {
-    value != ""
+    value !== ""
       ? $(`.${imgclass}`).attr("src", value)
       : $(`.${imgclass}`).attr("src", addImage);
   };

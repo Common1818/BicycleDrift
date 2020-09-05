@@ -9,10 +9,8 @@ import {
   DELETE_BIKE_ERROR,
   UPDATE_BIKE,
   UPDATE_BIKE_ERROR,
-  ADD_TO_CART,
 } from "./types";
 import { setAlert } from "./alert";
-import { type } from "jquery";
 
 // useId from localstorage
 const userId = localStorage.getItem("userId");
@@ -25,7 +23,7 @@ export const addBike = (bikeData) => async (dispatch) => {
     },
   };
   const body = JSON.stringify(bikeData);
-  console.log(bikeData);
+
   try {
     //
     const res = await axios.post(`/api/product/create/${userId}`, body, config);
@@ -58,7 +56,6 @@ export const addAccessory = (data) => async (dispatch) => {
     },
   };
   const body = JSON.stringify(data);
-  console.log(data);
   try {
     //
     const res = await axios.post(
@@ -176,7 +173,6 @@ export const deleteBike = (productId, userId) => async (dispatch) => {
 };
 
 export const updateBike = (bikedata, productId) => async (dispatch) => {
-  console.log(bikedata);
   const config = {
     headers: {
       "Content-Type": "application/json",

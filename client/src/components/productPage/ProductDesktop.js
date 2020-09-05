@@ -9,12 +9,12 @@ const ProductDesktop = ({ images }) => {
 
   const imagesArray = images && images;
   return (
-    <div class="row product-image-container desktop">
-      <div class="col-sm-2">
+    <div className="row product-image-container desktop">
+      <div className="col-sm-2">
         {imagesArray &&
           imagesArray.map((image) => {
             return (
-              <div key={image} class="row">
+              <div key={image} className="row">
                 <img
                   onClick={(e) => {
                     changeDisplayImage(e.target.src);
@@ -26,7 +26,7 @@ const ProductDesktop = ({ images }) => {
             );
           })}
       </div>
-      <div class="col-sm-10 ">
+      <div className="col-sm-10 ">
         <img
           className="display-image"
           src={imagesArray && imagesArray[0]}

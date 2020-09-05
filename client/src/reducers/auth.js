@@ -7,13 +7,12 @@ import {
   AUTH_ERROR,
   LOGOUT,
   SEND_RESET_EMAIL,
-  SEND_RESET_EMAIL_FAIL,
 } from "../actions/types";
 
 const initialState = {
   token: localStorage.getItem("token"),
   isAuthenticated: null,
-  loading: true,
+  loading: false,
   user: null,
   isAdmin: null,
 };
@@ -23,19 +22,22 @@ export default function (state = initialState, action) {
 
   switch (type) {
     case USER_LOADED:
-      console.log(payload);
       return {
         ...state,
         user: payload,
         isAuthenticated: true,
-        isAdmin: payload.role == 0 ? false : true,
+        isAdmin: payload.role === 0 ? false : true,
         loading: false,
       };
     case REGISTER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
     case LOGIN_SUCCESS:
       localStorage.setItem("token", payload.token);
       localStorage.setItem("userId", payload.userId);
-      console.log(payload);
+
       return {
         ...state,
         ...payload,
@@ -43,6 +45,10 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case REGISTER_FAIL:
+      return {
+        ...state,
+        loading: false,
+      };
     case LOGIN_FAIL:
     case AUTH_ERROR:
       localStorage.removeItem("token");
@@ -65,6 +71,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...payload,
+      };
+
+    case "SET_AUTH_LOADER":
+      return {
+        ...state,
+        loading: true,
       };
     default:
       return state;

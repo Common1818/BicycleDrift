@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { check } from "express-validator";
+import React from "react";
 
 const DetailsForm = ({
   details,
@@ -16,34 +15,35 @@ const DetailsForm = ({
   };
 
   console.log(billingDetails);
-  const [checked, setChecked] = useState(false);
 
   return (
     <div className="col-sm-4">
-      <h4 class="my-4">Billing Address</h4>
+      <h4 className="my-4">Billing Address</h4>
       <form>
-        <div class="form-row">
-          <div class="col-md-6 form-group">
-            <label for="firstName">First Name</label>
+        <div className="form-row">
+          <div className="col-md-6 form-group">
+            <label htmlFor="firstName">First Name</label>
             <input
               placeholder={
                 billingDetails ? billingDetails.firstName : "firstName"
               }
-              required="true"
+              required
               type="text"
-              class="form-control"
+              className="form-control"
               id="firstName"
               value={firstName}
               onChange={handleChange}
             ></input>
-            <div class="invalid-feedback">Valid first name is required.</div>
+            <div className="invalid-feedback">
+              Valid first name is required.
+            </div>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="lastName">Last Name</label>
+          <div className="col-md-6 form-group">
+            <label htmlFor="lastName">Last Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="lastName"
               placeholder={
                 billingDetails ? billingDetails.lastName : "lastName"
@@ -51,34 +51,34 @@ const DetailsForm = ({
               value={lastName}
               onChange={handleChange}
             ></input>
-            <div class="invalid-feedback">Valid last name is required.</div>
+            <div className="invalid-feedback">Valid last name is required.</div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text">@</span>
             </div>
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               id="email"
               placeholder={billingDetails ? billingDetails.email : "email"}
               value={email}
               onChange={handleChange}
               required
             ></input>
-            <div class="invalid-feedback">Your username is required.</div>
+            <div className="invalid-feedback">Your username is required.</div>
           </div>
-          <label for="mobileNumber">Mobile Number</label>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">+91</span>
+          <label htmlFor="mobileNumber">Mobile Number</label>
+          <div className="input-group">
+            <div className="input-group-prepend">
+              <span className="input-group-text">+91</span>
             </div>
             <input
               type="number"
-              class="form-control"
+              className="form-control"
               id="mobileNumber"
               placeholder={
                 billingDetails ? billingDetails.mobileNumber : "mobileNumber"
@@ -89,54 +89,56 @@ const DetailsForm = ({
               maxLength={10}
               required
             ></input>
-            <div class="invalid-feedback">Your Mobile Number is required.</div>
+            <div className="invalid-feedback">
+              Your Mobile Number is required.
+            </div>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="address">Address</label>
+        <div className="form-group">
+          <label htmlFor="address">Address</label>
           <textarea
             type="text"
-            class="form-control"
+            className="form-control"
             id="address"
             value={address}
             onChange={handleChange}
             placeholder={billingDetails ? billingDetails.address : "address"}
             required
           ></textarea>
-          <div class="invalid-feedback">
+          <div className="invalid-feedback">
             Please enter your shipping address.
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4 form-group">
-            <label for="city">City</label>
+        <div className="row">
+          <div className="col-md-4 form-group">
+            <label htmlFor="city">City</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="city"
               placeholder={billingDetails ? billingDetails.city : "city"}
               value={city}
               onChange={handleChange}
               required
             ></input>
-            <div class="invalid-feedback">Please provide a valid city.</div>
+            <div className="invalid-feedback">Please provide a valid city.</div>
           </div>
 
-          <div class="col-md-4 form-group">
-            <label for="pincode">Postcode</label>
+          <div className="col-md-4 form-group">
+            <label htmlFor="pincode">Postcode</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="pincode"
               placeholder={billingDetails ? billingDetails.pincode : "pincode"}
               value={pincode}
               onChange={handleChange}
               required
             ></input>
-            <div class="invalid-feedback">Postcode required.</div>
+            <div className="invalid-feedback">Postcode required.</div>
           </div>
-          <div class="form-check billingbutton">
+          <div className="form-check billingbutton">
             <button className="btn-primary" onClick={handleBilling}>
               Use This Address
             </button>

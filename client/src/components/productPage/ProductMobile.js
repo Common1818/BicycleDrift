@@ -8,7 +8,7 @@ const ProductMobile = ({ images }) => {
     $(".cover-image img").attr("src", tempSource);
   };
   const imagesArray = images && images;
-  console.log(imagesArray);
+  var k = 0;
   return (
     <div className="product-image-container mobile">
       <div className="cover-image">
@@ -17,8 +17,9 @@ const ProductMobile = ({ images }) => {
       <div className="not-cover-image">
         {imagesArray &&
           imagesArray.map((image) => {
+            k++;
             return (
-              <div>
+              <div key={k}>
                 <img
                   onClick={(e) => {
                     changeDisplayImage(e.target.src);

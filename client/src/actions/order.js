@@ -9,7 +9,6 @@ import {
 import { setAlert } from "./alert";
 import axios from "axios";
 const userId = localStorage.getItem("userId");
-console.log(userId);
 export const createOrder = (data) => async (dispatch) => {
   const userId = localStorage.getItem("userId");
   if (!userId) {
@@ -45,8 +44,6 @@ export const createOrder = (data) => async (dispatch) => {
         type: "RESET_CART_REDIRECT",
       });
     }, 2000);
-
-    console.log(res.data);
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
@@ -56,15 +53,16 @@ export const createOrder = (data) => async (dispatch) => {
 };
 
 export const fetchOrder = (orderId) => async (dispatch) => {
+  dispatch({
+    type: "SET_ORDER_LOADER",
+  });
   const userId = localStorage.getItem("userId");
   try {
     const res = await axios.get(`/api/order/${orderId}/${userId}`);
-    const messagesArray = res.data.messages;
     // orderAdded added message alert
 
     dispatch(setAlert("Order fetched successfully", "danger"));
     if (res.data.billingDetails) {
-      console.log("billing details exist");
       dispatch({
         type: "BILLING_DETAILS_UPDATED",
       });
@@ -74,9 +72,7 @@ export const fetchOrder = (orderId) => async (dispatch) => {
       type: CREATE_ORDER,
       payload: res.data,
     });
-    console.log(res.data);
   } catch (err) {
-    console.log(err);
     //    dispatch({
     //      payload: { errMessage: "Error getting all brands" },
     //      type: ADD_BRAND_FAIL,
@@ -92,8 +88,6 @@ export const fetchAdminOrder = (orderId) => async (dispatch) => {
       type: "GET_ADMIN_ORDER",
       payload: res.data,
     });
-
-    console.log(res.data);
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
@@ -107,6 +101,9 @@ export const fetchAdminOrder = (orderId) => async (dispatch) => {
 };
 
 export const deleteOrder = (orderId) => async (dispatch) => {
+  dispatch({
+    type: "SET_ORDER_LOADER",
+  });
   const userId = localStorage.getItem("userId");
   try {
     const res = await axios.delete(`/api/order/${orderId}/${userId}`);
@@ -118,9 +115,7 @@ export const deleteOrder = (orderId) => async (dispatch) => {
     dispatch({
       type: DELETE_ORDER,
     });
-    console.log(res.data);
   } catch (err) {
-    console.log(err);
     const errors = err.response.data.errors;
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
@@ -132,7 +127,9 @@ export const deleteOrder = (orderId) => async (dispatch) => {
 };
 
 export const updateAddress = (orderId, data) => async (dispatch) => {
-  console.log(data, orderId);
+  dispatch({
+    type: "SET_ORDER_LOADER",
+  });
   const userId = localStorage.getItem("userId");
   try {
     const config = {
@@ -149,7 +146,6 @@ export const updateAddress = (orderId, data) => async (dispatch) => {
         type: "BILLING_DETAILS_ERROR",
       });
     } else {
-      console.log(Serviceable);
       try {
         const config = {
           headers: {
@@ -157,8 +153,7 @@ export const updateAddress = (orderId, data) => async (dispatch) => {
           },
         };
         const body = JSON.stringify(data);
-        console.log(body);
-        console.log(`/api/order/${orderId}/${userId}`);
+
         const res = await axios.put(
           `/api/order/${orderId}/${userId}`,
           body,
@@ -175,7 +170,7 @@ export const updateAddress = (orderId, data) => async (dispatch) => {
         dispatch({
           type: "BILLING_DETAILS_ERROR",
         });
-        console.log(err);
+
         const errors = err.response.data.errors;
         if (errors) {
           errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
@@ -192,7 +187,9 @@ export const updateAddress = (orderId, data) => async (dispatch) => {
 
 export const getAllOrders = () => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/allorders/${userId}`);
+    const res = await axios.get(
+      `/api/allorders/${localStorage.getItem("userId")}`
+    );
     const messagesArray = res.data.messages;
     // Added successssfully wala message
     messagesArray.forEach((message) =>
@@ -211,6 +208,9 @@ export const getAllOrders = () => async (dispatch) => {
 };
 
 export const getUserOrders = () => async (dispatch) => {
+  dispatch({
+    type: "SET_ORDER_LOADER",
+  });
   try {
     const res = await axios.get(
       `/api/orders/${localStorage.getItem("userId")}`

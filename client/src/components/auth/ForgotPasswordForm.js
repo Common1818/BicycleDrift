@@ -21,6 +21,7 @@ const ForgotPasswordForm = ({ sendResetEmail, isAuthenticated }) => {
       <div class="container-center">
         <center>
           <img
+            alt=" "
             src="https://www.svgrepo.com/show/303611/giant-bicycles-logo.svg"
             width="30%"
           ></img>

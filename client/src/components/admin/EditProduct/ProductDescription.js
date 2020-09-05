@@ -1,7 +1,5 @@
 import React from "react";
-import $ from "jquery";
 import { connect } from "react-redux";
-import { Spinner } from "react-bootstrap";
 // import "./css/ProductDescription.css";
 
 const ProductDescription = ({

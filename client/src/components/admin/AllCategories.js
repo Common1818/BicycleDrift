@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllCategories } from "../../actions/category";
@@ -23,7 +24,7 @@ const AllCategories = ({
   return (
     <div className="all-categories container-fluid">
       <h3>All Categories</h3>
-      {loadingComplete == true ? (
+      {loadingComplete === true ? (
         <table>
           <tbody>
             <tr>

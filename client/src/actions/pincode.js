@@ -12,6 +12,9 @@ import axios from "axios";
 const userId = localStorage.getItem("userId");
 
 export const checkPincode = ({ pincode }) => async (dispatch) => {
+  dispatch({
+    type: "SET_PINCODE_LOADER",
+  });
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -43,9 +46,14 @@ export const checkPincode = ({ pincode }) => async (dispatch) => {
 };
 
 export const getAllPincodes = () => async (dispatch) => {
+  dispatch({
+    type: "SET_LOADER",
+  });
   try {
-    const res = await axios.get(`/api/pincodes/${userId}`);
-    console.log(res.data);
+    const res = await axios.get(
+      `/api/pincodes/${localStorage.getItem("userId")}`
+    );
+
     dispatch({
       type: FETCH_PINCODES,
       payload: { pincodes: res.data },
@@ -62,14 +70,14 @@ export const deletePincode = (pincodeId) => async (dispatch) => {
   const userId = localStorage.getItem("userId");
   try {
     const res = await axios.delete(`/api/pincode/${pincodeId}/${userId}`);
-    console.log(res.data);
+
     const messagesArray = res.data.messages;
     messagesArray.forEach((message) =>
       dispatch(setAlert(message.msg, "danger"))
     );
   } catch (err) {
     const errors = err.response.data.errors;
-    console.log(errors);
+
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
@@ -86,7 +94,7 @@ export const addPincode = (pincode) => async (dispatch) => {
   const body = JSON.stringify(pincode);
   try {
     const res = await axios.post(`/api/pincode/add/${userId}`, body, config);
-    console.log(res.data);
+
     const messagesArray = res.data.messages;
     messagesArray.forEach((message) =>
       dispatch(setAlert(message.msg, "danger"))
@@ -96,7 +104,7 @@ export const addPincode = (pincode) => async (dispatch) => {
     });
   } catch (err) {
     const errors = err.response.data.errors;
-    console.log(errors);
+
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useState, useEffect } from "react";
 import ProductHeading from "./ProductHeading";
 import { connect } from "react-redux";

@@ -2,9 +2,7 @@ import React from "react";
 import "./css/AboutBrand.css";
 
 const AboutBrand = ({ product }) => {
-  console.log(product);
-  const { brand } = product && product;
-  console.log(brand);
+  const brand = product && product.brand;
   return (
     <div className="about-page-container container">
       <h2>About the Brand</h2>

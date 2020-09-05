@@ -1,9 +1,6 @@
-import axios from "axios";
 import { ADD_TO_CART } from "./types";
-import { setAlert } from "./alert";
 
 export const addProductToCart = (cartItem) => (dispatch) => {
-  const userId = localStorage.getItem("userId");
   if (localStorage.getItem("cart") == null) {
     const cartProducts = [{ ...cartItem }];
     localStorage.setItem("cart", JSON.stringify(cartProducts));
@@ -12,8 +9,6 @@ export const addProductToCart = (cartItem) => (dispatch) => {
     const newCart = [...tempCart, { ...cartItem }];
     localStorage.setItem("cart", JSON.stringify(newCart));
   }
-
-  console.log(userId);
 
   setTimeout(() => {
     dispatch({
@@ -24,7 +19,6 @@ export const addProductToCart = (cartItem) => (dispatch) => {
 };
 
 export const updateCartItem = (cartItem) => (dispatch) => {
-  console.log("asdf");
   localStorage.setItem("cart", JSON.stringify(cartItem));
   setTimeout(() => {
     dispatch({

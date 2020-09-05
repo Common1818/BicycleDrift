@@ -1,6 +1,5 @@
 import React from "react";
-import $ from "jquery";
-import { Spinner } from "react-bootstrap";
+
 // import "./css/ProductDescription.css";
 
 const ProductDescription = ({

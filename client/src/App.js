@@ -19,7 +19,6 @@ import AddProductColor from "./components/admin/AddProduct/AddProductColor";
 import UpdateProduct from "./components/admin/EditProduct/UpdateProduct";
 import ForgotPasswordForm from "./components/auth/ForgotPasswordForm";
 import Products from "./components/products/Products";
-import UserDashboard from "./components/user/UserDashboard";
 import Payment from "./components/Payment/Payment";
 import Cart from "./components/cart/Cart";
 import OrderPage from "./components/order/OrderPage";

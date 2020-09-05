@@ -2,7 +2,6 @@ import {
   ADD_CATEGORY,
   ADD_CATEGORY_FAIL,
   GET_ALL_CATEGORIES,
-  GET_ALL_CATEGORIES_ERROR,
   DELETE_CATEGORY,
   DELETE_CATEGORY_ERROR,
 } from "../actions/types";
@@ -27,12 +26,6 @@ export default function (state = initialState, action) {
       return {
         ...state,
         categories: payload,
-        loadingComplete: true,
-        loadingComplete: true,
-      };
-    case ADD_CATEGORY_FAIL:
-      return {
-        ...state,
         loadingComplete: true,
       };
     case DELETE_CATEGORY:

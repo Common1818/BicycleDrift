@@ -14,7 +14,7 @@ const ProductDesktop = ({
   productImage4,
 }) => {
   const handlePreview = (value, imgclass) => {
-    value != ""
+    value !== ""
       ? $(`.${imgclass}`).attr("src", value)
       : $(`.${imgclass}`).attr("src", addImage);
   };

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from "react";
 
 const QuantityButton = ({
@@ -21,15 +22,17 @@ const QuantityButton = ({
           if (quantity > 1) {
             var newQuan = quantity - 1;
             CartProducts.map((prod) => {
-              if (prod._id == product._id) {
+              if (prod._id === product._id) {
                 prod.quantity = newQuan;
               }
             });
             setCartProducts([...CartProducts]);
             localStorage.setItem("cart", JSON.stringify(CartProducts));
             console.log(CartProducts);
+            return null;
           } else {
             window.alert("Quantity can not be less than 1");
+            return null;
           }
         }}
         style={{
@@ -44,6 +47,7 @@ const QuantityButton = ({
 
       <div style={{ flex: "1" }}>
         <input
+          readOnly
           value={quantity}
           type="number"
           style={{
@@ -59,14 +63,13 @@ const QuantityButton = ({
           e.preventDefault();
           var newQuan = quantity + 1;
           CartProducts.map((prod) => {
-            if (prod._id == product._id) {
+            if (prod._id === product._id) {
               prod.quantity = newQuan;
             }
           });
-          setCartProducts([...CartProducts]);
 
+          setCartProducts([...CartProducts]);
           localStorage.setItem("cart", JSON.stringify(CartProducts));
-          console.log(CartProducts);
         }}
         style={{
           alignItems: "center",

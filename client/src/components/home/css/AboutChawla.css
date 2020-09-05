@@ -613,6 +613,11 @@ main {
     padding: 1rem;
 }
 
+.about-image {
+    display: flex !important;
+    align-items: center !important;
+}
+
 .section-heading {
     -webkit-transform: rotate(0) translateX(0);
     transform: rotate(0) translateX(0);

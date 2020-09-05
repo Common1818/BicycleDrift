@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import ProductDesktop from "./ProductDesktop";
@@ -8,8 +9,6 @@ import Specifications from "./Specifications";
 import { getAllCategories } from "../../../actions/category";
 import { getAllBrands } from "../../../actions/brand";
 import { updateBike } from "../../../actions/product";
-import axios from "axios";
-// import { addBike } from "../../../actions/product";
 
 const UpdateProduct = ({
   getAllCategories,
@@ -92,12 +91,6 @@ const UpdateProduct = ({
       },
     });
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
     const bikedata = {
       images: [productImage1, productImage2, productImage3, productImage4],
       name,
@@ -136,11 +129,11 @@ const UpdateProduct = ({
   };
 
   return (
-    <div class="fluid-container p-4 m-2">
+    <div className="fluid-container p-4 m-2">
       <h2 className="text-center">Update Product</h2>
       <form onSubmit={handleSubmit}>
-        <div class="row product-container">
-          <div class=" product-image col-lg-7">
+        <div className="row product-container">
+          <div className=" product-image col-lg-7">
             <ProductHeading
               setcategory={setcategory}
               setbrand={setbrand}
@@ -175,7 +168,7 @@ const UpdateProduct = ({
           />
         </div>
 
-        <hr class="hr-4"></hr>
+        <hr className="hr-4"></hr>
         <Specifications
           setcolor={setcolor}
           setsize={setsize}

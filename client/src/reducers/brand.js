@@ -3,9 +3,7 @@ import {
   ADD_BRAND_FAIL,
   GET_ALL_BRANDS,
   GET_ALL_BRANDS_ERROR,
-  DELETEBRANDY,
   DELETE_BRAND_ERROR,
-  ADD_CATEGORY_FAIL,
   DELETE_BRAND,
 } from "../actions/types";
 
@@ -29,11 +27,6 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...payload,
-        loadingComplete: true,
-      };
-    case ADD_BRAND_FAIL:
-      return {
-        ...state,
         loadingComplete: true,
       };
     case DELETE_BRAND:

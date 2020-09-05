@@ -8,7 +8,7 @@ import { Row, Col } from "react-bootstrap";
 
 const OurPromise = () => {
   return (
-    <div class="our-promise-container">
+    <div className="our-promise-container">
       <h2>Our Promise</h2>
       <div className="our-promise">
         <Row className="promises desktop">
