@@ -1,7 +1,8 @@
 {
-    "mongoURI": "mongodb+srv://kartik123:kartik123@devconnectorcourse.xn9xn.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://Koshish:koshish@123@cluster0.fz7ji.mongodb.net/bicycledrift?retryWrites=true&w=majority",
     "jwtSecret": "Whatever",
     "merchantID": "ctygRR14184822145812",
     "paytmWebsite": "WEBSTAGING",
-    "merchantKey": "UiakA_96V!oGG%nS"
+    "merchantKey": "UiakA_96V!oGG%nS",
+    "paytmCallbackUrl": "https://vdbikes.com/api/callback"
 }

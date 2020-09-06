@@ -3,5 +3,6 @@
     "jwtSecret": "Whatever",
     "merchantID": "ctygRR14184822145812",
     "paytmWebsite": "WEBSTAGING",
-    "merchantKey": "UiakA_96V!oGG%nS"
+    "merchantKey": "UiakA_96V!oGG%nS",
+    "paytmCallbackUrl": "http://localhost:3000/api/callback"
 }
