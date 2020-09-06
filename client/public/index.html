@@ -7,6 +7,10 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <script src="https://kit.fontawesome.com/b862bb0d81.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <title>BicycleDrift</title>
 </head>
@@ -17,10 +21,6 @@
 
     <script defer language="JavaScript">
         document.onkeydown = function(e) {
-            // console.log(e.ctrlKey);
-            // console.log(e.keyCode === 91);
-            // console.log(e.keyCode == "C".charCodeAt(0));
-            console.log(e.keyCode === 91, e.keyCode == "C".charCodeAt(0));
             if (event.keyCode == 123) {
                 return false;
             }
@@ -28,6 +28,12 @@
                 return false;
             }
             if (e.ctrlKey && e.shiftKey && e.keyCode == "J".charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == "P".charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == "C".charCodeAt(0)) {
                 return false;
             }
             if (e.ctrlKey && e.keyCode == "U".charCodeAt(0)) {

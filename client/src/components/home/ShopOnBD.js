@@ -16,7 +16,7 @@ const ShopOnBD = ({ searchResult, history }) => {
           <a
             onClick={() => {
               $("html, body").animate({ scrollTop: 10 }, 500);
-              searchResult("toddlers", history);
+              searchResult("Toddlers", history);
             }}
           >
             <img
@@ -60,7 +60,7 @@ const ShopOnBD = ({ searchResult, history }) => {
               <a
                 onClick={() => {
                   $("html, body").animate({ scrollTop: 10 }, 500);
-                  searchResult("toddlers", history);
+                  searchResult("Toddlers", history);
                 }}
               >
                 <img

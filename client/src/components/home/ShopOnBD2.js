@@ -14,7 +14,7 @@ const ShopOnBD = ({ history, searchResult }) => {
           <a
             onClick={() => {
               $("html, body").animate({ scrollTop: 10 }, 500);
-              searchResult("kids", history);
+              searchResult("Kids", history);
             }}
           >
             <img
@@ -40,7 +40,7 @@ const ShopOnBD = ({ history, searchResult }) => {
           <a
             onClick={() => {
               $("html, body").animate({ scrollTop: 10 }, 500);
-              searchResult("walker", history);
+              searchResult("Walkers", history);
             }}
           >
             <img
@@ -58,7 +58,7 @@ const ShopOnBD = ({ history, searchResult }) => {
               <a
                 onClick={() => {
                   $("html, body").animate({ scrollTop: 10 }, 500);
-                  searchResult("kids", history);
+                  searchResult("Kids", history);
                 }}
               >
                 <img
@@ -88,7 +88,7 @@ const ShopOnBD = ({ history, searchResult }) => {
               <a
                 onClick={() => {
                   $("html, body").animate({ scrollTop: 10 }, 500);
-                  searchResult("walker", history);
+                  searchResult("Walkers", history);
                 }}
               >
                 <img
