@@ -10,12 +10,13 @@
     background-position: center;
     background-repeat: no-repeat; */
     background-color: #d9042727;
+    padding-top: 20vh;
+    height: auto;
 }
 
 .loginForm .container {
     display: grid;
     place-items: center;
-    height: 100vh;
 }
 
 .loginForm .box {
