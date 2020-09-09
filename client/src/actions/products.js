@@ -13,25 +13,27 @@ export const getAllBikes = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/products");
 
-    res.data = res.data.map((obj) => ({
-      ...obj,
-      searchString:
-        obj.name +
-        " " +
-        obj.modelyear +
-        " " +
-        obj.price +
-        " " +
-        obj.color +
-        " " +
-        obj.gender +
-        " " +
-        obj.brand.brandname +
-        " " +
-        obj.category.name +
-        " " +
-        obj.productType,
-    }));
+    res.data = res.data.map((obj) => {
+      return {
+        ...obj,
+        searchString:
+          obj.name +
+          " " +
+          obj.modelyear +
+          " " +
+          obj.price +
+          " " +
+          obj.color +
+          " " +
+          obj.gender +
+          " " +
+          obj.brand.brandname +
+          " " +
+          obj.category.name +
+          " " +
+          obj.productType,
+      };
+    });
 
     dispatch({
       type: GET_ALL_BIKES,

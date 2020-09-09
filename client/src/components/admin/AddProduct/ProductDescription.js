@@ -69,7 +69,7 @@ const ProductDescription = ({
             OR
           </div>
           <button href="#" class="btn btn--primary">
-            Pickup From Store{" "}
+            Buy Now{" "}
             <img src="https://www.svgrepo.com/show/10112/map.svg" alt="" />
           </button>
         </div>
