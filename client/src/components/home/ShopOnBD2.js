@@ -18,7 +18,7 @@ const ShopOnBD = ({ history, searchResult }) => {
             }}
           >
             <img
-              src="http://drive.google.com/uc?export=view&id=1TYYTnjiSQIyze4g27C-HiKuTKM5aTjFj"
+              src="https://drive.google.com/uc?export=view&id=1TYYTnjiSQIyze4g27C-HiKuTKM5aTjFj"
               alt=""
             ></img>
           </a>
@@ -31,7 +31,7 @@ const ShopOnBD = ({ history, searchResult }) => {
             }}
           >
             <img
-              src="http://drive.google.com/uc?export=view&id=1Wij-KVe3v1QInXZaNc3fszhex3-e-C12"
+              src="https://drive.google.com/uc?export=view&id=1Wij-KVe3v1QInXZaNc3fszhex3-e-C12"
               alt=""
             />
           </a>
@@ -44,7 +44,7 @@ const ShopOnBD = ({ history, searchResult }) => {
             }}
           >
             <img
-              src="http://drive.google.com/uc?export=view&id=1Ep3UJZI6s8Fqu7vD_CjLHBsSIED8-5wo"
+              src="https://drive.google.com/uc?export=view&id=1Ep3UJZI6s8Fqu7vD_CjLHBsSIED8-5wo"
               alt=""
             ></img>
           </a>
@@ -62,7 +62,7 @@ const ShopOnBD = ({ history, searchResult }) => {
                 }}
               >
                 <img
-                  src="http://drive.google.com/uc?export=view&id=1TYYTnjiSQIyze4g27C-HiKuTKM5aTjFj"
+                  src="https://drive.google.com/uc?export=view&id=1TYYTnjiSQIyze4g27C-HiKuTKM5aTjFj"
                   alt=""
                 ></img>
               </a>
@@ -77,7 +77,7 @@ const ShopOnBD = ({ history, searchResult }) => {
                 }}
               >
                 <img
-                  src="http://drive.google.com/uc?export=view&id=1Wij-KVe3v1QInXZaNc3fszhex3-e-C12"
+                  src="https://drive.google.com/uc?export=view&id=1Wij-KVe3v1QInXZaNc3fszhex3-e-C12"
                   alt=""
                 />
               </a>
@@ -92,7 +92,7 @@ const ShopOnBD = ({ history, searchResult }) => {
                 }}
               >
                 <img
-                  src="http://drive.google.com/uc?export=view&id=1Ep3UJZI6s8Fqu7vD_CjLHBsSIED8-5wo"
+                  src="https://drive.google.com/uc?export=view&id=1Ep3UJZI6s8Fqu7vD_CjLHBsSIED8-5wo"
                   alt=""
                 ></img>
               </a>

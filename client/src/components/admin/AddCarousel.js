@@ -10,7 +10,7 @@ const AddCarousel = ({ addCarousel }) => {
   const [img5, setimg5] = useState("");
 
   const handleString = (string) => {
-    var imageUrl = "http://drive.google.com/uc?export=view&id=";
+    var imageUrl = "https://drive.google.com/uc?export=view&id=";
     var splittedString = string.split("/d/")[1];
     if (splittedString == null) {
       imageUrl = string;

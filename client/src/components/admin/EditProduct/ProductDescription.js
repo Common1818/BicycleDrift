@@ -50,18 +50,19 @@ const ProductDescription = ({
             <p class="card__price">
               &#8377;{" "}
               <input
-                onChange={(e) => setPrice(e.target.value)}
-                defaultValue={product.price}
+                onChange={(e) => setActualPrice(e.target.value)}
+                defaultValue={product.actualPrice}
                 style={{ width: "50%" }}
-                placeholder="Price"
+                placeholder="Actual Price"
                 type="number"
               />
               <br />
               &#8377;{" "}
               <input
-                onChange={(e) => setActualPrice(e.target.value)}
+                onChange={(e) => setPrice(e.target.value)}
+                defaultValue={product.price}
                 style={{ width: "50%" }}
-                placeholder="Actual Price"
+                placeholder="Price"
                 type="number"
               />
             </p>

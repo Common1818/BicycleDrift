@@ -13,6 +13,7 @@ const Specifications = ({ specifications }) => {
   const suspension = specifications && specifications.suspension;
   const shifter = specifications && specifications.shifter;
   const tire = specifications && specifications.tire;
+  const size = specifications && specifications.size;
 
   return (
     <div className="container mt-4 specification-container">
@@ -138,7 +139,7 @@ const Specifications = ({ specifications }) => {
             alt="Frame"
           ></img>
           <h4>SIZES</h4>
-          MEDIUM (17.1T), LARGE (19.0T)
+          {size && size}
         </div>
         <div className="col-sm-4 ">
           <img

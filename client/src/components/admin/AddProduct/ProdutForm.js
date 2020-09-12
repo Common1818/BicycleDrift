@@ -125,6 +125,7 @@ const ProuctForm = ({
         category,
         stock: parseInt(stock),
         brand,
+        color,
         gender,
         age: {
           min: minAge,

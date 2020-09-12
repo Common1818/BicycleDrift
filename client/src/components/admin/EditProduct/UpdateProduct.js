@@ -36,7 +36,7 @@ const UpdateProduct = ({
   const [Description, setDescription] = useState(product.product.description);
   const [modelYear, setmodelYear] = useState(product.product.modelyear);
   const [color, setcolor] = useState(product.product.color);
-  const [size, setsize] = useState("");
+  const [size, setsize] = useState(product.product.size);
   const [handlebar, sethandlebar] = useState(
     product.product.specifications.handlebar
   );

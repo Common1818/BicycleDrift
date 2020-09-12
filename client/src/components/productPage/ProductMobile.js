@@ -1,7 +1,7 @@
 import React from "react";
 import $ from "jquery";
 import "./css/ProductMobile.css";
-
+import bikeBanner from "./images/bikeBanner.PNG";
 const ProductMobile = ({ images }) => {
   const changeDisplayImage = (tempSource) => {
     $(".cover-image img").removeAttr("src");
@@ -24,7 +24,7 @@ const ProductMobile = ({ images }) => {
                   onClick={(e) => {
                     changeDisplayImage(e.target.src);
                   }}
-                  src={image}
+                  src={image ? image : bikeBanner}
                   alt=""
                 />
               </div>

@@ -149,7 +149,7 @@ const ProductDescription = ({
             <div style={{ fontSize: "1.2rem" }} className="card__text">
               {description && description}
               <ul className="description-promise">
-                <li>Fre Home Delivery</li>
+                <li>Free Home Delivery *</li>
                 <li>Fully Fitted ready to ride</li>
                 <li>Free accessories worth 500</li>
               </ul>
@@ -205,9 +205,11 @@ const ProductDescription = ({
               Add to cart
             </button>
           ) : (
-            <button disabled href="#" className="btn btn--primary">
-              Add to cart
-            </button>
+            <>
+              <button disabled href="#" className="btn btn--primary">
+                Add to cart
+              </button>
+            </>
           )}
 
           <div style={{ color: "red", fontSize: "1.2rem" }}>
@@ -215,6 +217,18 @@ const ProductDescription = ({
               ? `Only ${stockNumber} left in stock, Order Now !!!`
               : null}
           </div>
+          <button
+            onClick={() => {
+              window.open(
+                "http://wa.me/+919212403104?text=I'm%20interested%20in%20purchasing%20a%20bicycle",
+                "_blank",
+                "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=600,height=600"
+              );
+            }}
+            className="btn btn--primary"
+          >
+            Pickup From Store
+          </button>
 
           <div style={{ fontSize: "2rem", fontWeight: "800" }} className="or">
             OR

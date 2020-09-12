@@ -9,9 +9,9 @@ const ProductAdminSection = ({ productId, product, deleteBike }) => {
   console.log(productId);
   const handleDelete = () => {
     const val = window.prompt(
-      "Are you sure you Want to delete? Enter: CONFIRM "
+      "Are you sure you Want to delete? Enter: Y or N "
     );
-    if (val === "CONFIRM") {
+    if (val === "Y") {
       deleteBike(productId, userId);
     }
   };

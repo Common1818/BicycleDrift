@@ -14,7 +14,15 @@ const AboutChawla = () => {
             </div>
             <div className="column-xs-12 column-md-4 about-image">
               <img
+                title="View Our image gallery"
                 alt=" "
+                onClick={() => {
+                  window.open(
+                    "https://www.google.com/maps/uv?pb=!1s0x390cdc23ac9b011f:0x18128ca1fa136374!3m1!7e115!4shttps://lh5.googleusercontent.com/p/AF1QipPPxkrYI3VX-AOBlVRzXJwip5-4jtzpfRcX3PLA%3Dw568-h320-k-no!5svdchawla+cycle+store+-+Google+Search!15zQ2dJZ0FRPT0&imagekey=!1e10!2sAF1QipPPxkrYI3VX-AOBlVRzXJwip5-4jtzpfRcX3PLA&hl=en&sa=X&ved=2ahUKEwjfptP9j-TrAhXJXCsKHVMgCqoQoiowFHoECBwQBg",
+                    "_blank",
+                    "toolbar=yes,scrollbars=yes,resizable=yes,top=200,left=400,width=600,height=600"
+                  );
+                }}
                 src="http://drive.google.com/uc?export=view&id=17ewdYfIHUDDCxNjHL8q-bjhfPH-Kd2Ns"
               ></img>
             </div>

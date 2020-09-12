@@ -43,7 +43,7 @@ const SpecificationsSchema = new mongoose.Schema({
     type: String,
   },
   size: {
-    typee: String,
+    type: String,
   },
 });
 

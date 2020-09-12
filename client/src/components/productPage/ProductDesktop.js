@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/ProductDesktop.css";
 import $ from "jquery";
+import bikeBanner from "./images/bikeBanner.PNG";
 const ProductDesktop = ({ images }) => {
   const changeDisplayImage = (tempSource) => {
     $(".display-image").removeAttr("src");
@@ -13,13 +14,14 @@ const ProductDesktop = ({ images }) => {
       <div className="col-sm-2">
         {imagesArray &&
           imagesArray.map((image) => {
+            console.log(image == "");
             return (
               <div key={image} className="row">
                 <img
                   onClick={(e) => {
                     changeDisplayImage(e.target.src);
                   }}
-                  src={image}
+                  src={image ? image : bikeBanner}
                   alt=""
                 ></img>
               </div>

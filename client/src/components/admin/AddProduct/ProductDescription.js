@@ -46,29 +46,29 @@ const ProductDescription = ({
             <p class="card__price">
               &#8377;{" "}
               <input
+                onChange={(e) => setActualPrice(e.target.value)}
+                style={{ width: "50%" }}
+                placeholder="Actual Price"
+                type="number"
+              />
+              &#8377;{" "}
+              <input
                 onChange={(e) => setPrice(e.target.value)}
                 style={{ width: "50%" }}
                 placeholder="Marked Price"
                 type="number"
               />
               <br />
-              &#8377;{" "}
-              <input
-                onChange={(e) => setActualPrice(e.target.value)}
-                style={{ width: "50%" }}
-                placeholder="Actual Price"
-                type="number"
-              />
             </p>
           </div>
 
-          <button href="#" class="btn btn--primary">
+          <button disabled href="#" class="btn btn--primary">
             add to cart
           </button>
           <div style={{ fontSize: "2rem", fontWeight: "800" }} className="or">
             OR
           </div>
-          <button href="#" class="btn btn--primary">
+          <button disabled href="#" class="btn btn--primary">
             Buy Now{" "}
             <img src="https://www.svgrepo.com/show/10112/map.svg" alt="" />
           </button>

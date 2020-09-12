@@ -180,7 +180,7 @@ export const updateBike = (bikedata, productId) => async (dispatch) => {
   };
   const body = JSON.stringify(bikedata);
   const res = await axios.put(
-    `/api/product/${productId}/${userId}`,
+    `/api/product/${productId}/${localStorage.getItem("userId")}`,
     body,
     config
   );

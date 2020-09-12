@@ -625,7 +625,7 @@ main {
 
 .about-container img {
     margin: 0px auto !important;
-    width: 80%;
+    width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-position: center;
@@ -673,4 +673,12 @@ footer {
         width: 30rem;
         height: 40rem;
     }
+}
+
+.about-image img {
+    transition: 0.5s ease;
+}
+
+.about-image img:hover {
+    filter: blur(1rem);
 }
