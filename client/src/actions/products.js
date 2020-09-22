@@ -12,7 +12,7 @@ import { setAlert } from "./alert";
 export const getAllBikes = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/products");
-
+    console.log(res.data);
     res.data = res.data.map((obj) => {
       return {
         ...obj,
@@ -40,6 +40,7 @@ export const getAllBikes = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    console.log(err);
     const errors = err.response.data.errors;
 
     // Array of errors

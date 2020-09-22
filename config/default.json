@@ -1,8 +1,8 @@
 {
     "mongoURI": "mongodb+srv://Koshish:koshish@123@cluster0.fz7ji.mongodb.net/bicycledrift?retryWrites=true&w=majority",
     "jwtSecret": "Whatever",
-    "merchantID": "daKLhW58889326182231",
-    "paytmWebsite": "WEBSTAGING",
-    "merchantKey": "LonJW!ccRfIB1spv",
+    "merchantID": "jvgOvn24032338865709",
+    "paytmWebsite": "DEFAULT",
+    "merchantKey": "25HMO8ItO96%0YGV",
     "paytmCallbackUrl": "http://localhost:3000/api/callback"
 }
