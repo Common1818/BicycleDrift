@@ -28,6 +28,7 @@ const OrderSchema = new mongoose.Schema(
     total: { type: Number },
     totalQuantity: { type: Number },
     status: { type: String, default: "Payment Pending" },
+    paymentId: { type: String },
     billingDetails: {
       firstName: { type: String },
       lastName: { type: String },

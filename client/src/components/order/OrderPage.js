@@ -9,6 +9,63 @@ import "./css/OrderPage.css";
 import Loader from "../layout/Loader";
 import PaymentModal from "./PaymentModal";
 
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
+
+const __DEV__ = document.domain === "localhost";
+
+const displayRazorpay = async (total, orId) => {
+  const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+
+  if (!res) {
+    alert("OOPS !!!! Gateway Failed to load.. Are you online ??");
+    return;
+  }
+
+  const data = await fetch("/api/razorpay", {
+    method: "POST",
+    body: JSON.stringify({
+      amount: total,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  }).then((t) => t.json());
+
+  const options = {
+    key: __DEV__ ? "rzp_test_52JHFOI3boJWpx" : "rzp_live_EdybhABLI9eugg",
+    currency: data.currency,
+    amount: data.amount.toString(),
+    order_id: data.id,
+    name: "Pay Securely",
+    description: `OrderId:${orId}`,
+    image: "http://www.vdbikes.com/static/media/Logo.64d8c23f.PNG",
+    handler: function (response) {
+      __DEV__
+        ? window.location.replace("http://localhost:3000/myorders")
+        : window.location.replace("http://www.vdbikes.com/myorders");
+    },
+    prefill: {
+      name,
+      email: "YourEmail@mail.com",
+      phone_number: "XXXXXXXXXX",
+    },
+  };
+  const paymentObject = new window.Razorpay(options);
+  paymentObject.open();
+};
+
 const OrderPage = ({
   fetchOrder,
   deleteOrder,
@@ -21,8 +78,6 @@ const OrderPage = ({
   user,
   redirectToPaytm,
 }) => {
-  console.log(order);
-
   const [details, setDetails] = useState({
     firstName: "",
     lastName: "",
@@ -32,6 +87,7 @@ const OrderPage = ({
     pincode: "",
     mobileNumber: "",
   });
+  console.log(order.status);
 
   const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -42,20 +98,24 @@ const OrderPage = ({
     fetchOrder(match.params.orderId);
   }, []);
 
-  const handleBilling = async (e) => {
-    e.preventDefault();
+  const handleBilling = async () => {
     const addressUpdate = details.address;
-    console.log(details);
+
     updateAddress(order._id, details);
   };
   // if (billingDetailsUpdated == true) {
   //   setModalShow(true);
   // }
 
-  const [modalShow, setModalShow] = React.useState(false);
   if (order.status && order.status !== "Payment Pending") {
     return <Redirect to="/" />;
   }
+
+  // const handlePayment = () => {
+  //   console.log("This is a payment button");
+  //   displayRazorpay(total)
+  // };
+
   return (
     <div className="order-page-container container-lg">
       {products ? (
@@ -82,11 +142,7 @@ const OrderPage = ({
                 <h2>SubTotal: {formatter.format(total)}</h2>
               </div>
             </div>
-            <PaymentModal
-              order={order}
-              show={modalShow}
-              onHide={() => setModalShow(false)}
-            />
+
             {orderLoader ? (
               <Loader />
             ) : (
@@ -112,7 +168,8 @@ const OrderPage = ({
               disabled={billingDetailsUpdated ? false : true}
               onClick={(e) => {
                 e.preventDefault();
-                setModalShow(true);
+
+                displayRazorpay(total, order._id);
               }}
             >
               Pay

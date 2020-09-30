@@ -62,3 +62,5 @@ export const redirectToPaytm = (details, orderId, userId) => async (
     console.log(err);
   }
 };
+
+export const handleRazorpay = (total) => async (dispatch) => {};

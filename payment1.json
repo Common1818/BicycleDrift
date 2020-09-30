@@ -1,0 +1,58 @@
+{
+    "entity": "event",
+    "account_id": "acc_FiNEl7WO9gtTiA",
+    "event": "payment.captured",
+    "contains": [
+        "payment"
+    ],
+    "payload": {
+        "payment": {
+            "entity": {
+                "id": "pay_FiurOlgyBX4uUm",
+                "entity": "payment",
+                "amount": 1049900,
+                "currency": "INR",
+                "status": "captured",
+                "order_id": "order_FiurHFLWCQ4GTk",
+                "invoice_id": null,
+                "international": false,
+                "method": "card",
+                "amount_refunded": 0,
+                "refund_status": null,
+                "captured": true,
+                "description": "OrderId:5f7364807cb45b246d3f4585",
+                "card_id": "card_FiurOsJTkigYOR",
+                "card": {
+                    "id": "card_FiurOsJTkigYOR",
+                    "entity": "card",
+                    "name": "test",
+                    "last4": "0008",
+                    "network": "MasterCard",
+                    "type": "unknown",
+                    "issuer": "",
+                    "international": false,
+                    "emi": false,
+                    "sub_type": "consumer"
+                },
+                "bank": null,
+                "wallet": null,
+                "vpa": null,
+                "email": "ngo@gmail.com",
+                "contact": "+918813936278",
+                "notes": [],
+                "fee": 22920,
+                "tax": 3496,
+                "error_code": null,
+                "error_description": null,
+                "error_source": null,
+                "error_step": null,
+                "error_reason": null,
+                "acquirer_data": {
+                    "auth_code": "112512"
+                },
+                "created_at": 1601397906
+            }
+        }
+    },
+    "created_at": 1601397908
+}
