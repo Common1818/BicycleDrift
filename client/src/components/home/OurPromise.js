@@ -1,9 +1,9 @@
 import React from "react";
 import "./css/OurPromise.css";
-import HomeDelivery from "./Images/HomeDelivery.PNG";
-import SecureTransactions from "./Images/SecureTransactions.PNG";
-import Asssembled from "./Images/Assembled.PNG";
-import QualityCheck from "./Images/QualityCheck.PNG";
+import HomeDelivery from "./Images/HomeDelivery.webp";
+import SecureTransactions from "./Images/SecureTransactions.webp";
+import Asssembled from "./Images/Assembled.webp";
+import QualityCheck from "./Images/QualityCheck.webp";
 import { Row, Col } from "react-bootstrap";
 
 const OurPromise = () => {

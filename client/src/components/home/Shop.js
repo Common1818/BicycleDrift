@@ -3,9 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { searchResult } from '../../actions/products';
 import './css/Shop.css';
-import ForKids from './Images/ForKids.png';
-import ForAdults from './Images/ForAdults.png';
-import Accessories from './Images/Accessories.png';
+import ForKids from './Images/ForKids.webp';
+import ForAdults from './Images/ForAdults.webp';
+import Accessories from './Images/Accessories.webp';
 
 const Shop = ({ searchResult, history }) => {
    return (
