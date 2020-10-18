@@ -18,7 +18,7 @@ const ShopOnBD = ({ history, searchResult }) => {
             }}
           >
             <img
-              src="https://drive.google.com/uc?export=view&id=1TYYTnjiSQIyze4g27C-HiKuTKM5aTjFj"
+              src="https://drive.google.com/uc?export=view&id=19Xr2il5WYDPzwJHgZAORIHvE-iwUUJfU"
               alt=""
             ></img>
           </a>
@@ -62,7 +62,7 @@ const ShopOnBD = ({ history, searchResult }) => {
                 }}
               >
                 <img
-                  src="https://drive.google.com/uc?export=view&id=1TYYTnjiSQIyze4g27C-HiKuTKM5aTjFj"
+                  src="https://drive.google.com/uc?export=view&id=19Xr2il5WYDPzwJHgZAORIHvE-iwUUJfU"
                   alt=""
                 ></img>
               </a>

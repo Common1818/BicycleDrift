@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/ProductDesktop.css";
 import $ from "jquery";
-import bikeBanner from "./images/bikeBanner.PNG";
+import bikeBanner from "./images/bikeBanner.webp";
 const ProductDesktop = ({ images }) => {
   const changeDisplayImage = (tempSource) => {
     $(".display-image").removeAttr("src");

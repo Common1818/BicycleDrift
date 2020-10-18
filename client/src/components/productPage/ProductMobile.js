@@ -1,7 +1,7 @@
 import React from "react";
 import $ from "jquery";
 import "./css/ProductMobile.css";
-import bikeBanner from "./images/bikeBanner.PNG";
+import bikeBanner from "./images/bikeBanner.webp";
 const ProductMobile = ({ images }) => {
   const changeDisplayImage = (tempSource) => {
     $(".cover-image img").removeAttr("src");

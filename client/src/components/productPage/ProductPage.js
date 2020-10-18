@@ -14,8 +14,8 @@ import ProductAdminSection from "./ProductAdminSection";
 import Loader from "../layout/Loader";
 import AboutBrand from "./AboutBrand";
 import AccessorySpecifications from "./accessorySpecifications";
-import accessoryBanner from "./images/accessoryBanner.PNG";
-import bikeBanner from "./images/bikeBanner.PNG";
+import accessoryBanner from "./images/accessoryBanner.webp";
+import bikeBanner from "./images/bikeBanner.webp";
 import OurPromise from "../home/OurPromise";
 
 const ProductPage = ({

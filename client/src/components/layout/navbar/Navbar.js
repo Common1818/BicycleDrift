@@ -1,7 +1,7 @@
 /*eslint-disable */
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "./NavComponents/Logo.PNG";
+import Logo from "./NavComponents/Logo.jpg";
 import SearchBar from "./NavComponents/SearchBar";
 import TopRow from "./NavComponents/TopRow";
 import { logout } from "../../../actions/auth";
